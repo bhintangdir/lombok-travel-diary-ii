@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us – Lombok Travel Diary</title>
+<meta name="description" content="Meet the local team behind Lombok Travel Diary: private tours, rentals and transfers, booked easily via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#27467F;--green:#2FA36B;--yellow:#F7C548;--red:#E8553D;--paper:#FFF8E8;--ink:#1E2A44;--line:#DCE6F2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--ink);line-height:1.65;background:var(--paper);background-image:repeating-linear-gradient(transparent 0 31px,var(--line) 31px 32px);overflow-x:hidden}
+h1,h2,h3{font-family:'Caveat',cursive;line-height:1.1;color:var(--navy)}
+h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:76px 0}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:600;font-size:.8rem;padding:4px 14px;border-radius:4px;transform:rotate(-2deg);margin-bottom:12px;letter-spacing:.05em;text-transform:uppercase}
+.head{text-align:center;max-width:640px;margin:0 auto 46px}.head p{color:#4a5873}
+.btn{display:inline-block;padding:12px 26px;border-radius:10px;font-weight:600;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:.15s;cursor:pointer;font-family:inherit;font-size:.95rem;background:#fff;color:var(--ink)}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.b-red{background:var(--red);color:#fff}.b-green{background:var(--green);color:#fff}.b-yellow{background:var(--yellow)}
+.c-navy{background:var(--navy);color:#fff}.c-green{background:var(--green);color:#fff}.c-yellow{background:var(--yellow)}.c-red{background:var(--red);color:#fff}
+.card{background:#fff;border:2.5px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);transition:.2s}
+.grid{display:grid;gap:28px}.g4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.alt{background:#fff;border-top:3px dashed var(--ink);border-bottom:3px dashed var(--ink)}
+
+nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:4px solid var(--yellow)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Caveat',cursive;font-size:1.9rem;color:#fff;font-weight:700}.logo span{color:var(--yellow)}
+.links{display:flex;gap:24px;align-items:center;list-style:none}
+.links a{color:#fff;font-weight:500;font-size:.92rem}
+.links a:not(.btn):hover,.links a.on{color:var(--yellow)}
+.links .btn{padding:8px 18px;box-shadow:3px 3px 0 var(--ink);color:#fff;background:var(--red)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+
+.hero{padding:96px 0 84px;text-align:center;color:#fff;background:linear-gradient(rgba(20,35,70,.6),rgba(20,35,70,.65)),url(images/about-hero.jpg) center/cover,linear-gradient(135deg,var(--navy),var(--green))}
+.hero h1{color:#fff;font-size:clamp(2.8rem,8vw,5.2rem);margin:8px 0 12px;text-shadow:3px 3px 0 rgba(0,0,0,.25)}
+.hero h1 em{color:var(--yellow);font-style:normal}
+.hero p{max-width:600px;margin:0 auto;font-size:1.05rem}
+.hero .tag{background:var(--red);color:#fff}
+
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story p{margin-bottom:14px}
+.pol{background:#fff;padding:16px 16px 52px;border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--ink);transform:rotate(3deg);position:relative}
+.pol::before{content:"";position:absolute;top:-14px;left:50%;width:110px;height:28px;background:rgba(232,85,61,.8);transform:translateX(-50%) rotate(-3deg)}
+.pol .pic{aspect-ratio:4/3;background:url(images/about.jpg) center/cover,linear-gradient(135deg,var(--green),var(--yellow));display:grid;place-items:center;font-size:5rem}
+.pol p{font-family:'Caveat',cursive;font-size:1.6rem;text-align:center;margin:10px 0 0;color:var(--navy)}
+.pol.s{position:absolute;width:42%;right:-6%;bottom:-28px;transform:rotate(-6deg);padding:8px 8px 28px;box-shadow:5px 5px 0 var(--ink)}
+.pol.s::before{width:60px;height:18px;background:rgba(247,197,72,.9)}
+.pol.s .pic{aspect-ratio:1;font-size:2.6rem;background:linear-gradient(135deg,var(--navy),var(--green))}
+.pw{position:relative;padding-bottom:20px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat{padding:22px 10px}.stat b{font-family:'Caveat',cursive;font-size:3rem;display:block;line-height:1}.stat span{font-size:.85rem;font-weight:500}
+
+.val{padding:28px 22px;text-align:center}.val:hover{transform:translateY(-5px) rotate(-.8deg)}
+.val .ic{font-size:2.4rem}.val h3{font-size:1.8rem;color:inherit;margin:6px 0}.val p{font-size:.9rem}
+
+.tl{max-width:760px;margin:0 auto;position:relative;padding-left:46px;border-left:3px dashed var(--ink)}
+.ms{position:relative;margin-bottom:26px}
+.ms::before{content:"";position:absolute;left:-62px;top:6px;width:26px;height:26px;border-radius:50%;background:var(--red);border:3px solid var(--paper);outline:2px solid var(--ink)}
+.ms:nth-child(3n+2)::before{background:var(--green)}.ms:nth-child(3n)::before{background:var(--navy)}
+.ms .card{padding:16px 22px;box-shadow:4px 4px 0 var(--ink)}
+.ms time{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--red);font-weight:700}
+.ms h3{font-size:1.6rem}.ms p{font-size:.9rem;color:#4a5873}
+
+.tm{text-align:center;padding:0 0 22px;overflow:hidden;position:relative}
+.tm::before{content:"";position:absolute;top:-10px;left:50%;width:80px;height:22px;transform:translateX(-50%) rotate(-3deg);background:rgba(247,197,72,.9);z-index:2}
+.tm:nth-child(2)::before{background:rgba(47,163,107,.8)}.tm:nth-child(3)::before{background:rgba(232,85,61,.8)}
+.tm:nth-child(1){transform:rotate(-1.5deg)}.tm:nth-child(2){transform:rotate(1deg)}.tm:nth-child(3){transform:rotate(-.8deg)}
+.tm:hover{transform:rotate(0) translateY(-4px)}
+.av{height:170px;display:grid;place-items:center;font-size:4.2rem;border-bottom:2.5px solid var(--ink);margin-bottom:14px;background-size:cover;background-position:center}
+.tm h3{font-size:1.9rem}.tm small{color:var(--red);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.tm p{font-size:.88rem;color:#4a5873;padding:6px 20px 0}
+
+.pro{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pbox{padding:30px}.pbox h3{font-size:2.1rem}
+.pbox ul{list-style:none;margin-top:10px}
+.pbox li{padding-left:28px;position:relative;margin-bottom:8px;font-size:.93rem}
+.pbox li::before{content:"✓";position:absolute;left:0;font-weight:700;color:var(--green)}
+.pbox.eco li::before{content:"🌿"}
+
+.cta{background:var(--green);text-align:center;color:#fff;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.cta h2{color:#fff;font-size:clamp(2.4rem,6vw,4rem)}.cta p{max-width:540px;margin:12px auto 28px}
+.cta .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--navy);color:#cfd8ec;padding:56px 0 24px;border-top:6px solid var(--yellow)}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+footer h4{font-family:'Caveat',cursive;font-size:1.6rem;color:var(--yellow);margin-bottom:8px}
+footer li{list-style:none;margin-bottom:6px;font-size:.9rem}footer a:hover{color:var(--yellow)}
+.copy{text-align:center;margin-top:36px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.25);font-size:.82rem}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);display:grid;place-items:center;font-size:1.7rem}
+
+@media(max-width:900px){
+.burger{display:block}
+.links{position:absolute;top:72px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:16px;display:none;border-bottom:4px solid var(--yellow)}
+.links.open{display:flex}
+.story,.pro{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr 1fr}section{padding:58px 0}
+}
+@media(max-width:520px){.foot{grid-template-columns:1fr}.pol.s{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="wrap nav">
+<a href="index.html" class="logo">Lombok<span>Travel</span>Diary</a>
+<button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+<ul class="links" id="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="tour-package.html">Tour Package</a></li>
+<li><a href="index.html#destination">Destination</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li><a href="about.html" class="on">About</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+<li><a class="btn" href="https://wa.me/6281234567890?text=Hi%20Lombok%20Travel%20Diary!%20I'd%20like%20to%20book%20a%20tour." target="_blank" rel="noopener">Book Now</a></li>
+</ul>
+</div>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+<span class="tag">📖 About us</span>
+<h1>The Locals Behind <em>Your Diary</em></h1>
+<p>We're a small team on Lombok who love sharing our island, one honest, friendly, unforgettable day at a time.</p>
+</div>
+</header>
+
+<section>
+<div class="wrap story">
+<div>
+<span class="tag">Our story</span>
+<h2>It Started with a Notebook</h2>
+<p>Lombok Travel Diary began with a simple habit: writing down the best beaches, warungs and hidden viewpoints we discovered as locals. Friends and visitors kept asking to see that notebook, so we turned it into tours.</p>
+<p>Today we plan private trips for travellers from all over the world. No big buses and no rushed schedules. Just a local driver-guide, a flexible plan and the best pages of Lombok.</p>
+<p>Everything is booked by chat. You talk to a real person, get clear prices and your plan is ready fast.</p>
+<a class="btn b-red" href="https://wa.me/6281234567890?text=Hi!%20I'd%20like%20to%20know%20more%20about%20Lombok%20Travel%20Diary." target="_blank" rel="noopener">Say hello on WhatsApp</a>
+</div>
+<div class="pw">
+<div class="pol"><div class="pic">🏖️</div><p>Where it all began</p></div>
+<div class="pol s"><div class="pic">🛺</div></div>
+</div>
+</div>
+</section>
+
+<section class="alt" style="padding:50px 0">
+<div class="wrap stats">
+<div class="card stat c-navy"><b>1,000+</b><span>Happy travellers</span></div>
+<div class="card stat c-green"><b>4.9★</b><span>Average rating</span></div>
+<div class="card stat c-yellow"><b>8+</b><span>Signature tours</span></div>
+<div class="card stat c-red"><b>24/7</b><span>WhatsApp support</span></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="head"><span class="tag">What we believe</span><h2>Our Page Rules</h2><p>Four simple promises that guide every trip we plan.</p></div>
+<div class="grid g4">
+<div class="card val c-navy"><div class="ic">🤝</div><h3>Honest</h3><p>Clear prices, clear plans and no hidden extras.</p></div>
+<div class="card val c-green"><div class="ic">🎯</div><h3>Personal</h3><p>Private trips built around your pace and interests.</p></div>
+<div class="card val c-yellow"><div class="ic">🏡</div><h3>Local</h3><p>Local guides, local food and local stories.</p></div>
+<div class="card val c-red"><div class="ic">🛡️</div><h3>Safe</h3><p>Trained drivers, tidy vehicles and weather checks.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<div class="head"><span class="tag">Our journey</span><h2>Chapters So Far</h2></div>
+<div class="tl">
+<div class="ms"><div class="card"><time>Chapter 1</time><h3>The first notebook</h3><p>Notes on favourite beaches and hidden spots, shared with friends and visitors.</p></div></div>
+<div class="ms"><div class="card"><time>Chapter 2</time><h3>First private tours</h3><p>Small trips by word of mouth, booked through simple chats.</p></div></div>
+<div class="ms"><div class="card"><time>Chapter 3</time><h3>Rentals &amp; transfers</h3><p>Added car and scooter rental plus airport and harbour pickups.</p></div></div>
+<div class="ms"><div class="card"><time>Chapter 4</time><h3>1,000+ travellers</h3><p>Guests from around the world, and many return for another page.</p></div></div>
+<div class="ms"><div class="card"><time>Next</time><h3>Your story</h3><p>The next chapter is yours. Let's write it together.</p></div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="head"><span class="tag">Meet the team</span><h2>The Hands Behind the Pages</h2><p>Friendly faces you'll meet on WhatsApp and on the road.</p></div>
+<div class="grid g3">
+<div class="card tm"><div class="av c-navy" style="background-image:url(images/team-1.jpg)">👨‍✈️</div><h3>Nama Founder</h3><small>Founder &amp; Trip Planner</small><p>Plans every itinerary and knows the island by heart.</p></div>
+<div class="card tm"><div class="av c-green" style="background-image:url(images/team-2.jpg)">🧑‍🤝‍🧑</div><h3>Nama Guide</h3><small>Lead Driver-Guide</small><p>Speaks English, loves photography and finds the best spots.</p></div>
+<div class="card tm"><div class="av c-red" style="background-image:url(images/team-3.jpg)">💬</div><h3>Nama Admin</h3><small>Guest Support</small><p>Answers your WhatsApp messages and keeps trips on track.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<div class="head"><span class="tag">Our promise</span><h2>Travel Well, Leave Light</h2></div>
+<div class="pro">
+<div class="card pbox"><h3>For you</h3><ul><li>English-speaking, friendly guides</li><li>Private tours, flexible stops</li><li>Fast replies on WhatsApp</li><li>Deposit to confirm, balance on the day</li></ul></div>
+<div class="card pbox eco"><h3>For Lombok</h3><ul><li>Support local warungs and artisans</li><li>Reef-safe snorkeling tips</li><li>Take-your-trash-with-you policy</li><li>Respect for village customs</li></ul></div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="wrap">
+<h2>Let's Write Your Lombok Story</h2>
+<p>Tell us your dates and what you love. We'll send a free plan within a few hours.</p>
+<div class="row">
+<a class="btn b-yellow" href="https://wa.me/6281234567890?text=Hi%20Lombok%20Travel%20Diary!%20I'd%20like%20to%20plan%20my%20trip." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+<a class="btn" href="tour-package.html">Browse Tours</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div><a href="index.html" class="logo">Lombok<span>Travel</span>Diary</a><p style="margin-top:10px;font-size:.9rem">Private Lombok tours, rentals and transfers. Book easily via WhatsApp.</p></div>
+<div><h4>Explore</h4><ul><li><a href="tour-package.html">Tour Package</a></li><li><a href="index.html#destination">Destination</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="about.html">About</a></li></ul></div>
+<div><h4>Services</h4><ul><li><a href="index.html#services">Car &amp; Scooter Rental</a></li><li><a href="index.html#services">Airport Transfer</a></li><li><a href="index.html#services">Harbour Transfer</a></li></ul></div>
+<div><h4>Contact</h4><ul><li>+62 812-3456-7890</li><li>hello@lomboktraveldiary.com</li><li>Instagram: @lomboktraveldiary</li></ul></div>
+</div>
+<div class="copy">© 2026 Lombok Travel Diary. Made with ☀️ in Lombok.</div>
+</div>
+</footer>
+
+<a class="wa" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<script>document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')))</script>
+</body>
+</html>

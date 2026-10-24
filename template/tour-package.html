@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tour Packages – Lombok Travel Diary</title>
+<meta name="description" content="Private Lombok tour packages: Gili island hopping, south beaches, waterfalls, Rinjani sunrise and custom itineraries. Book via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#27467F;--green:#2FA36B;--yellow:#F7C548;--red:#E8553D;--paper:#FFF8E8;--ink:#1E2A44;--line:#DCE6F2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--ink);line-height:1.65;background:var(--paper);background-image:repeating-linear-gradient(transparent 0 31px,var(--line) 31px 32px);overflow-x:hidden}
+h1,h2,h3{font-family:'Caveat',cursive;line-height:1.1;color:var(--navy)}
+h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:70px 0}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:600;font-size:.8rem;padding:4px 14px;border-radius:4px;transform:rotate(-2deg);margin-bottom:12px;letter-spacing:.05em;text-transform:uppercase}
+.head{text-align:center;max-width:640px;margin:0 auto 44px}.head p{color:#4a5873}
+.btn{display:inline-block;padding:10px 22px;border-radius:10px;font-weight:600;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:.15s;cursor:pointer;font-family:inherit;font-size:.9rem;background:#fff;color:var(--ink)}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.b-red{background:var(--red);color:#fff}.b-green{background:var(--green);color:#fff}.b-yellow{background:var(--yellow)}
+.c-navy{background:var(--navy);color:#fff}.c-green{background:var(--green);color:#fff}.c-yellow{background:var(--yellow)}.c-red{background:var(--red);color:#fff}
+
+nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:4px solid var(--yellow)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Caveat',cursive;font-size:1.9rem;color:#fff;font-weight:700}.logo span{color:var(--yellow)}
+.links{display:flex;gap:24px;align-items:center;list-style:none}
+.links a{color:#fff;font-weight:500;font-size:.92rem}
+.links a:not(.btn):hover,.links a.on{color:var(--yellow)}
+.links .btn{padding:8px 18px;box-shadow:3px 3px 0 var(--ink);color:#fff;background:var(--red)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+
+.hero{padding:90px 0 80px;text-align:center;color:#fff;background:linear-gradient(rgba(20,35,70,.6),rgba(20,35,70,.65)),url(images/tours-hero.jpg) center/cover,linear-gradient(135deg,var(--navy),var(--green))}
+.hero h1{color:#fff;font-size:clamp(2.8rem,8vw,5.2rem);margin:8px 0 12px;text-shadow:3px 3px 0 rgba(0,0,0,.25)}
+.hero h1 em{color:var(--yellow);font-style:normal}
+.hero p{max-width:580px;margin:0 auto;font-size:1.05rem}
+.hero .tag{background:var(--red);color:#fff}
+
+/* sticky divider filter */
+.filter{position:sticky;top:72px;z-index:40;background:var(--paper);border-bottom:4px solid var(--ink);box-shadow:0 6px 0 rgba(30,42,68,.08)}
+.filter .wrap{display:flex;align-items:flex-end;gap:6px;overflow-x:auto;padding-top:14px;scrollbar-width:none}
+.filter .wrap::-webkit-scrollbar{display:none}
+.fl{font-family:'Caveat',cursive;font-size:1.5rem;color:var(--navy);margin-right:8px;padding-bottom:6px;white-space:nowrap}
+.tab{flex:none;border:2.5px solid var(--ink);border-bottom:0;border-radius:12px 12px 0 0;padding:6px 20px 5px;font:600 .88rem 'Poppins',sans-serif;color:var(--ink);cursor:pointer;position:relative;top:4px;transition:.15s;opacity:.85}
+.tab:nth-of-type(1){background:var(--yellow)}.tab:nth-of-type(2){background:#8FD3B0}.tab:nth-of-type(3){background:#9DB6E8}.tab:nth-of-type(4){background:#F4A394}.tab:nth-of-type(5){background:#F9DE8F}.tab:nth-of-type(6){background:#BFE6CF}
+.tab:hover{padding-bottom:12px;opacity:1}
+.tab.on{padding-bottom:14px;opacity:1;color:#fff;background:var(--navy)!important;z-index:2}
+
+/* collage */
+.collage{columns:3 300px;column-gap:30px}
+.tour{break-inside:avoid;margin-bottom:34px;background:#fff;border:2.5px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);position:relative;transition:.2s;display:inline-block;width:100%}
+.tour:nth-child(3n+1){transform:rotate(-1.4deg)}.tour:nth-child(3n+2){transform:rotate(1.2deg)}.tour:nth-child(3n){transform:rotate(-.5deg)}
+.tour:hover{transform:rotate(0) translateY(-4px);z-index:5}
+.tour::before{content:"";position:absolute;top:-13px;left:50%;width:96px;height:26px;transform:translateX(-50%) rotate(-3deg);background:var(--tape,rgba(247,197,72,.9));z-index:2}
+.tour:nth-child(4n+2)::before{--tape:rgba(232,85,61,.8)}.tour:nth-child(4n+3)::before{--tape:rgba(47,163,107,.8)}.tour:nth-child(4n)::before{--tape:rgba(39,70,127,.75)}
+.ph{margin:14px 14px 0;border:2px solid var(--ink);display:grid;place-items:center;font-size:3.6rem;position:relative;background-size:cover;background-position:center}
+.ph.s{height:130px}.ph.m{height:170px}.ph.l{height:210px}
+.ph .dur{position:absolute;bottom:-12px;right:10px;background:var(--ink);color:#fff;font-size:.75rem;font-weight:600;padding:2px 12px;border-radius:20px}
+.tb{padding:22px 20px 20px}
+.tb h3{font-size:2rem;margin-bottom:4px}
+.tb>p{font-size:.9rem;color:#4a5873;margin-bottom:12px}
+.tb h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:10px 0 4px}
+.tb ul{list-style:none;font-size:.86rem}
+.hl li{padding-left:20px;position:relative;margin-bottom:2px}.hl li::before{content:"★";position:absolute;left:0;color:var(--yellow);-webkit-text-stroke:1px var(--ink)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips span{font-size:.72rem;font-weight:600;background:var(--paper);border:1.5px solid var(--ink);border-radius:20px;padding:1px 10px}
+.more{display:none;margin-top:12px;background:var(--paper);border:2px dashed var(--ink);border-radius:8px;padding:12px 14px;font-size:.84rem}
+.more.open{display:block}.more b{color:var(--navy)}
+.acts{display:flex;gap:10px;margin-top:16px}.acts .btn{flex:1;text-align:center;padding:8px 10px}
+.none{display:none;text-align:center;font-family:'Caveat',cursive;font-size:2rem;color:var(--navy)}
+
+/* compare */
+.cmp{background:#fff;border-top:3px dashed var(--ink);border-bottom:3px dashed var(--ink)}
+.tw{overflow-x:auto;border:2.5px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);background:#fff}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.88rem}
+th,td{padding:12px 14px;text-align:left;border-bottom:1.5px solid var(--line)}
+thead th{background:var(--navy);color:#fff;font-family:'Caveat',cursive;font-size:1.35rem;font-weight:700;white-space:nowrap}
+tbody tr:nth-child(even){background:var(--paper)}
+td:first-child{font-weight:600;color:var(--navy)}
+.lv{font-weight:700;color:var(--green);letter-spacing:1px}
+.note{text-align:center;font-size:.85rem;color:#6b7790;margin-top:16px}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto}
+details{background:#fff;border:2.5px solid var(--ink);border-radius:12px;margin-bottom:14px;box-shadow:4px 4px 0 var(--ink)}
+summary{padding:16px 22px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.4rem;color:var(--red);line-height:1}details[open] summary::after{content:"–"}
+details p{padding:0 22px 18px;color:#4a5873;font-size:.93rem}
+
+.cta{background:var(--green);text-align:center;color:#fff;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.cta h2{color:#fff;font-size:clamp(2.4rem,6vw,4rem)}.cta p{max-width:540px;margin:12px auto 28px}
+
+footer{background:var(--navy);color:#cfd8ec;padding:56px 0 24px;border-top:6px solid var(--yellow)}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+footer h4{font-family:'Caveat',cursive;font-size:1.6rem;color:var(--yellow);margin-bottom:8px}
+footer li{list-style:none;margin-bottom:6px;font-size:.9rem}footer a:hover{color:var(--yellow)}
+.copy{text-align:center;margin-top:36px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.25);font-size:.82rem}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);display:grid;place-items:center;font-size:1.7rem}
+
+@media(max-width:900px){
+.burger{display:block}
+.links{position:absolute;top:72px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:16px;display:none;border-bottom:4px solid var(--yellow)}
+.links.open{display:flex}
+.foot{grid-template-columns:1fr 1fr}section{padding:56px 0}
+.collage{column-gap:22px}
+}
+@media(max-width:520px){.foot{grid-template-columns:1fr}.fl{display:none}.tour{transform:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="wrap nav">
+<a href="index.html" class="logo">Lombok<span>Travel</span>Diary</a>
+<button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+<ul class="links" id="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="tour-package.html" class="on">Tour Package</a></li>
+<li><a href="index.html#destination">Destination</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+<li><a class="btn" href="https://wa.me/6281234567890?text=Hi%20Lombok%20Travel%20Diary!%20I'd%20like%20to%20book%20a%20tour." target="_blank" rel="noopener">Book Now</a></li>
+</ul>
+</div>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+<span class="tag">📖 Tour packages</span>
+<h1>Choose Your Next <em>Chapter</em></h1>
+<p>Private, flexible tours with a local driver-guide. Pick a page from our diary, tap WhatsApp, and we will handle the rest.</p>
+</div>
+</header>
+
+<div class="filter" id="filter">
+<div class="wrap">
+<span class="fl">Divider:</span>
+<button class="tab on" data-f="all">All Tours</button>
+<button class="tab" data-f="island">Islands</button>
+<button class="tab" data-f="beach">Beaches</button>
+<button class="tab" data-f="nature">Nature</button>
+<button class="tab" data-f="culture">Culture</button>
+<button class="tab" data-f="custom">Custom</button>
+</div>
+</div>
+
+<section style="padding-top:60px">
+<div class="wrap">
+<div class="collage" id="collage"></div>
+<p class="none" id="none">No pages here yet. Ask us for a custom plan! ✍️</p>
+</div>
+</section>
+
+<section class="cmp" id="compare">
+<div class="wrap">
+<div class="head"><span class="tag">Compare</span><h2>Trip vs Trip: Side by Side</h2><p>Not sure which tour fits? Compare the basics, then chat with us for an exact quote.</p></div>
+<div class="tw">
+<table>
+<thead><tr><th>Tour</th><th>Duration</th><th>Style</th><th>Difficulty</th><th>Best for</th><th>Price level</th></tr></thead>
+<tbody>
+<tr><td>Gili Islands Hopping</td><td>Full day</td><td>Boat &amp; snorkel</td><td>Easy</td><td>Couples, friends</td><td class="lv">$$$</td></tr>
+<tr><td>South Lombok Beaches</td><td>Full day</td><td>Road trip &amp; beaches</td><td>Easy</td><td>Families, photographers</td><td class="lv">$$</td></tr>
+<tr><td>Waterfalls &amp; Sasak Village</td><td>Full day</td><td>Hike &amp; culture</td><td>Moderate</td><td>Nature lovers</td><td class="lv">$$</td></tr>
+<tr><td>Rinjani Sunrise</td><td>Half day</td><td>Scenic &amp; walk</td><td>Easy</td><td>Early birds</td><td class="lv">$</td></tr>
+<tr><td>Secret Gilis (South)</td><td>Full day</td><td>Boat &amp; snorkel</td><td>Easy</td><td>Quiet-seekers</td><td class="lv">$$$</td></tr>
+<tr><td>Lombok Highlights</td><td>2 days</td><td>Road trip mix</td><td>Easy</td><td>First-timers</td><td class="lv">$$$</td></tr>
+<tr><td>Custom Itinerary</td><td>3–10 days</td><td>Your choice</td><td>Flexible</td><td>Long stays</td><td class="lv">Quote</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">$ = budget-friendly · $$ = mid-range · $$$ = premium. Prices depend on group size and season.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="head"><span class="tag">FAQ</span><h2>Before You Book</h2></div>
+<div class="faq">
+<details><summary>What is included in the tour price?</summary><p>Each card lists what's included. Usually this is a private car with driver-guide, hotel pickup, fuel, parking and bottled water. Boat and entrance fees are stated per tour.</p></details>
+<details><summary>Can I change the itinerary?</summary><p>Yes. Every tour is private, so we can swap stops, add a lunch spot or start later. Just tell us on WhatsApp.</p></details>
+<details><summary>How many people can join one tour?</summary><p>Our standard cars fit up to 5–6 guests. Larger groups are welcome, and we will arrange extra vehicles.</p></details>
+<details><summary>What if the weather is bad?</summary><p>We check sea and weather conditions the day before. If a boat trip is unsafe, we reschedule or swap to a land-based plan at no extra stress.</p></details>
+<details><summary>How do I pay?</summary><p>A small deposit secures your date, and the balance is paid on the day. We will share the payment options in chat.</p></details>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="wrap">
+<h2>Found Your Page?</h2>
+<p>Send us your dates and the tour you like. We'll reply with a clear plan and price.</p>
+<a class="btn b-yellow" href="https://wa.me/6281234567890?text=Hi%20Lombok%20Travel%20Diary!%20I'd%20like%20to%20plan%20my%20trip." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div><a href="index.html" class="logo">Lombok<span>Travel</span>Diary</a><p style="margin-top:10px;font-size:.9rem">Private Lombok tours, rentals and transfers. Book easily via WhatsApp.</p></div>
+<div><h4>Explore</h4><ul><li><a href="tour-package.html">Tour Package</a></li><li><a href="index.html#destination">Destination</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="index.html#about">About</a></li></ul></div>
+<div><h4>Services</h4><ul><li><a href="index.html#services">Car &amp; Scooter Rental</a></li><li><a href="index.html#services">Airport Transfer</a></li><li><a href="index.html#services">Harbour Transfer</a></li></ul></div>
+<div><h4>Contact</h4><ul><li>+62 812-3456-7890</li><li>hello@lomboktraveldiary.com</li><li>Instagram: @lomboktraveldiary</li></ul></div>
+</div>
+<div class="copy">© 2026 Lombok Travel Diary. Made with ☀️ in Lombok.</div>
+</div>
+</footer>
+
+<a class="wa" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+const T=[
+{c:'island',e:'🏝️',k:'c-navy',h:'l',n:'Gili Islands Hopping',d:'Turtles, clear water and car-free islands: Gili Trawangan, Meno and Air in one easy day.',t:'Full day · 8–9 h',hl:['Snorkel with sea turtles','Cycle around Gili Meno','Sunset swing photo'],i:['Hotel pickup','Boat &amp; snorkel gear','Guide','Lunch'],m:'Pickup 07:30 → Bangsal harbour → 3 snorkel stops → free time on each island → back by 17:30. <b>Not included:</b> personal expenses.'},
+{c:'beach',e:'🌊',k:'c-green',h:'m',n:'South Lombok Beaches',d:'Powdery sand and turquoise bays along the island\'s best southern coastline.',t:'Full day · 9 h',hl:['Tanjung Aan &amp; Bukit Merese','Selong Belanak surf bay','Mawun cliff views'],i:['Private car','Driver-guide','Fuel &amp; parking','Water'],m:'Pickup 08:00 → Merese hill → Tanjung Aan → lunch at Selong Belanak → Mawun at golden hour. <b>Not included:</b> lunch.'},
+{c:'nature',e:'💦',k:'c-yellow',h:'s',n:'Waterfalls &amp; Sasak Village',d:'Jungle walks to cool waterfalls, then a warm welcome in a traditional village.',t:'Full day · 8 h',hl:['Benang Stokel &amp; Kelambu','Weaving demonstration','Local village lunch'],i:['Private car','Guide','Entrance fees','Lunch'],m:'Pickup 08:00 → Sade village → Benang Stokel → Kelambu → return. Bring swimwear and sandals with grip.'},
+{c:'nature',e:'🌅',k:'c-red',h:'m',n:'Rinjani Sunrise Escape',d:'Watch golden light spill over rice terraces and Mount Rinjani, then enjoy a village breakfast.',t:'Half day · 5 h',hl:['Sunrise over rice fields','Easy foothill walk','Local breakfast'],i:['Early pickup','Guide','Breakfast','Coffee &amp; tea'],m:'Pickup 04:30 → Sembalun viewpoint → sunrise → village walk → back by 10:00. <b>Tip:</b> bring a light jacket.'},
+{c:'island',e:'🐠',k:'c-navy',h:'s',n:'Secret Gilis (South)',d:'Quiet islands and colourful reefs, far from the busy northern Gilis.',t:'Full day · 8 h',hl:['Gili Nanggu, Sudak &amp; Kedis','Clear reef snorkeling','Empty white beaches'],i:['Hotel pickup','Private boat','Snorkel gear','Lunch'],m:'Pickup 08:00 → Tawun harbour → 3 islands → beach lunch → back by 16:30.'},
+{c:'culture',e:'🧵',k:'c-yellow',h:'l',n:'Sasak Culture &amp; Crafts',d:'Meet local artisans and learn the traditions behind Lombok\'s weaving, pottery and food.',t:'Half day · 5 h',hl:['Sukarara weaving village','Banyumulek pottery','Taste local snacks'],i:['Private car','Guide','Workshop access','Snacks'],m:'Pickup 09:00 → Sade → Sukarara → Banyumulek → traditional market. Great with kids.'},
+{c:'culture',e:'🗺️',k:'c-green',h:'m',n:'Lombok Highlights (2 Days)',d:'The best of north and south in one diary: waterfalls, beaches, villages and sunsets.',t:'2 days · 1 night',hl:['Top south &amp; central stops','Hotel tips included','Relaxed pacing'],i:['Private car','Driver-guide','Fuel','Water'],m:'Day 1: south beaches &amp; Sade. Day 2: waterfalls &amp; Rinjani views. <b>Not included:</b> hotel &amp; meals.'},
+{c:'custom',e:'🎒',k:'c-red',h:'s',n:'Custom Lombok Itinerary',d:'Staying 3, 5 or 10 days? We write a plan around your pace, budget and interests.',t:'3–10 days · flexible',hl:['Fully tailored','Mix tours, rentals &amp; transfers','Hotel suggestions'],i:['Free planning','Local advice','Flexible dates'],m:'Tell us your arrival date, group size and wish-list. We reply with a draft diary within a few hours.'}
+];
+const wa=n=>'https://wa.me/6281234567890?text='+encodeURIComponent("Hi! I'm interested in the "+n.replace(/&amp;/g,'&')+" tour.");
+const box=document.getElementById('collage');
+box.innerHTML=T.map((x,i)=>`<article class="tour" data-c="${x.c}">
+<div class="ph ${x.h} ${x.k}" style="background-image:url(images/tour-${i+1}.jpg)">${x.e}<span class="dur">⏱ ${x.t}</span></div>
+<div class="tb"><h3>${x.n}</h3><p>${x.d}</p>
+<h4>Key highlights</h4><ul class="hl">${x.hl.map(y=>`<li>${y}</li>`).join('')}</ul>
+<h4>Included</h4><div class="chips">${x.i.map(y=>`<span>${y}</span>`).join('')}</div>
+<div class="more" id="m${i}">${x.m}</div>
+<div class="acts"><button class="btn" data-m="${i}">Detail</button><a class="btn b-green" href="${wa(x.n)}" target="_blank" rel="noopener">WhatsApp</a></div></div></article>`).join('');
+box.addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(!b)return;const m=document.getElementById('m'+b.dataset.m);m.classList.toggle('open');b.textContent=m.classList.contains('open')?'Close':'Detail'});
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');let n=0;
+box.querySelectorAll('.tour').forEach(c=>{const s=t.dataset.f==='all'||c.dataset.c===t.dataset.f;c.style.display=s?'':'none';if(s)n++});
+document.getElementById('none').style.display=n?'none':'block'}));
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>

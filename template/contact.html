@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – Lombok Travel Diary</title>
+<meta name="description" content="Contact Lombok Travel Diary via WhatsApp, email or visit our office. Send your trip details and get a free plan within hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#27467F;--green:#2FA36B;--yellow:#F7C548;--red:#E8553D;--paper:#FFF8E8;--ink:#1E2A44;--line:#DCE6F2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--ink);line-height:1.65;background:var(--paper);background-image:repeating-linear-gradient(transparent 0 31px,var(--line) 31px 32px);overflow-x:hidden}
+h1,h2,h3{font-family:'Caveat',cursive;line-height:1.1;color:var(--navy)}
+h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:70px 0}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:600;font-size:.8rem;padding:4px 14px;border-radius:4px;transform:rotate(-2deg);margin-bottom:12px;letter-spacing:.05em;text-transform:uppercase}
+.head{text-align:center;max-width:640px;margin:0 auto 44px}.head p{color:#4a5873}
+.btn{display:inline-block;padding:12px 26px;border-radius:10px;font-weight:600;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:.15s;cursor:pointer;font-family:inherit;font-size:.95rem;background:#fff;color:var(--ink);text-align:center}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.b-red{background:var(--red);color:#fff}.b-green{background:var(--green);color:#fff}.b-yellow{background:var(--yellow)}
+.c-navy{background:var(--navy);color:#fff}.c-green{background:var(--green);color:#fff}.c-yellow{background:var(--yellow)}.c-red{background:var(--red);color:#fff}
+.card{background:#fff;border:2.5px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);transition:.2s}
+.alt{background:#fff;border-top:3px dashed var(--ink);border-bottom:3px dashed var(--ink)}
+
+nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:4px solid var(--yellow)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Caveat',cursive;font-size:1.9rem;color:#fff;font-weight:700}.logo span{color:var(--yellow)}
+.links{display:flex;gap:24px;align-items:center;list-style:none}
+.links a{color:#fff;font-weight:500;font-size:.92rem}
+.links a:not(.btn):hover,.links a.on{color:var(--yellow)}
+.links .btn{padding:8px 18px;box-shadow:3px 3px 0 var(--ink);color:#fff;background:var(--red)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+
+.hero{padding:90px 0 110px;text-align:center;color:#fff;background:linear-gradient(rgba(20,35,70,.6),rgba(20,35,70,.65)),url(images/contact-hero.jpg) center/cover,linear-gradient(135deg,var(--navy),var(--green))}
+.hero h1{color:#fff;font-size:clamp(2.8rem,8vw,5.2rem);margin:8px 0 12px;text-shadow:3px 3px 0 rgba(0,0,0,.25)}
+.hero h1 em{color:var(--yellow);font-style:normal}
+.hero p{max-width:580px;margin:0 auto;font-size:1.05rem}
+.hero .tag{background:var(--red);color:#fff}
+
+.quick{margin-top:-64px;position:relative;z-index:5;padding:0 0 20px}
+.qg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.q{padding:24px 20px;text-align:center;display:block;position:relative}
+.q:nth-child(1){transform:rotate(-1.5deg)}.q:nth-child(2){transform:rotate(1deg)}.q:nth-child(3){transform:rotate(-.8deg)}.q:nth-child(4){transform:rotate(1.4deg)}
+.q:hover{transform:rotate(0) translateY(-5px)}
+.q::before{content:"";position:absolute;top:-11px;left:50%;width:70px;height:20px;transform:translateX(-50%) rotate(-3deg);background:rgba(247,197,72,.9)}
+.q:nth-child(2)::before{background:rgba(47,163,107,.8)}.q:nth-child(3)::before{background:rgba(232,85,61,.8)}.q:nth-child(4)::before{background:rgba(39,70,127,.75)}
+.q .ic{font-size:2.4rem}.q h3{font-size:1.7rem;color:inherit;margin:4px 0}.q p{font-size:.88rem;word-break:break-word}
+
+.fw{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:start}
+.fw p{color:#3d4a66;margin-bottom:12px}
+.note{background:var(--yellow);border:2.5px dashed var(--ink);border-radius:12px;padding:16px 20px;transform:rotate(-1deg);margin-top:20px}
+.note h3{font-size:1.6rem}.note ul{padding-left:18px;font-size:.88rem}
+.form{padding:30px;background:#fff;background-image:repeating-linear-gradient(transparent 0 35px,var(--line) 35px 36px);position:relative;border-left:14px double var(--red)}
+.form h3{font-size:2.2rem;margin-bottom:6px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:.8rem;font-weight:600;margin:12px 0 4px;color:var(--navy)}
+input,select,textarea{width:100%;font:inherit;font-size:.92rem;padding:10px 14px;border:2.5px solid var(--ink);border-radius:10px;background:var(--paper);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--yellow)}
+textarea{min-height:100px;resize:vertical}
+.form .btn{width:100%;margin-top:20px}
+.hint{text-align:center;font-size:.78rem;color:#6b7790;margin-top:10px}
+
+.loc{display:grid;grid-template-columns:1fr 1.3fr;gap:36px}
+.info{padding:30px}.info h3{font-size:2.1rem}
+.info p{margin:10px 0;font-size:.93rem}
+.hrs{list-style:none;margin:10px 0 18px;font-size:.88rem}.hrs li{display:flex;justify-content:space-between;border-bottom:1.5px dashed var(--line);padding:5px 0}
+.map{border:0;width:100%;height:100%;min-height:340px;display:block}
+.mapc{overflow:hidden;padding:0}
+
+.faq{max-width:760px;margin:0 auto}
+details{background:#fff;border:2.5px solid var(--ink);border-radius:12px;margin-bottom:14px;box-shadow:4px 4px 0 var(--ink)}
+summary{padding:16px 22px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.4rem;color:var(--red);line-height:1}details[open] summary::after{content:"–"}
+details p{padding:0 22px 18px;color:#4a5873;font-size:.93rem}
+
+.cta{background:var(--green);text-align:center;color:#fff;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.cta h2{color:#fff;font-size:clamp(2.4rem,6vw,4rem)}.cta p{max-width:540px;margin:12px auto 28px}
+footer{background:var(--navy);color:#cfd8ec;padding:56px 0 24px;border-top:6px solid var(--yellow)}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+footer h4{font-family:'Caveat',cursive;font-size:1.6rem;color:var(--yellow);margin-bottom:8px}
+footer li{list-style:none;margin-bottom:6px;font-size:.9rem}footer a:hover{color:var(--yellow)}
+.copy{text-align:center;margin-top:36px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.25);font-size:.82rem}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);display:grid;place-items:center;font-size:1.7rem}
+
+@media(max-width:900px){
+.burger{display:block}
+.links{position:absolute;top:72px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:16px;display:none;border-bottom:4px solid var(--yellow)}
+.links.open{display:flex}
+.fw,.loc{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}section{padding:56px 0}
+}
+@media(max-width:520px){.foot,.row{grid-template-columns:1fr}.q{transform:none!important}.form{padding:22px 18px}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="wrap nav">
+<a href="index.html" class="logo">Lombok<span>Travel</span>Diary</a>
+<button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+<ul class="links" id="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="tour-package.html">Tour Package</a></li>
+<li><a href="index.html#destination">Destination</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html" class="on">Contact</a></li>
+<li><a class="btn" href="https://wa.me/6281234567890?text=Hi%20Lombok%20Travel%20Diary!%20I'd%20like%20to%20book%20a%20tour." target="_blank" rel="noopener">Book Now</a></li>
+</ul>
+</div>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+<span class="tag">📖 Contact</span>
+<h1>Send Us a <em>Postcard</em></h1>
+<p>Questions, dates or a wild trip idea? Message us and a real local replies, usually within a few hours.</p>
+</div>
+</header>
+
+<div class="quick">
+<div class="wrap qg">
+<a class="card q c-green" href="https://wa.me/6281234567890" target="_blank" rel="noopener"><div class="ic">💬</div><h3>WhatsApp</h3><p>+62 812-3456-7890<br>Fastest way to book</p></a>
+<a class="card q c-yellow" href="mailto:hello@lomboktraveldiary.com"><div class="ic">✉️</div><h3>Email</h3><p>hello@lomboktraveldiary.com</p></a>
+<a class="card q c-red" href="https://instagram.com/lomboktraveldiary" target="_blank" rel="noopener"><div class="ic">📸</div><h3>Instagram</h3><p>@lomboktraveldiary</p></a>
+<a class="card q c-navy" href="#office"><div class="ic">📍</div><h3>Office</h3><p>Central Lombok, West Nusa Tenggara</p></a>
+</div>
+</div>
+
+<section>
+<div class="wrap fw">
+<div>
+<span class="tag">Plan a trip</span>
+<h2>Write Us a Note</h2>
+<p>Fill in the page and tap send. WhatsApp will open with your message ready, so you only need to press send.</p>
+<p>No account, no payment and no obligation. We'll reply with availability and a clear price.</p>
+<div class="note"><h3>✍️ Helpful to include</h3><ul><li>Your travel dates</li><li>Number of guests</li><li>Where you're staying</li><li>Tours or places you love</li></ul></div>
+</div>
+<form class="card form" id="f">
+<h3>Trip request</h3>
+<label for="n">Your name</label><input id="n" required placeholder="e.g. Emma">
+<div class="row">
+<div><label for="d">Travel date</label><input id="d" type="date"></div>
+<div><label for="g">Guests</label><input id="g" type="number" min="1" max="30" value="2"></div>
+</div>
+<label for="t">I'm interested in</label>
+<select id="t"><option>Gili Islands Hopping</option><option>South Lombok Beaches</option><option>Waterfalls &amp; Sasak Village</option><option>Rinjani Sunrise Escape</option><option>Secret Gilis (South)</option><option>Sasak Culture &amp; Crafts</option><option>Lombok Highlights (2 Days)</option><option>Custom Itinerary</option><option>Car or Scooter Rental</option><option>Airport / Harbour Transfer</option></select>
+<label for="h">Hotel / area (optional)</label><input id="h" placeholder="e.g. Kuta, Senggigi">
+<label for="m">Message</label><textarea id="m" placeholder="Tell us anything we should know..."></textarea>
+<button class="btn b-green" type="submit">💬 Send via WhatsApp</button>
+<p class="hint">Opens WhatsApp with your message prefilled.</p>
+</form>
+</div>
+</section>
+
+<section class="alt" id="office">
+<div class="wrap">
+<div class="head"><span class="tag">Visit us</span><h2>Our Office</h2></div>
+<div class="loc">
+<div class="card info">
+<h3>Lombok Travel Diary</h3>
+<p>📍 Jl. Raya Praya, Central Lombok, West Nusa Tenggara, Indonesia</p>
+<ul class="hrs"><li><span>Monday – Saturday</span><b>08:00 – 20:00</b></li><li><span>Sunday</span><b>09:00 – 17:00</b></li><li><span>WhatsApp</span><b>Replies all day</b></li></ul>
+<a class="btn b-red" href="https://www.google.com/maps/search/?api=1&query=Lombok%20Indonesia" target="_blank" rel="noopener">Get directions</a>
+</div>
+<div class="card mapc"><iframe class="map" title="Office location" loading="lazy" src="https://www.google.com/maps?q=Lombok,Indonesia&output=embed"></iframe></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="head"><span class="tag">FAQ</span><h2>Quick Answers</h2></div>
+<div class="faq">
+<details><summary>How fast do you reply?</summary><p>Usually within a few hours, and often within minutes during the day (WITA time).</p></details>
+<details><summary>Can I visit the office before booking?</summary><p>Yes. Message us first so someone is there to welcome you with a coffee and a map.</p></details>
+<details><summary>Do you offer pickup from the airport?</summary><p>Yes. Share your flight number and we'll track it and meet you at arrivals.</p></details>
+<details><summary>Which languages do you speak?</summary><p>English and Indonesian. Our team is happy to help with simple phrases in other languages too.</p></details>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="wrap">
+<h2>Prefer to Chat Right Now?</h2>
+<p>Tap the button and say hi. We're happy to help plan your Lombok days.</p>
+<a class="btn b-yellow" href="https://wa.me/6281234567890?text=Hi%20Lombok%20Travel%20Diary!%20I'd%20like%20to%20plan%20my%20trip." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div><a href="index.html" class="logo">Lombok<span>Travel</span>Diary</a><p style="margin-top:10px;font-size:.9rem">Private Lombok tours, rentals and transfers. Book easily via WhatsApp.</p></div>
+<div><h4>Explore</h4><ul><li><a href="tour-package.html">Tour Package</a></li><li><a href="index.html#destination">Destination</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="about.html">About</a></li></ul></div>
+<div><h4>Services</h4><ul><li><a href="index.html#services">Car &amp; Scooter Rental</a></li><li><a href="index.html#services">Airport Transfer</a></li><li><a href="index.html#services">Harbour Transfer</a></li></ul></div>
+<div><h4>Contact</h4><ul><li>+62 812-3456-7890</li><li>hello@lomboktraveldiary.com</li><li>Instagram: @lomboktraveldiary</li></ul></div>
+</div>
+<div class="copy">© 2026 Lombok Travel Diary. Made with ☀️ in Lombok.</div>
+</div>
+</footer>
+
+<a class="wa" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+const v=id=>document.getElementById(id).value.trim();
+document.getElementById('f').addEventListener('submit',e=>{
+e.preventDefault();
+const L=['Hi Lombok Travel Diary! 👋',"I'm "+v('n')+'.','Interested in: '+v('t')];
+if(v('d'))L.push('Travel date: '+v('d'));
+if(v('g'))L.push('Guests: '+v('g'));
+if(v('h'))L.push('Staying at: '+v('h'));
+if(v('m'))L.push('',v('m'));
+window.open('https://wa.me/6281234567890?text='+encodeURIComponent(L.join('\n')),'_blank','noopener');
+});
+const p=new URLSearchParams(location.search).get('tour');
+if(p){const s=document.getElementById('t');[...s.options].forEach(o=>{if(o.text.toLowerCase().includes(p.toLowerCase()))s.value=o.value})}
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>
