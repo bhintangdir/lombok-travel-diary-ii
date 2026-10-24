@@ -9,7 +9,6 @@ import { Star, Check, ArrowRight, MapPin, Clock, Phone, Mail, ChevronLeft, Chevr
 
 export default function HomeClient() {
   const { content } = useContent();
-  const [openDetailId, setOpenDetailId] = React.useState<string | null>(null);
   const [sliderIndex, setSliderIndex] = React.useState(0);
   const [selectedGalleryItem, setSelectedGalleryItem] = React.useState<any | null>(null);
 
@@ -50,10 +49,6 @@ export default function HomeClient() {
 
   const nextDestSlide = () => {
     setDestSliderIndex((prev) => Math.min(maxDestIndex, prev + 1));
-  };
-
-  const toggleDetail = (id: string) => {
-    setOpenDetailId((prev) => (prev === id ? null : id));
   };
 
   const getWaLink = (tourName: string) => {
@@ -153,9 +148,9 @@ export default function HomeClient() {
               }}
             >
               {tours.map((tour, idx) => {
-                const isOpen = openDetailId === tour.id;
-                // Alternate rotation just like the tour package page
-                const rotations = [-1.4, 1.2, -0.5];
+                const slug = tour.slug || tour.id;
+                // Seragamkan arah miring (semua miring konsisten ke arah yang sama)
+                const rotations = [-1.2, -0.8, -1.1];
                 const cardRotation = rotations[idx % 3];
 
                 return (
@@ -209,25 +204,14 @@ export default function HomeClient() {
                         ))}
                       </ul>
 
-                      <h4>Included</h4>
-                      <div className="chips">
-                        {tour.inclusions.map((inc, i) => (
-                          <span key={i}>{inc}</span>
-                        ))}
-                      </div>
-
-                      <div
-                        className={`more ${isOpen ? "open" : ""}`}
-                        dangerouslySetInnerHTML={{ __html: tour.more_detail }}
-                      />
-
                       <div className="acts">
-                        <button
+                        <Link
                           className="btn"
-                          onClick={() => toggleDetail(tour.id)}
+                          href={`/tour-package/${slug}`}
+                          style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px" }}
                         >
-                          {isOpen ? "Close" : "Detail"}
-                        </button>
+                          Detail <ArrowRight size={14} />
+                        </Link>
                         <a
                           className="btn b-green"
                           href={getWaLink(tour.name)}

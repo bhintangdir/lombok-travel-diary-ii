@@ -5,12 +5,11 @@ import Link from "next/link";
 import { useContent } from "@/context/ContentContext";
 import DynamicIcon from "@/components/DynamicIcon";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { Clock, Star, BookOpen, ChevronDown, Check, Compass } from "lucide-react";
+import { Clock, Star, BookOpen, ChevronDown, Check, Compass, ArrowRight } from "lucide-react";
 
 export default function TourPackageClient() {
   const { content } = useContent();
   const [filter, setFilter] = useState("all");
-  const [openDetailId, setOpenDetailId] = useState<string | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const categories = [
@@ -24,10 +23,6 @@ export default function TourPackageClient() {
   const filteredTours = content.tours.filter(
     (tour) => filter === "all" || tour.category === filter
   );
-
-  const toggleDetail = (id: string) => {
-    setOpenDetailId(openDetailId === id ? null : id);
-  };
 
   const getWaLink = (tourName: string) =>
     `https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent(
@@ -214,7 +209,7 @@ export default function TourPackageClient() {
         <div className="wrap">
           <div className="collage" id="collage">
             {filteredTours.map((tour) => {
-              const isOpen = openDetailId === tour.id;
+              const slug = tour.slug || tour.id;
 
               return (
                 <article key={tour.id} className="tour-card" data-c={tour.category}>
@@ -246,25 +241,15 @@ export default function TourPackageClient() {
                         </li>
                       ))}
                     </ul>
-                    <h4>Included</h4>
-                    <div className="chips">
-                      {tour.inclusions.map((inc, i) => (
-                        <span key={i}>{inc}</span>
-                      ))}
-                    </div>
-
-                    <div
-                      className={`more ${isOpen ? "open" : ""}`}
-                      dangerouslySetInnerHTML={{ __html: tour.more_detail }}
-                    />
 
                     <div className="acts">
-                      <button
+                      <Link
                         className="btn"
-                        onClick={() => toggleDetail(tour.id)}
+                        href={`/tour-package/${slug}`}
+                        style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px" }}
                       >
-                        {isOpen ? "Close" : "Detail"}
-                      </button>
+                        Detail <ArrowRight size={14} />
+                      </Link>
                       <a
                         className="btn b-green"
                         href={getWaLink(tour.name)}

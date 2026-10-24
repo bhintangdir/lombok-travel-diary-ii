@@ -80,6 +80,25 @@ export default function LanguageSelector() {
     detectCurrentLanguage();
     const interval = setInterval(detectCurrentLanguage, 1000);
 
+    // Completely suppress Google Translate banner and forced top padding on desktop & mobile
+    const suppressGoogleBanner = () => {
+      if (typeof document !== "undefined" && document.body) {
+        document.body.style.top = "0px";
+        document.body.style.position = "static";
+        const banners = document.querySelectorAll(
+          ".goog-te-banner-frame, iframe.goog-te-banner-frame, .VIpgJd-ZVi9od-ORHb-OEVmcd, .VIpgJd-ZVi9od-aZ2wEe-wOHMyf, .VIpgJd-y6EKec-M55qse, #goog-gt-tt"
+        );
+        banners.forEach((b) => {
+          (b as HTMLElement).style.setProperty("display", "none", "important");
+          (b as HTMLElement).style.setProperty("visibility", "hidden", "important");
+          (b as HTMLElement).style.setProperty("height", "0", "important");
+        });
+      }
+    };
+
+    suppressGoogleBanner();
+    const bannerInterval = setInterval(suppressGoogleBanner, 400);
+
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -89,6 +108,7 @@ export default function LanguageSelector() {
 
     return () => {
       clearInterval(interval);
+      clearInterval(bannerInterval);
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [currentLang]);
@@ -152,36 +172,38 @@ export default function LanguageSelector() {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "6px",
-          height: "38px",
-          padding: "0 14px",
-          borderRadius: "10px",
-          border: "2.5px solid var(--ink)",
+          gap: "5px",
+          height: "32px",
+          padding: "0 10px",
+          borderRadius: "8px",
+          border: "2px solid var(--ink)",
           background: "var(--paper)",
           color: "var(--ink)",
           fontWeight: 700,
-          fontSize: "0.82rem",
-          boxShadow: "3px 3px 0 var(--ink)",
+          fontSize: "0.76rem",
+          boxShadow: "2px 2px 0 var(--ink)",
           cursor: "pointer",
           transition: "transform 0.1s, box-shadow 0.1s",
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLButtonElement).style.transform = "translate(1px, 1px)";
-          (e.currentTarget as HTMLButtonElement).style.boxShadow = "2px 2px 0 var(--ink)";
+          (e.currentTarget as HTMLButtonElement).style.boxShadow = "1px 1px 0 var(--ink)";
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLButtonElement).style.transform = "";
-          (e.currentTarget as HTMLButtonElement).style.boxShadow = "3px 3px 0 var(--ink)";
+          (e.currentTarget as HTMLButtonElement).style.boxShadow = "2px 2px 0 var(--ink)";
         }}
       >
-        <Globe size={15} style={{ color: "var(--navy)", flexShrink: 0 }} />
-        <span style={{ fontSize: "1rem", lineHeight: 1 }}>{currentLanguageObj.flag}</span>
-        <span style={{ textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--navy)" }} className="notranslate">
+        <span className="hide-on-mobile-icon hidden sm:inline-flex" style={{ alignItems: "center" }}>
+          <Globe size={13} style={{ color: "var(--navy)", flexShrink: 0 }} />
+        </span>
+        <span style={{ fontSize: "0.86rem", lineHeight: 1 }}>{currentLanguageObj.flag}</span>
+        <span style={{ textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--navy)" }} className="notranslate">
           {currentLanguageObj.code.split("-")[0]}
         </span>
         <ChevronDown
-          size={13}
+          size={11}
           style={{
             color: "var(--ink)",
             flexShrink: 0,

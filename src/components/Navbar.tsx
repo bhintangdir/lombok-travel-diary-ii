@@ -56,7 +56,7 @@ export default function Navbar() {
           </Link>
 
           {/* Right section: Links (desktop) + Language Switcher + Book Button */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             {/* Desktop Navigation Links */}
             <ul className="links hidden lg:flex" style={{ margin: 0, padding: 0 }}>
               {content.nav.links.map((link, idx) => {
@@ -80,15 +80,30 @@ export default function Navbar() {
             {/* Language Switcher with Diary theme dropdown */}
             <LanguageSelector />
 
-            {/* Book Now Button (Desktop) */}
+            {/* Book Now Button */}
             <a
-              className="btn b-red hidden sm:inline-flex items-center gap-2"
+              className="btn b-red inline-flex items-center"
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ padding: "8px 18px", boxShadow: "3px 3px 0 var(--ink)", color: "#fff", display: "inline-flex", alignItems: "center", gap: "8px" }}
+              style={{
+                height: "32px",
+                padding: "0 10px",
+                borderRadius: "8px",
+                border: "2px solid var(--ink)",
+                boxShadow: "2px 2px 0 var(--ink)",
+                fontSize: "0.76rem",
+                fontWeight: 700,
+                color: "#fff",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                whiteSpace: "nowrap",
+              }}
             >
-              <WhatsAppIcon className="w-4 h-4 text-white" size={16} />
+              <span className="hide-on-mobile-icon hidden sm:inline-flex" style={{ alignItems: "center" }}>
+                <WhatsAppIcon className="w-3.5 h-3.5 text-white" size={14} />
+              </span>
               <span>{content.nav.book_now_text}</span>
             </a>
           </div>

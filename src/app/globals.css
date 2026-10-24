@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&family=Cairo:wght@500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
@@ -11,8 +11,8 @@
   --color-ink: #1E2A44;
   --color-line: #DCE6F2;
 
-  --font-caveat: 'Caveat', cursive;
-  --font-poppins: 'Poppins', sans-serif;
+  --font-caveat: 'Caveat', 'Cairo', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', cursive, sans-serif;
+  --font-poppins: 'Poppins', 'Noto Sans', 'Cairo', 'Noto Sans Arabic', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 :root {
@@ -23,6 +23,64 @@
   --paper: #FFF8E8;
   --ink: #1E2A44;
   --line: #DCE6F2;
+
+  --font-sans: 'Poppins', 'Noto Sans', 'Cairo', 'Noto Sans Arabic', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Caveat', 'Cairo', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', cursive, sans-serif;
+}
+
+/* ========================================================
+   COMPLETELY HIDE GOOGLE TRANSLATE BANNER, POPUP & TOOLBAR
+   ======================================================== */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+body > .skiptranslate,
+div.skiptranslate,
+.skiptranslate iframe,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-SmMuJa-Bbmql,
+.VIpgJd-y6EKec-M55qse,
+.VIpgJd-ZVi9od-v2WNKv {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  width: 0 !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+#google_translate_element_hidden {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+@media (max-width: 639px) {
+  .hide-on-mobile-icon {
+    display: none !important;
+  }
 }
 
 * {
@@ -36,7 +94,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-sans);
   color: var(--ink);
   line-height: 1.65;
   background: var(--paper);
@@ -45,7 +103,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-heading);
   line-height: 1.1;
   color: var(--navy);
 }
@@ -1076,9 +1134,9 @@ footer a:hover {
   width: 100%;
 }
 
-.tour-card:nth-child(3n+1) { transform: rotate(-1.4deg); }
-.tour-card:nth-child(3n+2) { transform: rotate(1.2deg); }
-.tour-card:nth-child(3n) { transform: rotate(-0.5deg); }
+.tour-card:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.tour-card:nth-child(3n+2) { transform: rotate(-0.8deg); }
+.tour-card:nth-child(3n) { transform: rotate(-1.1deg); }
 
 .tour-card:hover {
   transform: rotate(0) translateY(-4px);
@@ -1348,10 +1406,10 @@ textarea {
   overflow: visible !important;
 }
 
-.q:nth-child(1) { transform: rotate(-1.5deg); }
-.q:nth-child(2) { transform: rotate(1.2deg); }
-.q:nth-child(3) { transform: rotate(-1deg); }
-.q:nth-child(4) { transform: rotate(1.5deg); }
+.q:nth-child(1) { transform: rotate(-1.2deg); }
+.q:nth-child(2) { transform: rotate(-0.8deg); }
+.q:nth-child(3) { transform: rotate(-1.1deg); }
+.q:nth-child(4) { transform: rotate(-0.9deg); }
 
 .q:hover {
   transform: rotate(0) translateY(-6px);
@@ -1376,7 +1434,7 @@ textarea {
   background: rgba(242, 142, 43, 0.96); /* High-contrast Warm Amber / Orange Gold washi tape */
   border-top: 1px dashed rgba(255, 255, 255, 0.45);
   border-bottom: 1px dashed rgba(255, 255, 255, 0.45);
-  transform: translateX(-50%) rotate(-3.5deg);
+  transform: translateX(-50%) rotate(-2.5deg);
 }
 
 .q.q-email::before,
@@ -1384,7 +1442,7 @@ textarea {
   background: rgba(39, 70, 127, 0.92); /* Email Navy */
   border-top: 1px dashed rgba(255, 255, 255, 0.4);
   border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
-  transform: translateX(-50%) rotate(2.5deg);
+  transform: translateX(-50%) rotate(-2deg);
 }
 
 .q.q-ig::before,
@@ -1392,7 +1450,7 @@ textarea {
   background: rgba(255, 225, 120, 0.95); /* Bright Sunburst Yellow tape contrasting against red card */
   border-top: 1px dashed rgba(27, 42, 71, 0.25);
   border-bottom: 1px dashed rgba(27, 42, 71, 0.25);
-  transform: translateX(-50%) rotate(-2deg);
+  transform: translateX(-50%) rotate(-2.8deg);
 }
 
 .q.q-office::before,
@@ -1400,7 +1458,7 @@ textarea {
   background: rgba(247, 197, 72, 0.95); /* Office Warm Yellow */
   border-top: 1px dashed rgba(255, 255, 255, 0.4);
   border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
-  transform: translateX(-50%) rotate(3deg);
+  transform: translateX(-50%) rotate(-2.2deg);
 }
 
 .q .ic { font-size: 2.4rem; }
@@ -1471,9 +1529,9 @@ textarea {
   position: relative;
 }
 
-.pol:nth-child(1) { transform: rotate(-2.5deg); }
-.pol:nth-child(2) { transform: rotate(1.8deg) translateY(8px); }
-.pol:nth-child(3) { transform: rotate(-1deg); }
+.pol:nth-child(1) { transform: rotate(-2deg); }
+.pol:nth-child(2) { transform: rotate(-1.2deg) translateY(8px); }
+.pol:nth-child(3) { transform: rotate(-1.8deg); }
 
 .pol::before {
   content: "";
@@ -2115,9 +2173,9 @@ aside {
 }
 
 /* Postcard scrapbook tilts */
-.dest-card:nth-child(3n+1) { transform: rotate(1.1deg); }
-.dest-card:nth-child(3n+2) { transform: rotate(-1.3deg); }
-.dest-card:nth-child(3n) { transform: rotate(0.6deg); }
+.dest-card:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.dest-card:nth-child(3n+2) { transform: rotate(-0.8deg); }
+.dest-card:nth-child(3n) { transform: rotate(-1.1deg); }
 
 .dest-card:hover {
   transform: rotate(0) translateY(-6px);
