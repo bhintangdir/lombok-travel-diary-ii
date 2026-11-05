@@ -197,6 +197,10 @@
       {
         "key": "culture",
         "label": "Culture"
+      },
+      {
+        "key": "gem",
+        "label": "Hidden Gems ✨"
       }
     ],
     "comparison_table": {
@@ -694,7 +698,7 @@
           "Calm, child-friendly shallow waters",
           "Boat hopping to uninhabited sandbars"
         ],
-        "overview": "Tucked away in the remote southeastern peninsula of Lombok, Pantai Tangsi (famously known as Pink Beach) is one of only a handful of naturally pink-hued beaches on Earth. The delicate pink blush comes from microscopic red organism fragments blending with brilliant white sand.",
+        "overview": "Tucked away in the remote southeastern peninsula of Lombok, Pink Beach (Tangsi Beach) is one of only a handful of naturally pink-hued beaches on Earth. The delicate pink blush comes from microscopic red organism fragments blending with brilliant white sand.",
         "spots": [
           {
             "title": "Pink Beach 1 & 2",
@@ -1267,6 +1271,391 @@
           }
         ],
         "recommended_tour_slug": "mataram-culture-tour"
+      },
+      {
+        "id": "mandalika-circuit",
+        "slug": "mandalika-circuit",
+        "title": "Pertamina Mandalika International Circuit",
+        "name": "Pertamina Mandalika International Circuit",
+        "tagline": "World-class 4.3 km MotoGP street circuit by Kuta Mandalika beach",
+        "region": "South Lombok",
+        "category": "culture",
+        "category_label": "Motorsport & Circuit",
+        "icon": "Flag",
+        "color_class": "c-red",
+        "height_class": "l",
+        "bg_gradient": "linear-gradient(160deg,#E8553D,#27467F)",
+        "bg_image": "/mandalika-circuit-tour.jpg",
+        "image": "/mandalika-circuit-tour.jpg",
+        "badge": "MotoGP Track",
+        "best_time": "All Year Round",
+        "ideal_duration": "3 – 5 Hours",
+        "distance": "30m from Airport",
+        "vibe": "Modern Motorsport & Coast",
+        "highlights": [
+          "Official MotoGP & WorldSBK world circuit",
+          "Paddock, Pit Lane & podium photo access",
+          "Trackday laps for motorcycle & car enthusiasts",
+          "Overlook panorama from iconic Bukit Seger"
+        ],
+        "overview": "Indonesia premiere international racing venue situated right against the turquoise waters and golden hills of southern Lombok. Tourists can tour the Pit Building, walk on the actual MotoGP asphalt, capture photos at iconic curves, and join trackday sessions.",
+        "spots": [
+          {
+            "title": "Turn 10 Pertamina Motif",
+            "desc": "The iconic batik-motif run-off area world-famous on MotoGP TV broadcasts."
+          },
+          {
+            "title": "Paddock & Royal Box",
+            "desc": "Inner access to team garages, race control, and the winners podium."
+          },
+          {
+            "title": "Bukit Seger Viewpoint",
+            "desc": "Hilltop lookout granting a 360-degree panorama of the circuit against Seger Beach."
+          }
+        ],
+        "tips": [
+          "Check track schedule in advance as circuit is closed to tours during private testing or race weekends.",
+          "Wear covered shoes if joining the pit walk and track tour."
+        ],
+        "faq": [
+          {
+            "q": "Is the circuit open for daily tours?",
+            "a": "Yes, on non-race days official guided paddock and circuit tours operate daily."
+          }
+        ],
+        "recommended_tour_slug": "mandalika-circuit-tour"
+      },
+      {
+        "id": "savana-dandaun",
+        "slug": "savana-dandaun",
+        "title": "Savana Dandaun (Hidden Gem)",
+        "name": "Savana Dandaun",
+        "tagline": "Highland green meadow hidden at the foot of Mount Rinjani",
+        "region": "Sembalun, East Lombok",
+        "category": "gem",
+        "category_label": "Hidden Gem",
+        "icon": "Mountain",
+        "color_class": "c-green",
+        "height_class": "l",
+        "bg_gradient": "linear-gradient(160deg,#2FA36B,#F7C548)",
+        "bg_image": "/savana-dandaun.jpg",
+        "image": "/savana-dandaun.jpg",
+        "badge": "Hidden Gem ✨",
+        "best_time": "May – October",
+        "ideal_duration": "1 – 2 Days",
+        "distance": "2.5h from Mataram",
+        "vibe": "Serene Alpine Savanna",
+        "highlights": [
+          "Untouched green savanna plateaus",
+          "Friendly free-roaming grazing cows",
+          "Stunning golden sunrise hitting Rinjani",
+          "Pristine campfire & Milky Way stargazing"
+        ],
+        "overview": "A secluded high-altitude savanna nestled between Mount Rinjani and Sembalun hills. Far from the busy trekking paths, Savana Dandaun offers peaceful rolling hills, cool mountain air, and a tranquil camping experience under a sea of stars.",
+        "spots": [
+          {
+            "title": "Grazing Meadow Plateau",
+            "desc": "Wide open green plains framed by pine forests and Mount Rinjani."
+          },
+          {
+            "title": "Dandaun Sunrise Ridge",
+            "desc": "Overlook hill catching the first golden rays illuminating Sembalun valley."
+          }
+        ],
+        "tips": [
+          "Bring warm clothing; temperatures can drop to 12°C at night.",
+          "Camp with local porters who provide fresh warm meals."
+        ],
+        "faq": [
+          {
+            "q": "Is Savana Dandaun suitable for beginners?",
+            "a": "Yes, the hike is moderate (approx. 2.5 hours) with gradual incline."
+          }
+        ],
+        "recommended_tour_slug": "camping-savana-dandaun"
+      },
+      {
+        "id": "pantai-semeti-telawas",
+        "slug": "pantai-semeti-telawas",
+        "title": "Semeti Beach & Telawas Rocks (Hidden Gem)",
+        "name": "Semeti Beach & Telawas Rocks",
+        "tagline": "Krypton Beach of Lombok with dramatic volcanic rock pillars & blowholes",
+        "region": "Central Lombok",
+        "category": "gem",
+        "category_label": "Hidden Gem",
+        "icon": "Compass",
+        "color_class": "c-navy",
+        "height_class": "m",
+        "bg_gradient": "linear-gradient(160deg,#27467F,#E8553D)",
+        "bg_image": "/pantai-semeti-telawas.jpg",
+        "image": "/pantai-semeti-telawas.jpg",
+        "badge": "Hidden Gem ✨",
+        "best_time": "May – October",
+        "ideal_duration": "Half Day",
+        "distance": "1.5h from Kuta",
+        "vibe": "Untamed Rock Pillars",
+        "highlights": [
+          "Hexagonal volcanic basalt rock columns",
+          "Natural sea blowholes & crashing emerald waves",
+          "Pristine rugged coastline without crowds"
+        ],
+        "overview": "Known among photography enthusiasts as the Krypton Beach of Lombok, Semeti Beach and Telawas feature surreal volcanic stone pillars resembling a fortress in the sea.",
+        "spots": [
+          {
+            "title": "Telawas Blowholes",
+            "desc": "Ocean spray shooting high through natural rocky blowholes."
+          },
+          {
+            "title": "Semeti Basalt Columns",
+            "desc": "Geological rock stacks formed by ancient volcanic eruptions."
+          }
+        ],
+        "tips": [
+          "Wear sturdy sneakers or trekking sandals; rocks are sharp and uneven.",
+          "Best visited during low to mid tide for safe exploration."
+        ],
+        "faq": [
+          {
+            "q": "Can I swim at Semeti Beach?",
+            "a": "Swimming is not advised due to strong sea waves; it is primarily an incredible sight-seeing and photography spot."
+          }
+        ],
+        "recommended_tour_slug": "tour-beach-lombok"
+      },
+      {
+        "id": "tanjung-bloam",
+        "slug": "tanjung-bloam",
+        "title": "Tanjung Bloam & Bilasayak Beach",
+        "name": "Tanjung Bloam & Bilasayak Beach",
+        "tagline": "Golden stratified sea cliffs and sea turtle sanctuary",
+        "region": "East Lombok",
+        "category": "gem",
+        "category_label": "Hidden Gem",
+        "icon": "Palmtree",
+        "color_class": "c-yellow",
+        "height_class": "m",
+        "bg_gradient": "linear-gradient(160deg,#F7C548,#27467F)",
+        "bg_image": "/tanjung-bloam.jpg",
+        "image": "/tanjung-bloam.jpg",
+        "badge": "Hidden Gem ✨",
+        "best_time": "April – October",
+        "ideal_duration": "Half to Full Day",
+        "distance": "2h from Mataram",
+        "vibe": "Remote Coastal Sanctuary",
+        "highlights": [
+          "Striking layered golden-yellow sea cliffs",
+          "Sea turtle nesting sanctuary",
+          "Pristine nature reserve of Gunung Tunak"
+        ],
+        "overview": "A secluded coastal gem characterized by pastel yellow sedimentary rocks that glow brightly against turquoise waters.",
+        "spots": [
+          {
+            "title": "Bloam Yellow Cliffs",
+            "desc": "Natural stratified coastal rock arch and towers."
+          },
+          {
+            "title": "Bilasayak Beach",
+            "desc": "Secluded cove where wild sea turtles often nest."
+          }
+        ],
+        "tips": [
+          "Access is via dirt roads through the nature reserve; an SUV or 4WD vehicle with driver is recommended."
+        ],
+        "faq": [
+          {
+            "q": "Is there mobile signal at Tanjung Bloam?",
+            "a": "Signal is limited, making it an ideal digital detox spot."
+          }
+        ],
+        "recommended_tour_slug": "custom-trip-alam"
+      },
+      {
+        "id": "mangku-sakti",
+        "slug": "mangku-sakti",
+        "title": "Mangku Sakti Waterfall (Hidden Gem)",
+        "name": "Mangku Sakti Waterfall",
+        "tagline": "Milky-turquoise sulfur river cascading through white canyon rocks",
+        "region": "Sajang, Sembalun",
+        "category": "gem",
+        "category_label": "Hidden Gem",
+        "icon": "Waves",
+        "color_class": "c-green",
+        "height_class": "m",
+        "bg_gradient": "linear-gradient(160deg,#2FA36B,#27467F)",
+        "bg_image": "/mangku-sakti-waterfall.jpg",
+        "image": "/mangku-sakti-waterfall.jpg",
+        "badge": "Hidden Gem ✨",
+        "best_time": "May – October",
+        "ideal_duration": "Half Day",
+        "distance": "3h from Mataram",
+        "vibe": "Surreal Canyon River",
+        "highlights": [
+          "Natural sulfur river originating from Lake Segara Anak",
+          "Stunning white volcanic marble canyon formations",
+          "Refreshing natural mineral swimming pools"
+        ],
+        "overview": "One of Lombok's most unique hidden waterfalls. The water flows with a bright milky-turquoise tint due to minerals from Mount Rinjani, carving smooth white canyon crevices.",
+        "spots": [
+          {
+            "title": "Mangku Sakti Main Cascade",
+            "desc": "Water pouring into a turquoise pool framed by carved stone walls."
+          },
+          {
+            "title": "Mangku Kodek Canyon",
+            "desc": "Narrow natural rock canyon with cool stream pools."
+          }
+        ],
+        "tips": [
+          "Dry season is best to ensure the water maintains its milky-turquoise color."
+        ],
+        "faq": [
+          {
+            "q": "Is the sulfur water safe for bathing?",
+            "a": "Yes, locals and visitors regularly bathe here for its refreshing and skin-nourishing mineral properties."
+          }
+        ],
+        "recommended_tour_slug": "sembalun-mount-rinjani-tour"
+      },
+      {
+        "id": "bukit-anak-dara",
+        "slug": "bukit-anak-dara",
+        "title": "Bukit Anak Dara Ridge (Hidden Gem)",
+        "name": "Bukit Anak Dara",
+        "tagline": "Lombok's second-highest ridge summit with 360° golden sunrise views",
+        "region": "Sembalun, East Lombok",
+        "category": "gem",
+        "category_label": "Hidden Gem",
+        "icon": "Mountain",
+        "color_class": "c-green",
+        "height_class": "m",
+        "bg_gradient": "linear-gradient(160deg,#2FA36B,#F7C548)",
+        "bg_image": "/bukit-anak-dara.webp",
+        "image": "/bukit-anak-dara.webp",
+        "badge": "Hidden Gem ✨",
+        "best_time": "May – October",
+        "ideal_duration": "1 – 2 Days",
+        "distance": "2.5h from Airport",
+        "vibe": "Wild Ridge Camping",
+        "highlights": [
+          "1,923 meters above sea level overlooking Sembalun valley",
+          "Direct unobstructed view of Mount Rinjani peak",
+          "Uncrowded ridge trail with stargazing camp pitch"
+        ],
+        "overview": "Standing tall at 1,923 meters, Bukit Anak Dara is the ultimate ridge camping adventure for travellers who want panoramic views without the high tourist traffic of Pergasingan. Watch sunrise break over Sumbawa Island on one side and Mount Rinjani on the other.",
+        "spots": [
+          {
+            "title": "Love Tree Summit Viewpoint",
+            "desc": "Iconic lonely tree perched on the cliff edge with panoramic valley views."
+          },
+          {
+            "title": "Eastern Sunrise Ridge",
+            "desc": "Spectacular sunrise viewpoint overlooking Alas Strait and Sumbawa."
+          }
+        ],
+        "tips": [
+          "The hike takes approximately 3 to 4 hours with steep sections; trekking poles are helpful."
+        ],
+        "faq": [
+          {
+            "q": "Can beginners hike Anak Dara?",
+            "a": "Yes, with good basic fitness and a private local mountain guide/porter."
+          }
+        ],
+        "recommended_tour_slug": "hiking-bukit-anak-dara"
+      },
+      {
+        "id": "bukit-kondo",
+        "slug": "bukit-kondo",
+        "title": "Bukit Kondo Highland (Hidden Gem)",
+        "name": "Bukit Kondo",
+        "tagline": "Quiet panoramic summit overlooking Sembalun's verdant farm tapestry",
+        "region": "Sembalun, East Lombok",
+        "category": "gem",
+        "category_label": "Hidden Gem",
+        "icon": "Mountain",
+        "color_class": "c-yellow",
+        "height_class": "m",
+        "bg_gradient": "linear-gradient(160deg,#F7C548,#27467F)",
+        "bg_image": "/hiking-bukit-kondo.jpg",
+        "image": "/hiking-bukit-kondo.jpg",
+        "badge": "Hidden Gem ✨",
+        "best_time": "April – October",
+        "ideal_duration": "Half Day to 2D1N",
+        "distance": "2.5h from Airport",
+        "vibe": "Tranquil Highland Peak",
+        "highlights": [
+          "Less-travelled peak ideal for mindful explorers",
+          "Sweeping vistas of Mount Rinjani and volcanic caldera hills",
+          "Cool highland breezes and serene pine groves"
+        ],
+        "overview": "Bukit Kondo is a hidden gem summit located in the Sembalun highland bowl. Offering a peaceful trail away from tourist crowds, it gives you front-row seats to Mount Rinjani and the patchwork agricultural fields below.",
+        "spots": [
+          {
+            "title": "Kondo Sunrise Peak",
+            "desc": "Early morning golden light casting dramatic shadows across the valley."
+          },
+          {
+            "title": "Pine Ridge Trail",
+            "desc": "Gentle winding path shaded by mountain pine trees."
+          }
+        ],
+        "tips": [
+          "Can be easily combined with Savana Dandaun or strawberry picking in Sembalun."
+        ],
+        "faq": [
+          {
+            "q": "How long is the hike to Bukit Kondo?",
+            "a": "Around 2 to 2.5 hours, making it an enjoyable hike for all experience levels."
+          }
+        ],
+        "recommended_tour_slug": "hiking-bukit-kondo"
+      },
+      {
+        "id": "desa-adat-beleq",
+        "slug": "desa-adat-beleq",
+        "title": "Desa Adat Beleq (Hidden Gem)",
+        "name": "Desa Adat Beleq",
+        "tagline": "Ancient 7-house ancestral village nestled inside Sembalun's forest",
+        "region": "Sembalun, East Lombok",
+        "category": "gem",
+        "category_label": "Hidden Gem",
+        "icon": "Compass",
+        "color_class": "c-navy",
+        "height_class": "m",
+        "bg_gradient": "linear-gradient(160deg,#27467F,#2FA36B)",
+        "bg_image": "/desa-adat-beleq.jpg",
+        "image": "/desa-adat-beleq.jpg",
+        "badge": "Hidden Gem ✨",
+        "best_time": "All Year Round",
+        "ideal_duration": "1 – 2 Hours",
+        "distance": "2.5h from Mataram",
+        "vibe": "Ancestral Living History",
+        "highlights": [
+          "Historic 7-house layout preserved across centuries",
+          "Traditional bamboo architecture and clay foundations",
+          "Spiritual cradle of the indigenous Sembalun community"
+        ],
+        "overview": "Desa Adat Beleq is the oldest traditional village in Sembalun, holding deep spiritual significance as the ancestral birthplace of the valley's native community. Untouched by modern commercialism, the compound retains its original seven wooden-bamboo pavilions and stone communal shrines.",
+        "spots": [
+          {
+            "title": "Seven Ancestral Houses",
+            "desc": "The original seven family dwellings representing the founding lineages of Sembalun."
+          },
+          {
+            "title": "Bale Menggak Meeting Hall",
+            "desc": "Traditional open wooden pavilion used for community ceremonies."
+          }
+        ],
+        "tips": [
+          "Dress respectfully with covered shoulders and knees when entering sacred village grounds."
+        ],
+        "faq": [
+          {
+            "q": "Can I visit Desa Adat Beleq during a Sembalun day trip?",
+            "a": "Yes! It is located right at the edge of Sembalun village and easily combined with Pergasingan or strawberry harvesting."
+          }
+        ],
+        "recommended_tour_slug": "sembalun-mount-rinjani-tour"
       }
     ]
   },
@@ -1415,7 +1804,6 @@
       "duration": "Full day · 8–9 h",
       "group_size": "2–10 guests",
       "difficulty": "Easy",
-      "price_level": "$$$",
       "best_time": "May – October",
       "overview": "Sail from harbour to the three legendary Gilis off Lombok's northwest coast: Gili Trawangan, Gili Meno, and Gili Air. Swim alongside wild sea turtles at Turtle Point, snap unforgettable photos by the Bask underwater statues off Meno, cycle peaceful car-free lanes, and enjoy warm sunset sands. Everything is private with speed boat, GoPro documentation, local guide, and hotel driver transfers.",
       "highlights": [
@@ -1444,38 +1832,6 @@
         "Small cash for beach cafes",
         "Waterproof phone pouch"
       ],
-      "itinerary": [
-        {
-          "time": "08:00",
-          "title": "Hotel Pickup",
-          "desc": "Driver meets you at your hotel lobby and drives to Teluk Nara or Bangsal harbour."
-        },
-        {
-          "time": "09:15",
-          "title": "Speed Boat to 3 Gilis",
-          "desc": "Begin sea adventure exploring sea turtle points, coral gardens, and Meno statues."
-        },
-        {
-          "time": "11:30",
-          "title": "GoPro Photo & Video",
-          "desc": "Your guide captures your best underwater moments using our GoPro camera."
-        },
-        {
-          "time": "13:00",
-          "title": "Beachfront Lunch",
-          "desc": "Relaxed lunch at a beachfront cafe on Gili Air or Gili Meno overlooking turquoise waters."
-        },
-        {
-          "time": "15:00",
-          "title": "Gili Trawangan Chill",
-          "desc": "Cycle around the car-free island or relax by famous beach swings."
-        },
-        {
-          "time": "17:00",
-          "title": "Return to Lombok",
-          "desc": "Speed boat returns to harbour and your private driver escorts you back to your hotel."
-        }
-      ],
       "faq": [
         {
           "q": "Are GoPro photos included?",
@@ -1502,7 +1858,6 @@
       "duration": "Full day · 8 h",
       "group_size": "2–8 guests",
       "difficulty": "Easy",
-      "price_level": "$$$",
       "best_time": "May – October",
       "overview": "Escape the crowds and immerse yourself in the calm tropical beauty of Southwest Lombok's secret islands. Feed hundreds of friendly reef fish right from your hand at Gili Nanggu, savor freshly grilled seafood on the shaded shores of Gili Sudak, and take postcard photos on the tiny sandbar islet of Gili Kedis.",
       "highlights": [
@@ -1529,33 +1884,6 @@
         "Sunglasses & sun hat",
         "Phone / camera for GoPro file transfer"
       ],
-      "itinerary": [
-        {
-          "time": "08:00",
-          "title": "Hotel Pickup",
-          "desc": "Driver picks you up and cruises along the scenic Sekotong coastline to Tawun."
-        },
-        {
-          "time": "09:30",
-          "title": "Boat to Gili Nanggu",
-          "desc": "Snorkel over pristine coral gardens and feed friendly reef fish in crystal waters."
-        },
-        {
-          "time": "12:00",
-          "title": "Lunch on Gili Sudak",
-          "desc": "Enjoy fresh grilled fish under the shade of coastal trees with ocean breeze."
-        },
-        {
-          "time": "14:00",
-          "title": "Explore Gili Kedis",
-          "desc": "Visit the tiny heart-shaped sand islet with 360-degree turquoise sea views."
-        },
-        {
-          "time": "16:00",
-          "title": "Return Journey",
-          "desc": "Cruise back to harbour and drive smoothly to your hotel."
-        }
-      ],
       "faq": [
         {
           "q": "Are the waters calm?",
@@ -1578,7 +1906,6 @@
       "duration": "Full day · 9 h",
       "group_size": "2–6 guests",
       "difficulty": "Easy",
-      "price_level": "$$",
       "best_time": "Year-round (Apr – Nov)",
       "overview": "The definitive southern coastal road trip. From the gentle rolling surf and fine white sand of Selong Belanak, to the emerald horseshoe bay of Mawun, buzzing Kuta Mandalika, the pepper sand of Tanjung Aan, and a golden sunset from the grassy headlands of Bukit Merese.",
       "highlights": [
@@ -1604,43 +1931,6 @@
         "Sun hat & sunglasses",
         "Sunscreen & sandals"
       ],
-      "itinerary": [
-        {
-          "time": "08:30",
-          "title": "Hotel Pickup",
-          "desc": "Driver meets you and drives through scenic southern hill roads."
-        },
-        {
-          "time": "10:00",
-          "title": "Selong Belanak Beach",
-          "desc": "Wide powdery sand bay, perfect for casual swimming or beginner surf."
-        },
-        {
-          "time": "12:00",
-          "title": "Mawun Beach",
-          "desc": "Secluded horseshoe cove with brilliant turquoise water between hills."
-        },
-        {
-          "time": "13:30",
-          "title": "Kuta Beach & Lunch",
-          "desc": "Dine at town beachfront cafes with varied local and western choices."
-        },
-        {
-          "time": "15:00",
-          "title": "Tanjung Aan Beach",
-          "desc": "Dip in calm crystal water and relax on unique round pepper sand."
-        },
-        {
-          "time": "16:45",
-          "title": "Merese Hill Sunset",
-          "desc": "Easy 5-minute grassy hill walk for panoramic ocean sunset views."
-        },
-        {
-          "time": "18:15",
-          "title": "Return Journey",
-          "desc": "Comfortable drive back to your hotel."
-        }
-      ],
       "faq": [
         {
           "q": "Is the walk to Bukit Merese difficult?",
@@ -1663,7 +1953,6 @@
       "duration": "Full day · 8–9 h",
       "group_size": "2–6 guests",
       "difficulty": "Easy",
-      "price_level": "$$",
       "best_time": "Year-round",
       "overview": "A rich introduction to indigenous Sasak traditions paired with southern Lombok's world-famous beaches. Learn hand-weaving at Sukarara (try traditional royal costumes for photos!), walk through preserved thatched-roof homes in Sade, then relax along Kuta Mandalika and the pepper-sand curve of Tanjung Aan.",
       "highlights": [
@@ -1689,38 +1978,6 @@
         "Camera or phone",
         "Sunglasses & small cash for handicrafts"
       ],
-      "itinerary": [
-        {
-          "time": "08:30",
-          "title": "Hotel Pickup",
-          "desc": "Driver greets you and heads to Central Lombok's artisan villages."
-        },
-        {
-          "time": "09:30",
-          "title": "Sukarara Weaving Village",
-          "desc": "Learn songket loom techniques and dress in traditional Sasak wedding attire."
-        },
-        {
-          "time": "11:00",
-          "title": "Sade Heritage Village",
-          "desc": "Walk alleyways of centuries-old woven bamboo homes with a resident guide."
-        },
-        {
-          "time": "13:00",
-          "title": "Kuta Mandalika Lunch",
-          "desc": "Lunch at coastal cafes with views of Mandalika's hills and racing circuit."
-        },
-        {
-          "time": "15:00",
-          "title": "Tanjung Aan Beach",
-          "desc": "Swim in calm turquoise waters and walk the unique round pepper sand."
-        },
-        {
-          "time": "17:30",
-          "title": "Return to Hotel",
-          "desc": "Arrive comfortably back at your hotel."
-        }
-      ],
       "faq": [
         {
           "q": "Can we try on traditional Sasak costumes?",
@@ -1743,7 +2000,6 @@
       "duration": "Full day · 7–8 h",
       "group_size": "2–6 guests",
       "difficulty": "Easy – Moderate",
-      "price_level": "$$",
       "best_time": "Year-round",
       "overview": "Breathe the refreshing highland air of Central Lombok's foothill rainforest. A pleasant trail walk guides you to the 30-meter plunge of Benang Stokel and the fairy-tale curtain waterfall of Benang Kelambu, where crystal-clear spring water pours through a wall of wild emerald ferns.",
       "highlights": [
@@ -1769,33 +2025,6 @@
         "Shoes or sandals with good grip",
         "Towel & waterproof bag"
       ],
-      "itinerary": [
-        {
-          "time": "08:30",
-          "title": "Hotel Pickup",
-          "desc": "Your driver greets you and journeys into Central Lombok's green hills."
-        },
-        {
-          "time": "10:00",
-          "title": "Benang Stokel Waterfall",
-          "desc": "Gentle 10-minute walk to twin cascades and natural rock pool."
-        },
-        {
-          "time": "11:30",
-          "title": "Benang Kelambu Waterfall",
-          "desc": "Swim under tiered misty curtain springs emerging from lush fern cliffs."
-        },
-        {
-          "time": "13:30",
-          "title": "Local Warung Lunch",
-          "desc": "Taste authentic Sasak dishes like Ayam Taliwang at a rural forest restaurant."
-        },
-        {
-          "time": "15:30",
-          "title": "Return to Hotel",
-          "desc": "Relax in comfortable AC car on the drive back to your accommodation."
-        }
-      ],
       "faq": [
         {
           "q": "How long is the walk?",
@@ -1818,7 +2047,6 @@
       "duration": "Full day · 9 h",
       "group_size": "2–6 guests",
       "difficulty": "Moderate",
-      "price_level": "$$",
       "best_time": "Year-round",
       "overview": "Nestled on the lower jungle slopes of Mount Rinjani, Senaru (North Lombok / KLU) is home to Indonesia's most iconic waterfalls. Descend steps to two-tier Sendang Gile, then wade across crystal river shallows and colonial aqueduct bridges to reach the thundering amphitheater and rainbow mist of Tiu Kelep.",
       "highlights": [
@@ -1844,38 +2072,6 @@
         "Swimwear, change of clothes & towel",
         "Waterproof phone pouch"
       ],
-      "itinerary": [
-        {
-          "time": "08:00",
-          "title": "Hotel Pickup",
-          "desc": "Driver picks you up and cruises scenic coastal roads past Malimbu to Senaru."
-        },
-        {
-          "time": "10:30",
-          "title": "Sendang Gile Waterfall",
-          "desc": "Walk down shady stone steps to admire the grand first-tier cascade."
-        },
-        {
-          "time": "11:30",
-          "title": "Trek to Tiu Kelep",
-          "desc": "Wade through ankle-deep streams and jungle trails into the mist of Tiu Kelep."
-        },
-        {
-          "time": "13:30",
-          "title": "Valley View Lunch",
-          "desc": "Relax with lunch at a Senaru restaurant overlooking green river valleys."
-        },
-        {
-          "time": "15:00",
-          "title": "Senaru Traditional Village",
-          "desc": "Brief visit to ancient ancestral Sasak thatch-roof dwellings."
-        },
-        {
-          "time": "17:30",
-          "title": "Back at Hotel",
-          "desc": "Drop-off at your hotel refreshed and full of memories."
-        }
-      ],
       "faq": [
         {
           "q": "Do we get wet on this hike?",
@@ -1898,7 +2094,6 @@
       "duration": "Full Day (9–11 Hours)",
       "group_size": "1–14 guests",
       "difficulty": "Easy",
-      "price_level": "$$",
       "best_time": "Morning – Afternoon",
       "overview": "Ascend to Sembalun high valley at 1,156 meters above sea level right beneath the mighty Mount Rinjani caldera. Enjoy sweeping vistas from Pusuk Sembalun pass, look down upon the vibrant geometric farmlands from Bukit Selong, explore ancient Beleq ancestral houses, and hand-pick sweet highland strawberries.",
       "highlights": [
@@ -1924,38 +2119,6 @@
         "Jacket or sweater (high altitude can feel crisp and cool)",
         "Camera or smartphone with plenty of storage"
       ],
-      "itinerary": [
-        {
-          "time": "07:30",
-          "title": "Hotel Departure",
-          "desc": "Early morning drive via scenic north or east Lombok coastal roads."
-        },
-        {
-          "time": "10:00",
-          "title": "Pusuk Sembalun Viewpoint",
-          "desc": "Cloudy mountain ridge with wild monkeys and Rinjani backdrop."
-        },
-        {
-          "time": "11:00",
-          "title": "Bukit Selong & Desa Beleq",
-          "desc": "Overlook the world-famous geometric farmlands and ancient village."
-        },
-        {
-          "time": "12:45",
-          "title": "Highland Restaurant Lunch",
-          "desc": "Lunch with panoramic views of the entire valley amphitheater."
-        },
-        {
-          "time": "14:00",
-          "title": "Strawberry Picking & Coffee",
-          "desc": "Pick your own organic strawberries and sip Arabica coffee."
-        },
-        {
-          "time": "17:30",
-          "title": "Arrive Back at Hotel",
-          "desc": "Relaxing scenic descent with driver."
-        }
-      ],
       "faq": [
         {
           "q": "Do we have to trek or climb mountains?",
@@ -1978,7 +2141,6 @@
       "duration": "Full Day (8–10 Hours)",
       "group_size": "1–14 guests (Avanza, Innova, Hiace)",
       "difficulty": "Easy",
-      "price_level": "$$",
       "best_time": "Year-round",
       "overview": "Tetebatu Village offers an oasis of tranquility on the verdant southern slopes of Mount Rinjani. Walk along terraced emerald rice paddies with mountain backdrops, discover Sarang Walet waterfall hidden in a cavern gorge, meet rare Black Leaf Langurs in the protected primary forest, and taste authentic highland coffee roasted right in local village homes.",
       "highlights": [
@@ -2004,38 +2166,6 @@
         "Walking shoes or light trainers",
         "Light rain jacket or sweater",
         "Camera for terraced valley vistas"
-      ],
-      "itinerary": [
-        {
-          "time": "08:30",
-          "title": "Hotel Pickup",
-          "desc": "Comfortable private drive toward East Lombok's highland slopes."
-        },
-        {
-          "time": "10:00",
-          "title": "Rice Paddy & Plantation Walk",
-          "desc": "Gentle stroll through stepped emerald terraces, spice groves, and fresh springs."
-        },
-        {
-          "time": "12:00",
-          "title": "Black Monkey Forest",
-          "desc": "Quiet walk through primary forest to spot endemic Black Langurs."
-        },
-        {
-          "time": "13:30",
-          "title": "Traditional Lunch & Coffee",
-          "desc": "Local Sasak specialties and freshly brewed home-roasted coffee."
-        },
-        {
-          "time": "15:00",
-          "title": "Sarang Walet Waterfall",
-          "desc": "Short canyon trail to a picturesque cavern waterfall."
-        },
-        {
-          "time": "17:30",
-          "title": "Safe Return to Hotel",
-          "desc": "Relaxing ride home with your dedicated driver."
-        }
       ],
       "faq": [
         {
@@ -2063,7 +2193,6 @@
       "duration": "Half to Full Day (6–8 Hours)",
       "group_size": "1–14 guests",
       "difficulty": "Very Easy",
-      "price_level": "$$",
       "best_time": "Year-round",
       "overview": "Uncover the rich tapestry of Lombok's history in the provincial capital of Mataram. Visit Mayura Floating Water Court built in 1744, Narmada Summer Palace with its legendary fountain of eternal youth, Banyumulek terracotta pottery village, and the majestic Hubbul Wathan Grand Mosque (Islamic Center NTB).",
       "highlights": [
@@ -2088,38 +2217,6 @@
         "Modest clothing for palace and mosque visits",
         "Camera and sunglasses"
       ],
-      "itinerary": [
-        {
-          "time": "09:00",
-          "title": "Hotel Pickup",
-          "desc": "Morning pickup from your hotel in Senggigi, Mataram, or Kuta."
-        },
-        {
-          "time": "09:45",
-          "title": "Mayura Floating Court",
-          "desc": "Historical Balinese royal water court surrounded by lotus pools."
-        },
-        {
-          "time": "11:15",
-          "title": "Narmada Summer Palace",
-          "desc": "Replica of Mount Rinjani crater lake and sacred youth spring."
-        },
-        {
-          "time": "13:00",
-          "title": "Lombok Culinary Lunch",
-          "desc": "Taste famous Ayam Taliwang or Plecing Kangkung."
-        },
-        {
-          "time": "14:30",
-          "title": "Islamic Center NTB",
-          "desc": "Admire the 99-meter minaret and grand architectural domes."
-        },
-        {
-          "time": "16:00",
-          "title": "Banyumulek Pottery & Pearls",
-          "desc": "Try molding clay on a traditional potter's wheel."
-        }
-      ],
       "faq": [
         {
           "q": "Can non-Muslims enter the Islamic Center?",
@@ -2142,7 +2239,6 @@
       "duration": "2D1N or 3D2N Expedition",
       "group_size": "2–10 guests",
       "difficulty": "Moderate",
-      "price_level": "$$$",
       "best_time": "April – November",
       "overview": "Embark on an unforgettable cross-island journey from Lombok to neighboring Sumbawa. Swim alongside the majestic, harmless whale sharks of Saleh Bay at sunrise, hike to Mata Jitu waterfall on secluded Moyo Island where Lady Diana once retreated, and camp under the Milky Way on uninhabited Kenawa Island.",
       "highlights": [
@@ -2167,23 +2263,6 @@
         "Swimwear, rash guard & dry bag",
         "GoPro or underwater camera",
         "Light overnight travel bag"
-      ],
-      "itinerary": [
-        {
-          "time": "Day 1",
-          "title": "Lombok to Sumbawa & Kenawa",
-          "desc": "Cross by ferry to Sumbawa, boat to Kenawa Island for sunset hill panoramas."
-        },
-        {
-          "time": "Day 2",
-          "title": "Saleh Bay Whale Sharks",
-          "desc": "Pre-dawn boat ride to the fishing platforms (bagan) to swim with whale sharks, then explore Moyo Island."
-        },
-        {
-          "time": "Day 3 / Return",
-          "title": "Scenic Return to Lombok",
-          "desc": "Comfortable transfer back across the strait to your Lombok hotel."
-        }
       ],
       "faq": [
         {
@@ -2211,7 +2290,6 @@
       "duration": "Flexible (1–5+ Days)",
       "group_size": "Any group size",
       "difficulty": "Flexible",
-      "price_level": "Custom Quote",
       "best_time": "Year-round",
       "overview": "Have a personal wishlist of dream spots or want to blend beaches, waterfalls, island boat trips, local dining, and handicraft markets into one seamless itinerary? Our Custom Trip service gives you 100% flexibility with a dedicated local driver-guide ready to plan the smartest, most enjoyable route.",
       "highlights": [
@@ -2235,28 +2313,6 @@
         "Your wishlist of favorite places",
         "Travel dates & flight times"
       ],
-      "itinerary": [
-        {
-          "time": "Step 1",
-          "title": "Send Your Wishlist",
-          "desc": "Chat with us on WhatsApp with dates, group size, and places you want to see."
-        },
-        {
-          "time": "Step 2",
-          "title": "Receive Best Route Draft",
-          "desc": "We reply with a practical, scenic schedule and transparent price quote."
-        },
-        {
-          "time": "Step 3",
-          "title": "Adjust & Confirm",
-          "desc": "Modify stops until it fits your holiday style perfectly."
-        },
-        {
-          "time": "Step 4",
-          "title": "Enjoy Pure Exploration",
-          "desc": "Your driver meets you on time and guides you through Lombok effortlessly."
-        }
-      ],
       "faq": [
         {
           "q": "Is itinerary consultation free?",
@@ -2279,7 +2335,6 @@
       "duration": "2 Days & 1 Night",
       "group_size": "2–10 guests",
       "difficulty": "Moderate",
-      "price_level": "$$$",
       "best_time": "May – October",
       "overview": "Camp above the clouds with one of Indonesia's most breathtaking viewpoints. Bukit Pergasingan (1,710m) overlooks sacred Mount Rinjani, Sembalun's colorful agricultural patchwork quilt valley, and a dazzling canopy of stars (Milky Way) at night. Complete camping gear, local porters, meals, and hotel transfers are all included.",
       "highlights": [
@@ -2308,48 +2363,6 @@
         "Headlamp or flashlight",
         "Power bank & personal medicine"
       ],
-      "itinerary": [
-        {
-          "time": "Day 1 · 08:00",
-          "title": "Hotel Pick Up & Drive to Sembalun",
-          "desc": "Driver meets you at hotel and cruises to cool highland basecamp."
-        },
-        {
-          "time": "Day 1 · 11:30",
-          "title": "Registration & Briefing",
-          "desc": "Light lunch, meet guide & porter team carrying camp equipment."
-        },
-        {
-          "time": "Day 1 · 13:00",
-          "title": "Begin Pergasingan Hike",
-          "desc": "2.5 to 3 hour scenic hike through forest and open grassland ridges."
-        },
-        {
-          "time": "Day 1 · 16:30",
-          "title": "Camp Arrival & Sunset",
-          "desc": "Tents already pitched by porters. Enjoy hot tea and sunset over Rinjani."
-        },
-        {
-          "time": "Day 1 · 19:00",
-          "title": "Warm Dinner & Stargazing",
-          "desc": "Hot mountain meal under millions of bright stars and Milky Way."
-        },
-        {
-          "time": "Day 2 · 05:30",
-          "title": "Golden Rinjani Sunrise",
-          "desc": "Witness morning light illuminate Rinjani peak and colorful valley fields."
-        },
-        {
-          "time": "Day 2 · 07:30",
-          "title": "Breakfast & Descent",
-          "desc": "Delicious breakfast before gentle descent back to basecamp."
-        },
-        {
-          "time": "Day 2 · 12:00",
-          "title": "Drop Back to Hotel",
-          "desc": "Private transfer safely returns you to your hotel."
-        }
-      ],
       "faq": [
         {
           "q": "Can beginners join this camp?",
@@ -2372,7 +2385,6 @@
       "duration": "2 Days & 1 Night",
       "group_size": "2–10 guests",
       "difficulty": "Moderate",
-      "price_level": "$$$",
       "best_time": "May – October",
       "overview": "Camp amidst peaceful open highland pastures in Sembalun. Savana Dandaun (1,300m) is renowned for rolling green meadows, crisp mountain breezes, grazing wild Sembalun cattle and horses, and up-close views of Mount Rinjani. An idyllic camping getaway for friends and nature-loving families.",
       "highlights": [
@@ -2401,48 +2413,6 @@
         "Headlamp",
         "Camera for savana landscapes"
       ],
-      "itinerary": [
-        {
-          "time": "Day 1 · 08:30",
-          "title": "Hotel Pick Up",
-          "desc": "Pickup and scenic drive through mountain passes to Sembalun Bumbung."
-        },
-        {
-          "time": "Day 1 · 12:00",
-          "title": "Basecamp Preparation",
-          "desc": "Lunch at basecamp while porters prepare camping logistics."
-        },
-        {
-          "time": "Day 1 · 13:30",
-          "title": "Trek to Savana Dandaun",
-          "desc": "Pleasant 2-hour hike through pine groves and grassy hills."
-        },
-        {
-          "time": "Day 1 · 16:00",
-          "title": "Arrive at Savana Camp",
-          "desc": "Warm coffee and snacks in wide green meadows facing Rinjani."
-        },
-        {
-          "time": "Day 1 · 18:30",
-          "title": "Dinner Under Open Skies",
-          "desc": "Hot dinner amidst serene alpine silence."
-        },
-        {
-          "time": "Day 2 · 06:00",
-          "title": "Morning Mist & Sunrise",
-          "desc": "Watch morning sunlight filter through light mist across the savana."
-        },
-        {
-          "time": "Day 2 · 08:00",
-          "title": "Breakfast & Walk Down",
-          "desc": "Relaxed breakfast and walk down to basecamp."
-        },
-        {
-          "time": "Day 2 · 12:30",
-          "title": "Hotel Drop-off",
-          "desc": "Drive back to your hotel."
-        }
-      ],
       "faq": [
         {
           "q": "Is Dandaun good for casual hikers?",
@@ -2465,7 +2435,6 @@
       "duration": "1 Day / Sunrise Hike",
       "group_size": "2–8 guests",
       "difficulty": "Moderate – Challenging",
-      "price_level": "$$",
       "best_time": "May – October",
       "overview": "Bukit Anak Dara is celebrated for its ethereal ocean of clouds. Soaring 1,921 meters on the eastern rim of Sembalun, its summit gazes east towards Alas Strait and Sumbawa Island, while looking west into Mount Rinjani's massive caldera. Guided by experienced locals who will capture stunning photos of your ascent.",
       "highlights": [
@@ -2491,33 +2460,6 @@
         "Trekking shoes with solid grip",
         "Headlamp for night start"
       ],
-      "itinerary": [
-        {
-          "time": "02:00",
-          "title": "Basecamp Briefing",
-          "desc": "Meet at Sembalun basecamp, gear check and guide briefing."
-        },
-        {
-          "time": "02:30",
-          "title": "Night Ascent Begins",
-          "desc": "Trek 3 to 3.5 hours under cool, clear mountain skies."
-        },
-        {
-          "time": "05:45",
-          "title": "Summit Arrival",
-          "desc": "Experience magical dawn light breaking over an endless sea of white clouds."
-        },
-        {
-          "time": "06:30",
-          "title": "Photo Documentation",
-          "desc": "Guide snaps aesthetic photos with cloud blanket and Rinjani backdrop."
-        },
-        {
-          "time": "08:00",
-          "title": "Descent to Basecamp",
-          "desc": "Hike back down to transit basecamp for rest."
-        }
-      ],
       "faq": [
         {
           "q": "How long is the hike?",
@@ -2540,7 +2482,6 @@
       "duration": "1 Day / Day Hike",
       "group_size": "2–8 guests",
       "difficulty": "Moderate",
-      "price_level": "$$",
       "best_time": "May – October",
       "overview": "Bukit Kondo offers an uncrowded, tranquil hike along scenic ridge trails. Trek through open savanas with 360-degree vistas over Sembalun valley, local coffee groves, and Rinjani's towering crater walls. Guided by a warm local who ensures you capture memorable photos along the way.",
       "highlights": [
@@ -2566,33 +2507,6 @@
         "Trekking sneakers with good tread",
         "Sunglasses, hat & sunscreen"
       ],
-      "itinerary": [
-        {
-          "time": "05:00",
-          "title": "Basecamp Gathering",
-          "desc": "Prep and gentle stretching before the morning hike."
-        },
-        {
-          "time": "05:30",
-          "title": "Start Bukit Kondo Trek",
-          "desc": "Walk scenic green ridge trails in crisp morning air."
-        },
-        {
-          "time": "08:00",
-          "title": "Summit Panorama",
-          "desc": "Marvel at 360-degree open views of Sembalun and Rinjani."
-        },
-        {
-          "time": "08:30",
-          "title": "Photo Session & Rest",
-          "desc": "Your guide photographs memorable moments on scenic cliff spots."
-        },
-        {
-          "time": "10:00",
-          "title": "Return to Basecamp",
-          "desc": "Descend back to transit basecamp to refresh."
-        }
-      ],
       "faq": [
         {
           "q": "Is the trail slippery?",
@@ -2615,7 +2529,6 @@
       "duration": "Flexible (1–4 Days)",
       "group_size": "Solo, couples or groups",
       "difficulty": "Flexible",
-      "price_level": "Custom Quote",
       "best_time": "May – October",
       "overview": "Want to trek a specific hill in Sembalun or combine hill camping with waterfall adventures and strawberry farm visits? We organize custom trekking and camping throughout Sembalun Hills with licensed guides, trusted local porters, quality tents, and private transport.",
       "highlights": [
@@ -2640,18 +2553,6 @@
         "Your preferred travel dates",
         "Camera and warm layers"
       ],
-      "itinerary": [
-        {
-          "time": "Consultation",
-          "title": "Discuss Your Dream Trek",
-          "desc": "Chat on WhatsApp and tell us which hills you'd love to conquer."
-        },
-        {
-          "time": "Ready to Go",
-          "title": "Tailored All-In Package",
-          "desc": "We arrange team, gear, porters, and transport tailored exactly to you."
-        }
-      ],
       "faq": [
         {
           "q": "Can solo hikers book?",
@@ -2674,7 +2575,6 @@
       "duration": "Half / Full Day (5–8 h)",
       "group_size": "2–5 anglers",
       "difficulty": "Easy – Moderate",
-      "price_level": "$$",
       "best_time": "March – September (Maret – September)",
       "overview": "Ampenan is Lombok's historical coastal fishing grounds facing the calm waters of the Lombok Strait. From March through September, sea conditions are calm and baitfish thrive, making it the premier season to target Spanish mackerel (tenggiri), red snapper (kakap merah), barracuda, and trevally. Guided by experienced Ampenan boatmen with motorized boats, fishing gear, live bait, and private hotel transfers included.",
       "highlights": [
@@ -2701,28 +2601,6 @@
         "Sunscreen & light long-sleeve shirt",
         "Cooler bag to bring fresh fish home"
       ],
-      "itinerary": [
-        {
-          "time": "06:00",
-          "title": "Hotel Pickup",
-          "desc": "Driver meets you at your hotel and drives to Ampenan Beach."
-        },
-        {
-          "time": "06:45",
-          "title": "Launch Boat into Ampenan Waters",
-          "desc": "Depart from Ampenan coast heading towards prime seasonal feeding reefs."
-        },
-        {
-          "time": "07:30",
-          "title": "Strike Action!",
-          "desc": "Live-bait fishing and light jigging for mackerel, trevally and snapper."
-        },
-        {
-          "time": "12:00",
-          "title": "Return & Hotel Transfer",
-          "desc": "Return to shore with fresh catch in ice; driver transfers you to hotel."
-        }
-      ],
       "faq": [
         {
           "q": "When is the best season for Ampenan fishing?",
@@ -2745,7 +2623,6 @@
       "duration": "Full Day (6–8 h)",
       "group_size": "2–5 anglers",
       "difficulty": "Moderate",
-      "price_level": "$$$",
       "best_time": "October – March (Oktober – Maret)",
       "overview": "Teluk Sepi ('The Quiet Bay') in Sekotong Barat is a natural deep-water haven encircled by rolling green hills. From October through March, when outer seas experience monsoon swells, Teluk Sepi remains calm, safe, and teeming with predatory fish. Its deep drop-offs and underwater coral formations hold Giant Trevally (GT), Grouper (kerapu), Ruby Snapper, and large squid.",
       "highlights": [
@@ -2772,33 +2649,6 @@
         "Motion sickness tablets (if sensitive to boat sway)",
         "Personal favorite lures (optional)"
       ],
-      "itinerary": [
-        {
-          "time": "06:30",
-          "title": "Hotel Pickup",
-          "desc": "Private driver picks you up and heads to peaceful Teluk Sepi bay in southwest Lombok."
-        },
-        {
-          "time": "08:00",
-          "title": "Cruise Protected Bay Waters",
-          "desc": "Navigate deep drop-off points inside calm, sheltered Teluk Sepi."
-        },
-        {
-          "time": "08:30",
-          "title": "Drop-Off Fishing & Jigging",
-          "desc": "Target big grouper, giant trevally, and ruby snapper around underwater coral ridges."
-        },
-        {
-          "time": "13:30",
-          "title": "Secluded Beach Rest",
-          "desc": "Relax on a quiet shore with optional fresh fish beach grill."
-        },
-        {
-          "time": "15:00",
-          "title": "Hotel Drop-off",
-          "desc": "Head back to hotel with your fresh catch packed in ice."
-        }
-      ],
       "faq": [
         {
           "q": "Why is Teluk Sepi recommended in October to March?",
@@ -2821,7 +2671,6 @@
       "duration": "Half / Full Day (5–8 h)",
       "group_size": "2–6 anglers",
       "difficulty": "Easy – Moderate",
-      "price_level": "$$",
       "best_time": "All Year Round (Every Month / Tiap Bulan)",
       "overview": "Pelangan in the Sekotong peninsula is blessed with outer island barriers that provide fishable conditions throughout all twelve months of the year. Whether bottom fishing over healthy coral gardens, trolling outer channels, or drifting with live bait, Pelangan delivers consistent action every single month for Coral Trout (kerapu lodi), Red Snapper, Grouper, and Trevally.",
       "highlights": [
@@ -2848,33 +2697,6 @@
         "Sun protection (hat, sunscreen)",
         "Cooler bag to bring fresh fish home"
       ],
-      "itinerary": [
-        {
-          "time": "07:00",
-          "title": "Hotel Pickup",
-          "desc": "Driver meets you at hotel and drives along the scenic Sekotong coastline."
-        },
-        {
-          "time": "08:15",
-          "title": "Board Boat at Pelangan",
-          "desc": "Depart from Pelangan harbour out to rich barrier reef spots."
-        },
-        {
-          "time": "08:45",
-          "title": "Active Reef Fishing",
-          "desc": "Drop lines with captain assisting baiting and landing fish."
-        },
-        {
-          "time": "13:00",
-          "title": "Beach Picnic & Relax",
-          "desc": "Relax on a secluded sandbar or grill fresh catch."
-        },
-        {
-          "time": "14:30",
-          "title": "Return Drive",
-          "desc": "Transfer back to hotel with your fresh seafood packed in ice."
-        }
-      ],
       "faq": [
         {
           "q": "Can I fish here in any month?",
@@ -2897,7 +2719,6 @@
       "duration": "10–12 h / Day (Daily / Weekly)",
       "group_size": "1–14 guests (Avanza, Innova, Hiace)",
       "difficulty": "Very Easy",
-      "price_level": "$$",
       "best_time": "Every day (24h)",
       "overview": "The easiest, most comfortable way to discover Lombok. No worries about winding mountain roads, navigation, or vehicle maintenance. Our drivers are courteous, punctual locals who know every shortcut, viewpoints, and best warungs. All vehicles are clean, fresh, and air-conditioned.",
       "highlights": [
@@ -2921,23 +2742,6 @@
       "what_to_bring": [
         "Your destination wishlist",
         "Camera for Lombok road vistas"
-      ],
-      "itinerary": [
-        {
-          "time": "08:00 / Custom",
-          "title": "Driver Ready at Lobby",
-          "desc": "Punctual arrival with a clean, cool car."
-        },
-        {
-          "time": "All Day",
-          "title": "Explore Your Way",
-          "desc": "Visit beaches, waterfalls, cafes, and shops at your own pace."
-        },
-        {
-          "time": "Finish",
-          "title": "Safe Return to Hotel",
-          "desc": "Drop-off safely without driving exhaustion."
-        }
       ],
       "faq": [
         {
@@ -2965,7 +2769,6 @@
       "duration": "One Way / Round Trip",
       "group_size": "1–14 guests",
       "difficulty": "Very Easy",
-      "price_level": "$",
       "best_time": "24/7 Service",
       "overview": "Arrive at Lombok International Airport (ZAM/LOP) with total peace of mind. Your driver meets you at arrivals holding a clear sign with your name. We track your flight in real-time, so even if your flight is delayed, your private car is always waiting with no extra fee.",
       "highlights": [
@@ -2989,18 +2792,6 @@
         "Flight number & arrival/departure time",
         "Hotel name or address"
       ],
-      "itinerary": [
-        {
-          "time": "On Landing",
-          "title": "Arrival Meet & Greet",
-          "desc": "Driver greets you with name board and helps load luggage."
-        },
-        {
-          "time": "Direct Drive",
-          "title": "Comfortable Transfer",
-          "desc": "Cool, smooth ride straight to your hotel or villa."
-        }
-      ],
       "faq": [
         {
           "q": "What if my flight is delayed?",
@@ -3023,7 +2814,6 @@
       "duration": "One Way / Round Trip",
       "group_size": "1–14 guests",
       "difficulty": "Very Easy",
-      "price_level": "$",
       "best_time": "Daily (Morning – Evening)",
       "overview": "Arriving on or catching a fast boat from Bali and the Gili Islands via Bangsal or Teluk Nara harbour, or ferry from Lembar? Avoid harbour crowds and touts with our pre-booked private driver and clean AC car waiting right at the pier.",
       "highlights": [
@@ -3045,13 +2835,6 @@
       "what_to_bring": [
         "Boat schedule & pier name"
       ],
-      "itinerary": [
-        {
-          "time": "On Boat Arrival",
-          "title": "Pier Meet & Greet",
-          "desc": "Driver meets you at harbour pier and assists with bags."
-        }
-      ],
       "faq": [
         {
           "q": "Can we do a tour right after harbour pickup?",
@@ -3060,6 +2843,60 @@
       ],
       "more_detail": "Harbour Transfers Bangsal, Teluk Nara, Lembar. Includes Driver, AC Car & Petrol.",
       "image": "/harbour-transport.jpg"
+    },
+    {
+      "id": "mandalika-circuit-tour",
+      "slug": "mandalika-circuit-tour",
+      "category": "alam",
+      "category_label": "Motorsport & Coast",
+      "icon": "Flag",
+      "color_class": "c-red",
+      "height_class": "m",
+      "name": "Mandalika Circuit Tour & Trackday",
+      "tagline": "Official Pertamina Mandalika International Circuit walking tour, Pit Building, Paddock access, and MotoGP trackday experience.",
+      "duration": "Half day · 4–5 h",
+      "group_size": "2–10 guests",
+      "difficulty": "Easy",
+      "best_time": "All year (non-race events)",
+      "overview": "Step inside the temple of Indonesian motorsport: Pertamina Mandalika International Circuit. Explore Pit Lane and Paddock areas, step onto the asphalt for photos at the iconic Turn 10 Pertamina curve, join scheduled trackday riding or driving sessions, and enjoy sunset vistas overlooking the whole coastal circuit from Bukit Seger.",
+      "highlights": [
+        "Official Circuit Pit Lane & Paddock Walk",
+        "Photo Stop at Iconic Turn 10 Pertamina Curve",
+        "Trackday Session Assistance (Laps/Driving)",
+        "Panoramic Track View from Bukit Seger",
+        "Private AC Car & Dedicated Driver"
+      ],
+      "inclusions": [
+        "Private AC car & driver with petrol",
+        "Official Mandalika Circuit tour admission",
+        "Paddock & Pit Building guided walking access",
+        "Trackday registration & slot coordination",
+        "Bukit Seger circuit viewpoint entry",
+        "Bottled water"
+      ],
+      "exclusions": [
+        "Vehicle rental fee for trackday laps (quoted separately)",
+        "Personal racing gear rental",
+        "Meals and drinks outside tour"
+      ],
+      "what_to_bring": [
+        "Valid driving license (if participating in trackday)",
+        "Comfortable walking shoes & casual attire",
+        "Camera or smartphone for iconic track photos",
+        "Sunglasses and hat"
+      ],
+      "faq": [
+        {
+          "q": "Can tourists walk on the circuit track?",
+          "a": "Yes! On non-race days, official guided walking tours take visitors through Pit Lane, Paddock, and key turns."
+        },
+        {
+          "q": "How does trackday booking work?",
+          "a": "We coordinate directly with circuit management for open trackday schedules, vehicle inspection, and session slots."
+        }
+      ],
+      "more_detail": "Pickup → Mandalika Circuit Tour → Paddock & Pit Walk → Turn 10 Photos → Bukit Seger Viewpoint → Hotel Drop-off.",
+      "image": "/mandalika-circuit-tour.jpg"
     }
   ],
   "about_page": {
@@ -3316,8 +3153,7 @@
       "Category",
       "Duration",
       "Difficulty",
-      "Key Inclusions",
-      "Price Level"
+      "Key Inclusions"
     ],
     "rows": [
       {
@@ -3325,146 +3161,135 @@
         "duration": "Nature",
         "style": "Full day · 9 Hours",
         "difficulty": "Easy",
-        "best_for": "Speed boat + GoPro + Guide",
-        "price_level": "$$$"
+        "best_for": "Speed boat + GoPro + Guide"
       },
       {
         "name": "Snorkeling Secret Gilis",
         "duration": "Nature",
         "style": "Full day · 8 Hours",
         "difficulty": "Easy",
-        "best_for": "Nanggu, Sudak, Kedis",
-        "price_level": "$$$"
+        "best_for": "Nanggu, Sudak, Kedis"
       },
       {
         "name": "Central Lombok Waterfalls",
         "duration": "Nature",
         "style": "Full day · 8 Hours",
         "difficulty": "Easy",
-        "best_for": "Benang Stokel & Kelambu",
-        "price_level": "$$"
+        "best_for": "Benang Stokel & Kelambu"
       },
       {
         "name": "North Lombok Waterfalls (KLU)",
         "duration": "Nature",
         "style": "Full day · 9 Hours",
         "difficulty": "Moderate",
-        "best_for": "Tiu Kelep & Sendang Gile",
-        "price_level": "$$"
+        "best_for": "Tiu Kelep & Sendang Gile"
       },
       {
         "name": "Sasak Culture & Coast Tour",
         "duration": "Nature",
         "style": "Full day · 9 Hours",
         "difficulty": "Easy",
-        "best_for": "Sade, Sukarara, Tanjung Aan",
-        "price_level": "$$"
+        "best_for": "Sade, Sukarara, Tanjung Aan"
       },
       {
         "name": "South Lombok Beach Tour",
         "duration": "Nature",
         "style": "Full day · 9 Hours",
         "difficulty": "Easy",
-        "best_for": "Selong Belanak, Mawun, Merese",
-        "price_level": "$$"
+        "best_for": "Selong Belanak, Mawun, Merese"
       },
       {
         "name": "Camping Pergasingan Hill",
         "duration": "Trekking",
         "style": "2D & 1N Camp",
         "difficulty": "Moderate",
-        "best_for": "All-in Porter, Meals & Gear",
-        "price_level": "$$$"
+        "best_for": "All-in Porter, Meals & Gear"
       },
       {
         "name": "Camping Savana Dandaun",
         "duration": "Trekking",
         "style": "2D & 1N Camp",
         "difficulty": "Moderate",
-        "best_for": "All-in Porter, Meals & Gear",
-        "price_level": "$$$"
+        "best_for": "All-in Porter, Meals & Gear"
       },
       {
         "name": "Hiking Bukit Anak Dara",
         "duration": "Trekking",
         "style": "1D Sunrise",
         "difficulty": "Challenging",
-        "best_for": "Accommodation, Guide, Phone Photos",
-        "price_level": "$$"
+        "best_for": "Accommodation, Guide, Phone Photos"
       },
       {
         "name": "Hiking Bukit Kondo",
         "duration": "Trekking",
         "style": "1D Day Hike",
         "difficulty": "Moderate",
-        "best_for": "Accommodation, Guide, Phone Photos",
-        "price_level": "$$"
+        "best_for": "Accommodation, Guide, Phone Photos"
       },
       {
         "name": "Traditional Reef Fishing Trip",
         "duration": "Fishing",
         "style": "5–8 Hours",
         "difficulty": "Easy",
-        "best_for": "Boat, Captain & Full Tackle",
-        "price_level": "$$"
+        "best_for": "Boat, Captain & Full Tackle"
       },
       {
         "name": "Deep Sea & Trolling Trip",
         "duration": "Fishing",
         "style": "Full day · 8 Hours",
         "difficulty": "Moderate",
-        "best_for": "Trolling, Jigging & FAD Reef",
-        "price_level": "$$$"
+        "best_for": "Trolling, Jigging & FAD Reef"
       },
       {
         "name": "Car Rental + Driver + Petrol",
         "duration": "Transport",
         "style": "10–12 Hours / Day",
         "difficulty": "Easy",
-        "best_for": "Custom Route Across Lombok",
-        "price_level": "$$"
+        "best_for": "Custom Route Across Lombok"
       },
       {
         "name": "Airport Transfer (LOP)",
         "duration": "Transport",
         "style": "One Way / Return",
         "difficulty": "Easy",
-        "best_for": "24/7 Flight Tracking & Meet-Greet",
-        "price_level": "$"
+        "best_for": "24/7 Flight Tracking & Meet-Greet"
       },
       {
         "name": "Tetebatu Green Valley Tour",
         "duration": "Nature",
         "style": "Full day · 9 Hours",
         "difficulty": "Easy",
-        "best_for": "Rice terraces, Black monkeys & falls",
-        "price_level": "$$"
+        "best_for": "Rice terraces, Black monkeys & falls"
       },
       {
         "name": "Sembalun Highland Tour",
         "duration": "Nature",
         "style": "Full day · 10 Hours",
         "difficulty": "Easy",
-        "best_for": "Rinjani views & strawberry farms",
-        "price_level": "$$"
+        "best_for": "Rinjani views & strawberry farms"
       },
       {
         "name": "Mataram Cultural Tour",
         "duration": "Nature",
         "style": "Half day · 7 Hours",
         "difficulty": "Very Easy",
-        "best_for": "Palaces, pottery & Islamic Center",
-        "price_level": "$$"
+        "best_for": "Palaces, pottery & Islamic Center"
       },
       {
         "name": "Sumbawa Whale Shark Tour",
         "duration": "Nature",
         "style": "2D1N Expedition",
         "difficulty": "Moderate",
-        "best_for": "Whale sharks, Moyo & Kenawa Island",
-        "price_level": "$$$"
+        "best_for": "Whale sharks, Moyo & Kenawa Island"
+      },
+      {
+        "name": "Mandalika Circuit Tour & Trackday",
+        "duration": "Motorsport",
+        "style": "Half day · 5 Hours",
+        "difficulty": "Easy",
+        "best_for": "Pit & Paddock + Turn 10 + Bukit Seger"
       }
     ],
-    "note": "$ = Budget-friendly · $$ = Moderate · $$$ = Premium / All-Inclusive. Private tours with a friendly local driver-guide."
+    "note": "Private tours with a friendly local driver-guide. Custom routes and flexible stops are always welcome."
   }
 }

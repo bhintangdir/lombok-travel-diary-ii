@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyWa from "@/components/StickyWa";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import { ContentProvider } from "@/context/ContentContext";
 
 export const metadata: Metadata = {
@@ -25,6 +26,11 @@ export const metadata: Metadata = {
     "kuta lombok tour",
     "lomboktraveldiary.com",
   ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   alternates: {
     canonical: "https://lomboktraveldiary.com",
   },
@@ -65,7 +71,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&family=Cairo:wght@500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
@@ -75,6 +81,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <StickyWa />
+          <MobileBottomNav />
         </ContentProvider>
       </body>
     </html>

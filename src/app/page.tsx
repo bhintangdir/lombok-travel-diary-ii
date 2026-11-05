@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Lombok Travel Diary – Tour Packages & Private Trips",
-    description: "Write your own Lombok diary with private local tours, island hopping, and honest prices booked directly via WhatsApp.",
+    description: "Write your own Lombok diary with private local tours, island hopping, and personalized itineraries booked directly via WhatsApp.",
     url: "https://lomboktraveldiary.com",
     siteName: "Lombok Travel Diary",
     type: "website",

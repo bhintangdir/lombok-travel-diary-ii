@@ -2,217 +2,89 @@
 
 import React from "react";
 import Link from "next/link";
+import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
-import InstagramIcon from "@/components/InstagramIcon";
-import TikTokIcon from "@/components/TikTokIcon";
-import { MapPin, Mail, Clock, Compass, Phone } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Footer() {
   const { content } = useContent();
 
-  const waUrl = `https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent("Hi Lombok Travel Diary! I'd like to ask about your tour packages and transport services.")}`;
+  const phone = content.contact?.phone || "+62 851-3893-9835";
+  const email = content.contact?.email || "lomboktraveldiary@gmail.com";
+  const address = content.contact?.address || "Meninting, Batulayar, Lombok Barat";
 
   return (
     <footer>
       <div className="wrap">
-        <div className="foot">
-          {/* Column 1: Brand & Detailed Story */}
+        <div className="fgrid">
+          {/* Column 1: Brand Logo using logo-top */}
           <div>
-            <Link href="/" style={{ display: "inline-block" }}>
-              <img
-                src="/logo-square.png"
-                alt="Lombok Travel Diary"
-                style={{
-                  height: "76px",
-                  width: "auto",
-                  objectFit: "contain",
-                  display: "block",
-                }}
-              />
-            </Link>
-            <p
-              style={{
-                marginTop: "14px",
-                fontSize: "0.88rem",
-                lineHeight: "1.6",
-                color: "#d0dcf5",
-              }}
-            >
-              {content.footer.about_text}
+            <div style={{ marginBottom: "18px" }}>
+              <Link href="/" aria-label="Lombok Travel Diary Home">
+                <BrandLogo variant="top" />
+              </Link>
+            </div>
+            <p style={{ maxWidth: "300px", lineHeight: 1.6, fontSize: "0.92rem", color: "#a5c2cc" }}>
+              Private tours, Sembalun ridge trekking, Gili snorkeling, comfortable vehicle rentals, and tailor-made custom trips across Lombok.
             </p>
-
-            <div
-              style={{
-                marginTop: "16px",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "8px 14px",
-                background: "rgba(255, 255, 255, 0.08)",
-                borderRadius: "10px",
-                border: "1px dashed rgba(247, 197, 72, 0.4)",
-                fontSize: "0.82rem",
-                color: "#e2ecff",
-              }}
-            >
-              <MapPin size={15} className="text-[var(--yellow)] shrink-0" />
-              <span>Meninting, Batulayar, Lombok Barat</span>
-            </div>
-
-            <div style={{ marginTop: "14px" }}>
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn b-green"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  fontSize: "0.82rem",
-                  padding: "6px 14px",
-                }}
-              >
-                <WhatsAppIcon size={15} />
-                <span>Book via WhatsApp</span>
-              </a>
-            </div>
           </div>
 
-          {/* Column 2: Navigation & Pages */}
+          {/* Column 2: Explore */}
           <div>
-            <h4>Pages</h4>
+            <h4>Explore</h4>
             <ul>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/tour-package">Tour Packages</Link>
-              </li>
-              <li>
-                <Link href="/destination">Destinations</Link>
-              </li>
-              <li>
-                <Link href="/#gallery">Diary Snapshots</Link>
-              </li>
-              <li>
-                <Link href="/about">About Us</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact Us</Link>
-              </li>
+              <li><Link href="/tour-package">Tour Packages</Link></li>
+              <li><Link href="/destination">Destinations &amp; Gems</Link></li>
+              <li><Link href="/#gallery">Moments Gallery</Link></li>
+              <li><Link href="/about">About Us</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Featured Tour Packages */}
+          {/* Column 3: Services */}
           <div>
-            <h4>Tour Packages</h4>
+            <h4>Services</h4>
             <ul>
-              <li>
-                <Link href="/tour-package/snorkeling-3-gili">3 Gilis Snorkeling</Link>
-              </li>
-              <li>
-                <Link href="/tour-package/sembalun-sunrise-rinjani">Sembalun &amp; Rinjani</Link>
-              </li>
-              <li>
-                <Link href="/tour-package/mancing-spot-ampenan">Ampenan Fishing (Mar–Sep)</Link>
-              </li>
-              <li>
-                <Link href="/tour-package/mancing-spot-teluk-sepi">Teluk Sepi Fishing (Oct–Mar)</Link>
-              </li>
-              <li>
-                <Link href="/tour-package/mancing-spot-pelangan">Pelangan Fishing (Year-Round)</Link>
-              </li>
-              <li>
-                <Link href="/tour-package/waterfall-lombok-tengah">Benang Kelambu Falls</Link>
-              </li>
-              <li>
-                <Link href="/tour-package#sewa">Car Rental with Driver</Link>
-              </li>
+              <li><Link href="/tour-package#custom-builder">Custom Trip Planner</Link></li>
+              <li><Link href="/#our-services">Car &amp; Scooter Rental</Link></li>
+              <li><Link href="/#our-services">Airport &amp; Harbor Transfer</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: Popular Destinations */}
+          {/* Column 4: Contact with Lucide Icons */}
           <div>
-            <h4>Destinations</h4>
-            <ul>
-              <li>
-                <Link href="/destination/gili-islands">Gili Islands</Link>
+            <h4>Contact</h4>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <Phone size={16} style={{ color: "var(--sea)", flexShrink: 0 }} />
+                <span>{phone}</span>
               </li>
-              <li>
-                <Link href="/destination/kuta-mandalika">Kuta Mandalika Beach</Link>
+              <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <Mail size={16} style={{ color: "var(--sea)", flexShrink: 0 }} />
+                <span>{email}</span>
               </li>
-              <li>
-                <Link href="/destination/mount-rinjani">Mount Rinjani</Link>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <MapPin size={16} style={{ color: "var(--sea)", flexShrink: 0, marginTop: "3px" }} />
+                <span>{address}</span>
               </li>
-              <li>
-                <Link href="/destination/pink-beach">Pink Beach Tangsi</Link>
-              </li>
-              <li>
-                <Link href="/destination/desa-sade">Sade Heritage Village</Link>
-              </li>
-              <li>
-                <Link href="/destination/selong-belanak">Selong Belanak Beach</Link>
-              </li>
-              <li>
-                <Link href="/destination/tetebatu-rice-terraces">Tetebatu Terraces</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 5: Direct Contact */}
-          <div>
-            <h4>Contact &amp; Social</h4>
-            <ul>
-              <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                <WhatsAppIcon size={16} className="text-[#25D366] shrink-0 mt-0.5" />
-                <a
-                  href={`https://wa.me/${content.contact.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#fff", fontWeight: 600 }}
+              <li style={{ marginTop: "6px" }}>
+                <Link
+                  href="/contact"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    color: "var(--sun)",
+                    fontWeight: 600,
+                  }}
                 >
-                  {content.contact.phone}
-                </a>
-              </li>
-              <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                <Mail size={16} className="text-[var(--yellow)] shrink-0 mt-0.5" />
-                <a href={`mailto:${content.contact.email}`} style={{ wordBreak: "break-all" }}>
-                  {content.contact.email}
-                </a>
-              </li>
-              <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                <InstagramIcon size={16} className="text-[#FF7A8A] shrink-0 mt-0.5" />
-                <a href={content.contact.instagram_url} target="_blank" rel="noopener noreferrer">
-                  {content.contact.instagram}
-                </a>
-              </li>
-              <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                <TikTokIcon size={16} className="text-[#25F4EE] shrink-0 mt-0.5" />
-                <a
-                  href={content.contact.tiktok_url || "https://www.tiktok.com/@lomboktraveldiary"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {content.contact.tiktok || "@lomboktraveldiary"}
-                </a>
-              </li>
-              <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                <Clock size={16} className="text-[#96e6a1] shrink-0 mt-0.5" />
-                <span style={{ fontSize: "0.82rem", color: "#cfd8ec" }}>
-                  Daily: 08:00 – 20:00
-                  <br />
-                  <small style={{ color: "var(--yellow)" }}>WhatsApp available 24/7</small>
-                </span>
+                  Contact Us <ArrowRight size={14} />
+                </Link>
               </li>
             </ul>
           </div>
         </div>
-
-        {/* Bottom Bar: Copyright */}
         <div className="copy">
-          <div>{content.footer.copyright}</div>
+          © {new Date().getFullYear()} Lombok Travel Diary. All rights reserved.
         </div>
       </div>
     </footer>

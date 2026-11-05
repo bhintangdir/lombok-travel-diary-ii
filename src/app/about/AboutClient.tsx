@@ -2,196 +2,161 @@
 
 import React from "react";
 import Link from "next/link";
+import { Compass, Check, ShieldCheck, HeartHandshake } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
-import DynamicIcon from "@/components/DynamicIcon";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { Leaf, BookOpen } from "lucide-react";
 
 export default function AboutClient() {
   const { content } = useContent();
-  const page = content.about_page;
 
-  const waStory = `https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent(
-    "Hi! I'd like to know more about Lombok Travel Diary."
-  )}`;
-
-  const waCta = `https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent(
-    content.cta.button_message
-  )}`;
+  const waNumber = content.contact?.whatsapp || "6285138939835";
+  const wa = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
 
   return (
     <main>
-      {/* Hero */}
-      <header className="hero">
+      {/* 1. HERO BANNER */}
+      <section
+        className="hero sm"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, rgba(4, 58, 75, 0.6), rgba(4, 58, 75, 0.82)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=70'), linear-gradient(135deg, var(--sea), var(--deep))",
+        }}
+      >
         <div className="wrap">
-          <span className="tag" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            <BookOpen size={14} className="w-3.5 h-3.5 inline" />
-            {page.tag}
-          </span>
-          <h1>
-            {page.heading_line_1} <em>{page.heading_highlight}</em>
-          </h1>
-          <p>{page.subheading}</p>
+          <div className="crumb">
+            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
+              Home
+            </Link>{" "}
+            / About
+          </div>
+          <h1>Local Team, Island Heart.</h1>
+          <p>
+            We are Lombok Travel Diary — dedicated to helping you experience the raw beauty and warm spirit of Lombok Island, honestly and unhurriedly.
+          </p>
         </div>
-      </header>
+      </section>
 
-      {/* Story */}
+      {/* 2. STORY SPLIT */}
       <section>
-        <div className="wrap story">
+        <div className="wrap split">
+          <div
+            className="photo"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=70')",
+            }}
+            role="img"
+            aria-label="Peaceful Lombok beach"
+          />
           <div>
-            <span className="tag">{page.story.tag}</span>
-            <h2>{page.story.heading}</h2>
-            <p>{page.story.paragraph_1}</p>
-            <p>{page.story.paragraph_2}</p>
-            <p>{page.story.paragraph_3}</p>
+            <h2>Our Story</h2>
+            <p>
+              Lombok Travel Diary grew out of a straightforward belief: every traveler deserves a holiday shaped by people who actually live here. No convoluted booking engines, no hidden fees, just personal, direct communication on WhatsApp.
+            </p>
+            <p>
+              Today, we organize 100% customizable private tours, Sembalun hill camping (Pergasingan, Savana Dandaun, Anak Dara, Kondo), snorkeling across untouched Secret Gilis, comfortable vehicle rentals, and airport transfers tailored entirely to your personal schedule.
+            </p>
+            <ul style={{ listStyle: "none", paddingLeft: 0, margin: "20px 0 24px" }}>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "12px", fontSize: "0.95rem" }}>
+                <Check size={18} strokeWidth={2.6} style={{ color: "var(--sea)", flexShrink: 0, marginTop: "2px" }} />
+                <span>Born-and-raised local guides, certified drivers, and mountain porters</span>
+              </li>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "12px", fontSize: "0.95rem" }}>
+                <Check size={18} strokeWidth={2.6} style={{ color: "var(--sea)", flexShrink: 0, marginTop: "2px" }} />
+                <span>100% customizable itineraries crafted to match your own natural pace</span>
+              </li>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "12px", fontSize: "0.95rem" }}>
+                <Check size={18} strokeWidth={2.6} style={{ color: "var(--sea)", flexShrink: 0, marginTop: "2px" }} />
+                <span>Direct WhatsApp concierge before and during your journey across Lombok</span>
+              </li>
+            </ul>
             <a
-              className="btn b-red"
-              href={waStory}
+              className="btn btn-primary"
+              href={wa("Hello Lombok Travel Diary! I would like to learn more about your team and private tour packages.")}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
             >
-              <WhatsAppIcon size={18} className="w-4 h-4 text-white" />
-              {page.story.cta_button}
+              Chat With Our Team
             </a>
           </div>
-          <div className="pw">
-            <div className="pol">
-              <div
-                className="pic"
-                style={{
-                  backgroundImage: `url(${page.story.polaroid_image || '/tanjung-ann.webp'})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-              <p>{page.story.polaroid_caption}</p>
-            </div>
-            <div className="pol s">
-              <div
-                className="pic"
-                style={{
-                  backgroundImage: `url(${page.story.small_polaroid_image || '/tete-batu-village-tour.jpg'})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Stats Counter */}
-      <section className="alt" style={{ padding: "50px 0" }}>
-        <div className="wrap stats-grid">
-          {page.stats.map((st, i) => (
-            <div key={i} className={`card stat ${st.color}`}>
-              <b>{st.value}</b>
-              <span>{st.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Values / Page Rules */}
-      <section>
+      {/* 3. WHAT WE STAND FOR */}
+      <section className="why">
         <div className="wrap">
-          <div className="head">
-            <span className="tag">{page.values.tag}</span>
-            <h2>{page.values.heading}</h2>
-            <p>{page.values.subheading}</p>
+          <div className="head c">
+            <h2>What We Stand For</h2>
+            <p className="lead">Our guiding principles to guarantee a comfortable, transparent, and respectful journey.</p>
           </div>
           <div className="grid g4">
-            {page.values.items.map((val, i) => (
-              <div key={i} className={`card val ${val.color}`}>
-                <div className="ic" style={{ display: "grid", placeItems: "center" }}>
-                  <DynamicIcon name={val.icon} size={36} className="w-9 h-9" />
-                </div>
-                <h3>{val.title}</h3>
-                <p>{val.description}</p>
+            <div className="item">
+              <div className="ico">
+                <Compass size={26} strokeWidth={2} />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Chapters */}
-      <section className="alt">
-        <div className="wrap">
-          <div className="head">
-            <span className="tag">{page.milestones.tag}</span>
-            <h2>{page.milestones.heading}</h2>
-          </div>
-          <div className="tl" style={{ maxWidth: "760px", margin: "0 auto" }}>
-            {page.milestones.items.map((ms, i) => (
-              <div key={i} className="ms">
-                <div className="card">
-                  <time>{ms.chapter}</time>
-                  <h3>{ms.title}</h3>
-                  <p>{ms.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Promises */}
-      <section className="alt">
-        <div className="wrap">
-          <div className="head">
-            <span className="tag">{page.promises.tag}</span>
-            <h2>{page.promises.heading}</h2>
-          </div>
-          <div className="pro">
-            <div className="card pbox">
-              <h3>{page.promises.for_you.title}</h3>
-              <ul>
-                {page.promises.for_you.items.map((it, i) => (
-                  <li key={i}>
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3>Deep Local Knowledge</h3>
+              <p>We know the quietest coves, the cleanest mountain trails, and the optimal times to avoid crowds.</p>
             </div>
-            <div className="card pbox eco">
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <Leaf size={24} className="text-[var(--green)]" />
-                <h3>{page.promises.for_lombok.title}</h3>
+            <div className="item">
+              <div className="ico">
+                <Check size={26} strokeWidth={2.4} style={{ color: "var(--sea)" }} />
               </div>
-              <ul>
-                {page.promises.for_lombok.items.map((it, i) => (
-                  <li key={i} style={{ display: "flex", alignItems: "center", gap: "8px", paddingLeft: 0 }}>
-                    <Leaf size={14} className="text-[var(--green)] flex-shrink-0" />
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3>Transparent Pricing</h3>
+              <p>Upfront, honest quotes with zero surprise surcharges or forced shopping commissions.</p>
+            </div>
+            <div className="item">
+              <div className="ico">
+                <ShieldCheck size={26} strokeWidth={2} />
+              </div>
+              <h3>Safety &amp; Comfort First</h3>
+              <p>Well-maintained air-conditioned vehicles, inspected speedboats, and quality camping equipment.</p>
+            </div>
+            <div className="item">
+              <div className="ico">
+                <HeartHandshake size={26} strokeWidth={2} />
+              </div>
+              <h3>Respectful Tourism</h3>
+              <p>Supporting local porters fairly and honoring traditional Sasak customs and natural ecosystems.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* 4. HOW TO BOOK (4 STEPS) */}
+      <section className="book" id="how-to-book">
+        <div className="wrap">
+          <div className="head c">
+            <h2>Four Simple Steps</h2>
+            <p className="lead">Smooth planning from initial idea to your first sunset in Lombok.</p>
+          </div>
+          <div className="steps">
+            <div className="step">
+              <h3>Drop Us a Line</h3>
+              <p>Say hello anytime directly on WhatsApp.</p>
+            </div>
+            <div className="step">
+              <h3>Share Your Vision</h3>
+              <p>Tell us your travel dates, party size, and wishlist spots.</p>
+            </div>
+            <div className="step">
+              <h3>Receive Itinerary</h3>
+              <p>A transparent breakdown and honest local quote within hours.</p>
+            </div>
+            <div className="step">
+              <h3>Confirm &amp; Explore</h3>
+              <p>Lock in your dates and let us handle all the logistics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CTA */}
       <section className="cta">
         <div className="wrap">
-          <h2>{page.cta.heading}</h2>
-          <p>{page.cta.subheading}</p>
-          <div className="row">
-            <a
-              className="btn b-yellow"
-              href={waCta}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
-            >
-              <WhatsAppIcon size={18} className="w-4 h-4 text-[var(--ink)]" />
-              Chat on WhatsApp
-            </a>
-            <Link className="btn" href="/tour-package">
-              Browse Tours
-            </Link>
-          </div>
+          <h2>Let Us Plan Your Lombok Experience</h2>
+          <p>Send us a message today and receive a complimentary tailor-made itinerary for your dates.</p>
+          <a className="btn btn-wa" href={wa("Hello Lombok Travel Diary! I would like to plan my trip to Lombok.")} target="_blank" rel="noopener noreferrer">
+            Chat on WhatsApp Now
+          </a>
         </div>
       </section>
     </main>

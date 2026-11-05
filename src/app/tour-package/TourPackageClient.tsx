@@ -1,66 +1,173 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { Check, Sparkles, Gem } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
-import DynamicIcon from "@/components/DynamicIcon";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { Clock, Star, BookOpen, ChevronDown, Check, Compass, ArrowRight } from "lucide-react";
 
 export default function TourPackageClient() {
   const { content } = useContent();
   const [filter, setFilter] = useState("all");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const c = params.get("c");
+      if (c && ["all", "trek", "nature", "circuit", "fishing", "transport", "custom"].includes(c)) {
+        setFilter(c);
+      }
+    }
+  }, []);
+
+  const waNumber = content.contact?.whatsapp || "6285138939835";
+  const wa = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
 
   const categories = [
-    { key: "all", label: "All Packages" },
-    { key: "alam", label: "Nature & Beach" },
-    { key: "trekking", label: "Trekking" },
-    { key: "mancing", label: "Fishing" },
-    { key: "transport", label: "Car Rental & Transfers" },
+    { key: "all", label: "All Tours" },
+    { key: "trek", label: "Sembalun Trekking" },
+    { key: "nature", label: "Snorkeling & Islands" },
+    { key: "fishing", label: "Fishing Trips" },
+    { key: "circuit", label: "Mandalika Circuit" },
+    { key: "transport", label: "Car Rental & Transfer" },
+    { key: "custom", label: "Custom Trip Planner" },
   ];
 
-  const filteredTours = content.tours.filter(
-    (tour) => filter === "all" || tour.category === filter
-  );
+  // Map tours from content
+  const allTours = (content.tours || []).map((t: any) => {
+    let catKey = "nature";
+    const slug = (t.slug || t.id || "").toLowerCase();
+    const cat = (t.category || "").toLowerCase();
 
-  const getWaLink = (tourName: string) =>
-    `https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent(
-      `Hi! I'm interested in the ${tourName} tour.`
-    )}`;
+    if (
+      cat === "mancing" ||
+      cat === "fishing" ||
+      slug.includes("mancing") ||
+      slug.includes("fishing")
+    ) {
+      catKey = "fishing";
+    } else if (
+      cat === "trekking" ||
+      slug.includes("sembalun") ||
+      slug.includes("pergasingan") ||
+      slug.includes("dandaun") ||
+      slug.includes("anak-dara") ||
+      slug.includes("kondo")
+    ) {
+      catKey = "trek";
+    } else if (
+      cat === "transport" ||
+      slug.includes("rental") ||
+      slug.includes("transfer") ||
+      slug.includes("transport")
+    ) {
+      catKey = "transport";
+    } else if (cat === "circuit" || slug.includes("mandalika")) {
+      catKey = "circuit";
+    } else if (cat === "custom" || slug.includes("custom")) {
+      catKey = "custom";
+    }
 
-  const ctaWa = `https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent(content.cta.button_message)}`;
+    const badgeText =
+      catKey === "fishing"
+        ? "Fishing Trip"
+        : catKey === "trek"
+        ? "Sembalun Trekking"
+        : catKey === "transport"
+        ? "Private Transport"
+        : catKey === "circuit"
+        ? "Motorsport & Circuit"
+        : catKey === "custom"
+        ? "Tailor-Made"
+        : "Nature & Islands";
 
-  const activeCategoryObj = categories.find((c) => c.key === filter) || categories[0];
+    return {
+      ...t,
+      catKey,
+      badgeText,
+      subTitle: t.subtitle || t.hero_tag || "",
+      imageUrl: t.image?.startsWith("http")
+        ? t.image
+        : t.image?.startsWith("/")
+        ? t.image
+        : `https://images.unsplash.com/${t.image || "photo-1506905925346-21bda4d32df4"}?auto=format&fit=crop&w=800&q=70`,
+      highlightsList: t.highlights || (t.bullet_points || []).slice(0, 3) || [
+        "Private AC vehicle with local driver",
+        "Licensed local guide accompaniment",
+        "Flexible schedule tailored to you",
+      ],
+      includesList: t.inclusions || t.included || [
+        "Private AC Car & Fuel",
+        "Licensed Local Guide",
+        "Entrance & Parking Fees",
+        "Chilled Mineral Water",
+      ],
+    };
+  });
+
+  const filteredTours = allTours.filter((t: any) => filter === "all" || t.catKey === filter);
+
+  // Custom Trip Builder States
+  const [duration, setDuration] = useState("2 Days 1 Night (2D1N)");
+  const [selectedDests, setSelectedDests] = useState<string[]>([
+    "Savana Dandaun",
+    "Gili Kedis, Nanggu & Sudak (Secret Gilis)",
+  ]);
+  const [selectedFeats, setSelectedFeats] = useState<string[]>([
+    "Private AC Vehicle + Local Driver + Petrol",
+    "Underwater GoPro Camera & Footage",
+  ]);
+
+  const toggleDest = (destName: string) => {
+    setSelectedDests((prev) =>
+      prev.includes(destName) ? prev.filter((d) => d !== destName) : [...prev, destName]
+    );
+  };
+
+  const toggleFeat = (featName: string) => {
+    setSelectedFeats((prev) =>
+      prev.includes(featName) ? prev.filter((f) => f !== featName) : [...prev, featName]
+    );
+  };
+
+  const buildCustomWaMessage = () => {
+    let msg = `Hello Lombok Travel Diary! I would like to enquire about a Custom Trip to Lombok:\n`;
+    msg += `• Duration: ${duration}\n`;
+    msg += `• Selected Destinations: ${selectedDests.length > 0 ? selectedDests.join(", ") : "Local recommendations"}\n`;
+    msg += `• Services: ${selectedFeats.length > 0 ? selectedFeats.join(", ") : "Standard private transport"}\n`;
+    msg += `• Number of Guests: ___ people\n`;
+    msg += `• Preferred Dates: ___\n`;
+    msg += `Please send me an itinerary recommendation and quote. Thank you!`;
+    return wa(msg);
+  };
 
   return (
     <main>
-      {/* Hero Header */}
-      <header className="hero">
+      {/* 1. HERO SECTION */}
+      <section className="hero sm">
         <div className="wrap">
-          <span className="tag" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            <BookOpen size={14} className="w-3.5 h-3.5 inline" />
-            Tour packages
-          </span>
-          <h1>
-            Choose Your Next <em>Chapter</em>
-          </h1>
+          <div className="crumb">
+            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
+              Home
+            </Link>{" "}
+            / Tour Package
+          </div>
+          <h1>Lombok Tour Packages &amp; Trekking</h1>
           <p>
-            Private, flexible tours with a local driver-guide. Pick a page from our diary, tap WhatsApp, and we will handle the rest.
+            Private, handcrafted itineraries: Sembalun Ridge Trekking, 3 Gilis &amp; Secret Gilis Snorkeling, rainforest waterfalls, southern beaches, and Pertamina Mandalika Circuit tours.
           </p>
         </div>
-      </header>
+      </section>
 
-      {/* Sticky Tab Filter (Desktop Tabs & Mobile Dropdown) */}
-      <div className="filter" id="filter">
-        <div className="wrap" style={{ position: "relative" }}>
-          {/* Desktop Tabs */}
-          <div className="filter-tabs-desktop">
-            <span className="fl">Divider:</span>
+      {/* 2. TOURS LIST & FILTERS */}
+      <section id="list" style={{ paddingTop: "56px" }}>
+        <div className="wrap">
+          {/* Filter Chips */}
+          <div className="filters" role="group" aria-label="Filter tours by category">
             {categories.map((cat) => (
               <button
                 key={cat.key}
-                className={`tab ${filter === cat.key ? "on" : ""}`}
+                className={`chip ${filter === cat.key ? "active" : ""}`}
+                aria-pressed={filter === cat.key}
                 onClick={() => setFilter(cat.key)}
               >
                 {cat.label}
@@ -68,288 +175,334 @@ export default function TourPackageClient() {
             ))}
           </div>
 
-          {/* Mobile Dropdown (compact like switch bahasa) */}
-          <div className="filter-dropdown-mobile">
-            <div style={{ position: "relative", width: "100%", maxWidth: "340px", margin: "0 auto" }}>
-              <button
-                type="button"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                aria-label="Filter Tour Categories"
-                aria-expanded={isDropdownOpen}
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  gap: "8px",
-                  height: "40px",
-                  padding: "0 14px",
-                  borderRadius: "10px",
-                  border: "2.5px solid var(--ink)",
-                  background: "var(--paper)",
-                  color: "var(--ink)",
-                  fontWeight: 700,
-                  fontSize: "0.86rem",
-                  boxShadow: "3px 3px 0 var(--ink)",
-                  cursor: "pointer",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <Compass size={16} className="text-[var(--navy)] flex-shrink-0" />
-                  <span style={{ color: "var(--navy)", fontWeight: 700 }}>
-                    {activeCategoryObj.label}
+          <p className="count">Showing {filteredTours.length} private tour packages</p>
+
+          {/* Cards Grid */}
+          <div className="grid g3" id="grid">
+            {filteredTours.map((t: any, idx: number) => (
+              <article key={idx} className="tc">
+                <div
+                  className="pic img"
+                  style={{ backgroundImage: `url('${t.imageUrl}')` }}
+                >
+                  <span className={`badge ${t.catKey === "circuit" || t.catKey === "custom" ? "gem" : ""}`}>
+                    {t.badgeText}
                   </span>
-                  <span
-                    style={{
-                      background: "var(--yellow)",
-                      color: "var(--ink)",
-                      fontSize: "0.72rem",
-                      padding: "1px 6px",
-                      borderRadius: "10px",
-                      fontWeight: 800,
-                      border: "1px solid var(--ink)",
-                    }}
-                  >
-                    {filteredTours.length}
-                  </span>
+                  {t.is_popular && <span className="badge r">Most Popular</span>}
                 </div>
-                <ChevronDown
-                  size={15}
-                  style={{
-                    color: "var(--ink)",
-                    flexShrink: 0,
-                    transform: isDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
-                    transition: "transform 0.2s ease",
-                  }}
-                />
-              </button>
-
-              {/* Dropdown Menu Modal */}
-              {isDropdownOpen && (
-                <>
-                  <div
-                    style={{ position: "fixed", inset: 0, zIndex: 9998 }}
-                    onClick={() => setIsDropdownOpen(false)}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "calc(100% + 6px)",
-                      left: 0,
-                      right: 0,
-                      background: "#fff",
-                      border: "2.5px solid var(--ink)",
-                      borderRadius: "12px",
-                      boxShadow: "4px 4px 0 var(--ink)",
-                      zIndex: 9999,
-                      overflow: "hidden",
-                      padding: "5px",
-                    }}
-                  >
-                    {categories.map((cat) => {
-                      const count = content.tours.filter(
-                        (t) => cat.key === "all" || t.category === cat.key
-                      ).length;
-                      const isSelected = filter === cat.key;
-
-                      return (
-                        <button
-                          key={cat.key}
-                          onClick={() => {
-                            setFilter(cat.key);
-                            setIsDropdownOpen(false);
-                          }}
-                          style={{
-                            width: "100%",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                            padding: "9px 12px",
-                            borderRadius: "8px",
-                            border: "none",
-                            background: isSelected ? "var(--yellow)" : "transparent",
-                            color: "var(--ink)",
-                            fontWeight: isSelected ? 800 : 600,
-                            fontSize: "0.85rem",
-                            cursor: "pointer",
-                            textAlign: "left",
-                            marginBottom: "2px",
-                          }}
-                        >
-                          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                            {isSelected ? (
-                              <Check size={15} className="text-[var(--navy)] flex-shrink-0" />
-                            ) : (
-                              <span style={{ width: 15 }} />
-                            )}
-                            <span>{cat.label}</span>
-                          </div>
-                          <span
-                            style={{
-                              fontSize: "0.74rem",
-                              color: isSelected ? "var(--ink)" : "#7a87a5",
-                              fontWeight: 700,
-                            }}
-                          >
-                            ({count})
-                          </span>
-                        </button>
-                      );
-                    })}
+                <div className="body">
+                  <div className="sub">
+                    <span>{t.duration || "Full Day"}</span>
+                    <span>•</span>
+                    <span>{t.difficulty || "Moderate"}</span>
+                    <span>•</span>
+                    <span>{t.style || "Private"}</span>
                   </div>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+                  <h3>{t.name}</h3>
+                  {t.subTitle && <span className="tagline">{t.subTitle}</span>}
+                  <p className="d">{t.tagline || t.overview || t.description || t.short_description}</p>
 
-      {/* Collage Section */}
-      <section style={{ paddingTop: "60px" }}>
-        <div className="wrap">
-          <div className="collage" id="collage">
-            {filteredTours.map((tour) => {
-              const slug = tour.slug || tour.id;
+                  <h4>Key Highlights</h4>
+                  <ul className="hl">
+                    {t.highlightsList.slice(0, 3).map((h: string, hIdx: number) => (
+                      <li key={hIdx}>{h}</li>
+                    ))}
+                  </ul>
 
-              return (
-                <article key={tour.id} className="tour-card" data-c={tour.category}>
-                  <div
-                    className={`ph ${tour.height_class} ${tour.color_class}`}
-                    style={{
-                      backgroundImage: tour.image ? `url(${tour.image})` : undefined,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      position: "relative",
-                    }}
-                  >
-                    {!tour.image && (
-                      <DynamicIcon name={tour.icon} size={48} className="w-12 h-12" />
-                    )}
-                    <span className="dur" style={{ display: "inline-flex", alignItems: "center", gap: "4px", zIndex: 2 }}>
-                      <Clock size={12} /> {tour.duration}
-                    </span>
+                  <h4>Key Inclusions</h4>
+                  <div className="inc">
+                    {t.includesList.slice(0, 4).map((incItem: string, incIdx: number) => (
+                      <span key={incIdx}>
+                        <Check size={12} strokeWidth={2.8} style={{ display: "inline-block", marginRight: "4px", verticalAlign: "-1px" }} />
+                        {incItem}
+                      </span>
+                    ))}
                   </div>
-                  <div className="tb">
-                    <h3>{tour.name}</h3>
-                    <p>{tour.tagline}</p>
-                    <h4>Key highlights</h4>
-                    <ul className="hl">
-                      {tour.highlights.map((h, i) => (
-                        <li key={i} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                          <Star size={14} className="text-[var(--yellow)] flex-shrink-0" fill="currentColor" stroke="var(--ink)" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
 
-                    <div className="acts">
-                      <Link
-                        className="btn"
-                        href={`/tour-package/${slug}`}
-                        style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px" }}
-                      >
-                        Detail <ArrowRight size={14} />
-                      </Link>
-                      <a
-                        className="btn b-green"
-                        href={getWaLink(tour.name)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px" }}
-                      >
-                        <WhatsAppIcon size={16} /> WhatsApp
-                      </a>
-                    </div>
+                  <div className="acts" style={{ marginTop: "22px" }}>
+                    <Link className="btn btn-line" href={`/tour-package/${t.slug}`}>
+                      View Details
+                    </Link>
+                    <a
+                      className="btn btn-wa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={wa(`Hello Lombok Travel Diary! I am interested in the tour package: ${t.name}. Dates: ___ Guests: ___`)}
+                    >
+                      WhatsApp
+                    </a>
                   </div>
-                </article>
-              );
-            })}
+                </div>
+              </article>
+            ))}
           </div>
 
-          {filteredTours.length === 0 && (
-            <p
+          {/* 3. CUSTOM TRIP BUILDER (SANGAT PENTING) */}
+          <div className="custom-box" id="custom-builder">
+            <div
               style={{
-                textAlign: "center",
-                fontFamily: "'Caveat', cursive",
-                fontSize: "2rem",
-                color: "var(--navy)",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                padding: "6px 16px",
+                background: "rgba(242,165,65,0.2)",
+                border: "1px solid var(--sun)",
+                borderRadius: "999px",
+                fontSize: "0.8rem",
+                fontWeight: 700,
+                color: "var(--sun)",
+                marginBottom: "14px",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
               }}
             >
-              No pages here yet. Ask us for a custom plan! ✍️
+              <Sparkles size={13} strokeWidth={2.4} />
+              100% Tailor-Made Private Trip
+            </div>
+            <h2>Design Your Custom Lombok Trip</h2>
+            <p className="cintro">
+              Want to combine Sembalun ridge camping, Secret Gili snorkeling, hidden waterfalls, and a Mandalika trackday? Pick your preferred duration and spots below for an instant personalized WhatsApp quote.
             </p>
-          )}
+
+            {/* Step 1: Durasi */}
+            <div className="c-step">
+              <h3>
+                <span>1</span> Choose Trip Duration
+              </h3>
+              <div className="c-opt-grid">
+                {[
+                  "1 Day (Day Trip)",
+                  "2 Days 1 Night (2D1N)",
+                  "3 Days 2 Nights (3D2N)",
+                  "4 Days 3 Nights (4D3N)",
+                  "5+ Days Expedition",
+                ].map((dur) => (
+                  <label key={dur} className={`c-opt ${duration === dur ? "checked" : ""}`}>
+                    <input
+                      type="radio"
+                      name="c_duration"
+                      value={dur}
+                      checked={duration === dur}
+                      onChange={() => setDuration(dur)}
+                    />
+                    <span className="c-control c-radio" aria-hidden="true" />
+                    <span>{dur}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Step 2: Destinasi & Hidden Gems */}
+            <div className="c-step">
+              <h3>
+                <span>2</span> Select Destinations &amp; Hidden Gems (Mix &amp; Match)
+              </h3>
+              <div className="c-opt-grid">
+                {[
+                  { name: "Pergasingan Hill (1,750m)", gem: false },
+                  { name: "Savana Dandaun", gem: true },
+                  { name: "Bukit Anak Dara (1,921m)", gem: true },
+                  { name: "Bukit Kondo", gem: true },
+                  { name: "Snorkeling 3 Gilis (Trawangan, Meno, Air)", gem: false },
+                  { name: "Gili Kedis, Nanggu & Sudak (Secret Gilis)", gem: true },
+                  { name: "Benang Kelambu & Stokel Waterfalls", gem: false },
+                  { name: "Tiu Kelep & Sendang Gile Waterfalls", gem: false },
+                  { name: "Mangku Sakti Waterfall Sembalun", gem: true },
+                  { name: "Pertamina Mandalika Circuit (Tour & Trackday)", gem: false },
+                  { name: "Tanjung Aan Beach & Bukit Merese", gem: false },
+                  { name: "Selong Belanak & Mawun Beaches", gem: false },
+                  { name: "Sade & Sukarara Sasak Traditional Villages", gem: false },
+                  { name: "Semeti & Telawas Blowhole Beach", gem: true },
+                  { name: "Tanjung Bloam & Tunak Cliffs", gem: true },
+                ].map((d) => {
+                  const isChecked = selectedDests.includes(d.name);
+                  return (
+                    <label
+                      key={d.name}
+                      className={`c-opt ${d.gem ? "gem-opt" : ""} ${isChecked ? "checked" : ""}`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={() => toggleDest(d.name)}
+                      />
+                      <span className="c-control" aria-hidden="true">
+                        {isChecked && <Check size={13} strokeWidth={3} />}
+                      </span>
+                      <span>
+                        {d.gem && <Gem size={15} strokeWidth={2.3} className="c-gem-icon" style={{ color: "#F2A541", stroke: "#F2A541" }} />}
+                        {d.name}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Step 3: Fasilitas Tambahan */}
+            <div className="c-step">
+              <h3>
+                <span>3</span> Inclusions &amp; Services Needed
+              </h3>
+              <div className="c-opt-grid">
+                {[
+                  "Private AC Vehicle + Local Driver + Petrol",
+                  "Underwater GoPro Camera & Footage",
+                  "Full Camping Equipment & Tent Setup",
+                  "Licensed Mountain Guide & Local Porter",
+                  "Private Speedboat / Island Charter Boat",
+                  "Mandalika Circuit Trackday Experience",
+                ].map((feat) => {
+                  const isChecked = selectedFeats.includes(feat);
+                  return (
+                    <label key={feat} className={`c-opt ${isChecked ? "checked" : ""}`}>
+                      <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={() => toggleFeat(feat)}
+                      />
+                      <span className="c-control" aria-hidden="true">
+                        {isChecked && <Check size={13} strokeWidth={3} />}
+                      </span>
+                      <span>{feat}</span>
+                    </label>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Live Result Box */}
+            <div className="c-result-box">
+              <div className="c-res-txt">
+                <b>Your Custom Itinerary is Ready!</b>
+                <p>
+                  Duration: <b>{duration}</b> • <b>{selectedDests.length} Destinations</b> selected
+                  {selectedDests.length > 0
+                    ? ` (${selectedDests.slice(0, 3).join(", ")}${selectedDests.length > 3 ? ", and more" : ""})`
+                    : ""}
+                </p>
+              </div>
+              <a
+                className="btn btn-sun"
+                href={buildCustomWaMessage()}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontSize: "1rem", padding: "14px 30px" }}
+              >
+                Send Custom Plan to WhatsApp →
+              </a>
+            </div>
+          </div>
+
+          <p className="note">
+            Need local advice on route logistics?{" "}
+            <a
+              href={wa("Hello Lombok Travel Diary! I would like recommendations for my Lombok trip.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--link)", fontWeight: 600, textDecoration: "underline" }}
+            >
+              Consult directly with our local team on WhatsApp
+            </a>
+            .
+          </p>
         </div>
       </section>
 
-      {/* Comparison Table Section */}
-      <section className="cmp" id="compare">
+      {/* 4. COMPARISON TABLE SECTION */}
+      <section className="cmp" id="comparison">
         <div className="wrap">
-          <div className="head">
-            <span className="tag">{content.comparison_table.tag}</span>
-            <h2>{content.comparison_table.heading}</h2>
-            <p>{content.comparison_table.subheading}</p>
+          <div className="head c">
+            <h2>Tour Package Comparison</h2>
+            <p className="lead">Side-by-side comparison of our core itineraries, durations, difficulty levels, and tour styles.</p>
           </div>
-          <div className="tw">
+          <div className="tbl">
             <table>
               <thead>
                 <tr>
-                  {content.comparison_table.columns.map((col, idx) => (
-                    <th key={idx}>{col}</th>
-                  ))}
+                  <th>Package Name</th>
+                  <th>Category</th>
+                  <th>Duration</th>
+                  <th>Difficulty</th>
+                  <th>Tour Style</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                {content.comparison_table.rows.map((row, idx) => (
+                {allTours.map((t: any, idx: number) => (
                   <tr key={idx}>
-                    <td>{row.name}</td>
-                    <td>{row.duration}</td>
-                    <td>{row.style}</td>
-                    <td>{row.difficulty}</td>
-                    <td>{row.best_for}</td>
-                    <td className="lv">{row.price_level}</td>
+                    <td>
+                      {t.name}
+                      {t.is_popular && <span className="tag">Popular</span>}
+                    </td>
+                    <td>{t.badgeText}</td>
+                    <td>{t.duration || "Full Day"}</td>
+                    <td>{t.difficulty || "Moderate"}</td>
+                    <td>{t.style || "Private"}</td>
+                    <td>
+                      <Link className="btn-sm btn-line" href={`/tour-package/${t.slug}`}>
+                        View Tour
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="note" style={{ textAlign: "center", fontSize: ".85rem", color: "#6b7790", marginTop: "16px" }}>
-            {content.comparison_table.note}
+          <p className="note">
+            All tours are private or small-group with experienced local drivers and guides. Route adjustments, hotel pickups, or extra participants are gladly accommodated.
           </p>
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* 5. FAQ SECTION */}
       <section>
         <div className="wrap">
-          <div className="head">
-            <span className="tag">FAQ</span>
-            <h2>Before You Book</h2>
+          <div className="head c">
+            <h2>Frequently Asked Questions</h2>
           </div>
           <div className="faq">
-            {content.faq.items.map((f, idx) => (
-              <details key={idx}>
-                <summary>{f.question}</summary>
-                <p>{f.answer}</p>
-              </details>
-            ))}
+            <details>
+              <summary>What is included in the Sembalun trekking and camping packages?</summary>
+              <p>
+                All Sembalun camping packages (Camping Pergasingan Hill and Savana Dandaun) are all-inclusive: hotel pick-up and drop-off in private AC car, warm meals and mineral water, clean dome tents, thick sleeping mattresses, sleeping bags, experienced local porters to carry camp gear, a licensed mountain guide, and all national park entrance fees.
+              </p>
+            </details>
+            <details>
+              <summary>Are underwater photos and videos provided?</summary>
+              <p>
+                Yes! Both our 3 Gilis and Secret Gilis snorkeling packages include underwater photography using high-definition GoPro cameras. All files are transferred directly to your smartphone before you return to your hotel.
+              </p>
+            </details>
+            <details>
+              <summary>How does the Pertamina Mandalika Circuit tour work?</summary>
+              <p>
+                The Mandalika Circuit Tour includes official walking access into the Pit Building, Paddock area, and photo stops along the famous Turn 10 batik motif curve and Bukit Seger viewpoint. For Trackday sessions (riding a motorcycle or sports car on the actual circuit), we handle official scheduling and registration.
+              </p>
+            </details>
+            <details>
+              <summary>Can I request a custom trip combining multiple destinations?</summary>
+              <p>
+                Absolutely! Custom trips are our specialty. You can mix and match Sembalun hill trekking, Secret Gili snorkeling, waterfalls like Benang Kelambu, and hidden coastal gems like Semeti Beach. Simply use our interactive Custom Trip Planner above or send us a message on WhatsApp.
+              </p>
+            </details>
+            <details>
+              <summary>When is the best season for trekking and island hopping in Lombok?</summary>
+              <p>
+                The dry season between May and October offers clear sunny skies, calm sea conditions for snorkeling, and crisp sunrise vistas above the clouds across Sembalun.
+              </p>
+            </details>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* 6. CTA SECTION */}
       <section className="cta">
         <div className="wrap">
-          <h2>Found Your Page?</h2>
-          <p>Send us your dates and the tour you like. We&apos;ll reply with a clear plan and price.</p>
-          <a
-            className="btn b-yellow"
-            href={ctaWa}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
-          >
-            <WhatsAppIcon size={18} className="w-4 h-4 text-[var(--ink)]" />
-            Chat on WhatsApp
+          <h2>Found the Perfect Tour Package?</h2>
+          <p>Send us your dates and party size. We will respond with an exact itinerary and transparent quote within hours.</p>
+          <a className="btn btn-wa" href={wa("Hello Lombok Travel Diary! I would like to book a tour package.")} target="_blank" rel="noopener noreferrer">
+            Chat on WhatsApp Now
           </a>
         </div>
       </section>

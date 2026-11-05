@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Globe, ChevronDown, Check, BookMarked } from "lucide-react";
+import { Globe, ChevronDown, Check } from "lucide-react";
 
 declare global {
   interface Window {
@@ -80,7 +80,7 @@ export default function LanguageSelector() {
     detectCurrentLanguage();
     const interval = setInterval(detectCurrentLanguage, 1000);
 
-    // Completely suppress Google Translate banner and forced top padding on desktop & mobile
+    // Suppress Google Translate banner and forced top padding
     const suppressGoogleBanner = () => {
       if (typeof document !== "undefined" && document.body) {
         document.body.style.top = "0px";
@@ -161,7 +161,7 @@ export default function LanguageSelector() {
       {/* Hidden Google Translate Target */}
       <div id="google_translate_element_hidden" className="hidden" style={{ display: "none" }}></div>
 
-      {/* Trigger Button — diary-styled */}
+      {/* Modern Trigger Pill */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -172,40 +172,37 @@ export default function LanguageSelector() {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "5px",
-          height: "32px",
-          padding: "0 10px",
-          borderRadius: "8px",
-          border: "2px solid var(--ink)",
-          background: "var(--paper)",
-          color: "var(--ink)",
-          fontWeight: 700,
-          fontSize: "0.76rem",
-          boxShadow: "2px 2px 0 var(--ink)",
+          gap: "6px",
+          height: "34px",
+          padding: "0 12px",
+          borderRadius: "999px",
+          border: "1.5px solid var(--line)",
+          background: "#fff",
+          color: "var(--deep)",
+          fontWeight: 600,
+          fontSize: "0.82rem",
           cursor: "pointer",
-          transition: "transform 0.1s, box-shadow 0.1s",
+          transition: "border-color 0.2s, background 0.2s",
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.transform = "translate(1px, 1px)";
-          (e.currentTarget as HTMLButtonElement).style.boxShadow = "1px 1px 0 var(--ink)";
+          (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--ocean)";
         }}
         onMouseLeave={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.transform = "";
-          (e.currentTarget as HTMLButtonElement).style.boxShadow = "2px 2px 0 var(--ink)";
+          (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--line)";
         }}
       >
-        <span className="hide-on-mobile-icon hidden sm:inline-flex" style={{ alignItems: "center" }}>
-          <Globe size={13} style={{ color: "var(--navy)", flexShrink: 0 }} />
+        <span className="hidden sm:inline-flex" style={{ alignItems: "center" }}>
+          <Globe size={13} style={{ color: "var(--ocean)", flexShrink: 0 }} />
         </span>
-        <span style={{ fontSize: "0.86rem", lineHeight: 1 }}>{currentLanguageObj.flag}</span>
-        <span style={{ textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--navy)" }} className="notranslate">
+        <span style={{ fontSize: "0.95rem", lineHeight: 1 }}>{currentLanguageObj.flag}</span>
+        <span style={{ textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--deep)" }} className="notranslate">
           {currentLanguageObj.code.split("-")[0]}
         </span>
         <ChevronDown
-          size={11}
+          size={12}
           style={{
-            color: "var(--ink)",
+            color: "var(--muted)",
             flexShrink: 0,
             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
             transition: "transform 0.2s",
@@ -213,7 +210,7 @@ export default function LanguageSelector() {
         />
       </button>
 
-      {/* Dropdown — diary notebook themed */}
+      {/* Modern Clean Dropdown Menu */}
       {isOpen && (
         <div
           className="notranslate"
@@ -222,38 +219,39 @@ export default function LanguageSelector() {
             position: "absolute",
             right: 0,
             top: "calc(100% + 8px)",
-            width: "220px",
+            width: "210px",
             maxHeight: "320px",
             overflowY: "auto",
             borderRadius: "16px",
-            border: "2.5px solid var(--ink)",
+            border: "1px solid var(--line)",
             background: "#fff",
-            backgroundImage: "repeating-linear-gradient(transparent 0 31px, var(--line) 31px 32px)",
-            boxShadow: "6px 6px 0 var(--ink)",
+            boxShadow: "0 16px 36px rgba(4, 58, 75, 0.12)",
             zIndex: 100,
           }}
         >
-          {/* Sticky header */}
+          {/* Header */}
           <div
             style={{
               position: "sticky",
               top: 0,
               zIndex: 10,
-              padding: "10px 14px 8px",
-              borderBottom: "2px solid var(--ink)",
-              background: "var(--yellow)",
+              padding: "10px 14px",
+              borderBottom: "1px solid var(--line)",
+              background: "#fff",
               display: "flex",
               alignItems: "center",
               gap: "8px",
             }}
           >
-            <BookMarked size={16} style={{ color: "var(--navy)", flexShrink: 0 }} />
+            <Globe size={14} style={{ color: "var(--ocean)", flexShrink: 0 }} />
             <span
               style={{
-                fontFamily: "'Caveat', cursive",
-                fontSize: "1.2rem",
+                fontFamily: "var(--sans)",
+                fontSize: "0.78rem",
                 fontWeight: 700,
-                color: "var(--navy)",
+                color: "var(--deep)",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
               }}
               className="notranslate"
             >
@@ -262,7 +260,7 @@ export default function LanguageSelector() {
           </div>
 
           {/* Language list */}
-          <div style={{ padding: "8px" }} className="notranslate">
+          <div style={{ padding: "6px" }} className="notranslate">
             {languages.map((lang) => {
               const isSelected = currentLang === lang.code;
               return (
@@ -279,30 +277,29 @@ export default function LanguageSelector() {
                     justifyContent: "space-between",
                     padding: "8px 10px",
                     borderRadius: "10px",
-                    border: isSelected ? "2px solid var(--ink)" : "2px solid transparent",
-                    background: isSelected ? "var(--yellow)" : "transparent",
-                    boxShadow: isSelected ? "2px 2px 0 var(--ink)" : "none",
-                    color: "var(--ink)",
-                    fontWeight: isSelected ? 700 : 500,
+                    border: "none",
+                    background: isSelected ? "var(--mist)" : "transparent",
+                    color: isSelected ? "var(--link)" : "var(--ink)",
+                    fontWeight: isSelected ? 600 : 500,
                     fontSize: "0.88rem",
                     cursor: "pointer",
-                    marginBottom: "4px",
-                    transition: "all 0.12s",
+                    marginBottom: "2px",
+                    transition: "background 0.15s, color 0.15s",
                     textAlign: "left",
                   }}
                   onMouseEnter={(e) => {
-                    if (!isSelected) (e.currentTarget as HTMLButtonElement).style.background = "var(--paper)";
+                    if (!isSelected) (e.currentTarget as HTMLButtonElement).style.background = "var(--mist)";
                   }}
                   onMouseLeave={(e) => {
                     if (!isSelected) (e.currentTarget as HTMLButtonElement).style.background = "transparent";
                   }}
                 >
                   <span style={{ display: "flex", alignItems: "center", gap: "10px" }} className="notranslate">
-                    <span style={{ fontSize: "1.25rem", lineHeight: 1 }}>{lang.flag}</span>
+                    <span style={{ fontSize: "1.15rem", lineHeight: 1 }}>{lang.flag}</span>
                     <span className="notranslate">{lang.name}</span>
                   </span>
                   {isSelected && (
-                    <Check size={15} style={{ color: "var(--red)", flexShrink: 0 }} strokeWidth={3} />
+                    <Check size={14} style={{ color: "var(--ocean)", flexShrink: 0 }} strokeWidth={2.5} />
                   )}
                 </button>
               );

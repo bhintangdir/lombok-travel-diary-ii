@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import { useContent } from "@/context/ContentContext";
-import DynamicIcon from "@/components/DynamicIcon";
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { Mail, MapPin, Clock, ChevronDown, Check } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { Mail, Edit3, Send, MapPin } from "lucide-react";
+import { useContent } from "@/context/ContentContext";
 
 export default function ContactClient() {
   const { content } = useContent();
@@ -13,239 +13,254 @@ export default function ContactClient() {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("2");
-  const [tourChoice, setTourChoice] = useState("Gili Islands Hopping");
-  const [hotel, setHotel] = useState("");
+  const [tourChoice, setTourChoice] = useState("Custom Trip (Tailor-Made Itinerary)");
   const [message, setMessage] = useState("");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on click outside or Escape key
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDropdownOpen(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const lines = [
-      "Hi Lombok Travel Diary! 👋",
-      `I'm ${name.trim()}.`,
-      `Interested in: ${tourChoice}`,
+      "Hello Lombok Travel Diary! 👋",
+      `My name is: ${name.trim()}`,
+      `I am interested in: ${tourChoice}`,
     ];
-    if (date) lines.push(`Travel date: ${date}`);
-    if (guests) lines.push(`Guests: ${guests}`);
-    if (hotel) lines.push(`Staying at: ${hotel}`);
-    if (message.trim()) lines.push("", message.trim());
+    if (date.trim()) lines.push(`Travel dates: ${date.trim()}`);
+    if (guests) lines.push(`Number of guests: ${guests} people`);
+    if (message.trim()) lines.push(`Additional notes: ${message.trim()}`);
 
     const waUrl = `https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
     window.open(waUrl, "_blank", "noopener,noreferrer");
   };
 
-  const getQuickLink = (type: string) => {
-    switch (type) {
-      case "wa":
-        return `https://wa.me/${content.contact.whatsapp}`;
-      case "email":
-        return `mailto:${content.contact.email}`;
-      case "ig":
-        return content.contact.instagram_url;
-      case "tiktok":
-        return content.contact.tiktok_url || "https://www.tiktok.com/@lomboktraveldiary";
-      case "office":
-        return "#office";
-      default:
-        return "#";
-    }
-  };
+  const defaultTourOptions = [
+    "Custom Trip (Tailor-Made Itinerary)",
+    "Camping Pergasingan Hill (2D1N)",
+    "Camping Savana Dandaun Hill (2D1N)",
+    "Hiking Bukit Anak Dara",
+    "Hiking Bukit Kondo",
+    "Snorkeling 3 Gilis (Trawangan, Meno, Air)",
+    "Snorkeling Secret Gilis (Nanggu, Sudak, Kedis)",
+    "Lombok Fishing Expeditions (Pelangan, Teluk Sepi, Ampenan)",
+    "Central Lombok Waterfalls (Benang Kelambu & Stokel)",
+    "North Lombok Waterfalls (Tiu Kelep & Sendang Gile)",
+    "Sasak Heritage & Southern Beaches",
+    "South Lombok Beach Tour & Merese Sunset",
+    "Mandalika Circuit Tour & Trackday Experience",
+    "Car or Scooter Rental with Driver",
+    "Airport or Harbor Transfer",
+  ];
 
   return (
     <main>
       {/* Hero */}
-      <header className="hero">
+      <section
+        className="hero sm"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg,rgba(4,58,75,.5),rgba(4,58,75,.78)),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=70'),linear-gradient(135deg,var(--sea),var(--deep))",
+        }}
+      >
         <div className="wrap">
-          <span className="tag" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            <Mail size={14} className="w-3.5 h-3.5 inline" />
-            {page.tag}
-          </span>
-          <h1>
-            {page.heading_line_1} <em>{page.heading_highlight}</em>
-          </h1>
-          <p>{page.subheading}</p>
+          <div className="crumb">
+            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
+              Home
+            </Link>{" "}
+            / Contact
+          </div>
+          <h1>Let Us Plan Your Trip.</h1>
+          <p>The fastest way to reach us is WhatsApp. Prefer email or dropping by our office? We would love that too.</p>
         </div>
-      </header>
+      </section>
 
       {/* Quick Contact Cards */}
-      <div className="quick">
-        <div className="wrap qg">
-          {page.quick_cards.map((qc, i) => (
+      <section style={{ paddingBottom: "40px" }}>
+        <div className="wrap">
+          <div className="grid g4">
             <a
-              key={i}
-              className={`card q q-${qc.type} ${qc.color}`}
-              href={getQuickLink(qc.type)}
-              target={qc.type !== "office" && qc.type !== "email" ? "_blank" : undefined}
+              className="sc cc"
+              href={`https://wa.me/${content.contact.whatsapp}`}
+              target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="ic" style={{ display: "grid", placeItems: "center" }}>
-                <DynamicIcon name={qc.icon} size={36} className="w-9 h-9" />
+              <div className="ico ico-wa">
+                <WhatsAppIcon size={28} />
               </div>
-              <h3>{qc.title}</h3>
-              <p>
-                {qc.desc}
-                <br />
-                {qc.sub}
-              </p>
+              <b>WhatsApp</b>
+              <p>{content.contact.phone}</p>
             </a>
-          ))}
-        </div>
-      </div>
 
-      {/* Form Section */}
-      <section>
-        <div className="wrap fw">
-          <div>
-            <span className="tag">{page.form_section.tag}</span>
-            <h2>{page.form_section.heading}</h2>
-            <p>{page.form_section.paragraph_1}</p>
-            <p>{page.form_section.paragraph_2}</p>
-            <div className="note-box">
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <Edit3 size={20} className="text-[var(--navy)]" />
-                <h3>{page.form_section.note_box.title}</h3>
+            <a className="sc cc" href={`mailto:${content.contact.email}`}>
+              <div className="ico">
+                <Mail size={26} strokeWidth={2} />
               </div>
-              <ul>
-                {page.form_section.note_box.items.map((it, i) => (
-                  <li key={i}>{it}</li>
-                ))}
-              </ul>
+              <b>Email</b>
+              <p>{content.contact.email}</p>
+            </a>
+
+            <div className="sc cc">
+              <div className="ico">
+                <MapPin size={26} strokeWidth={2} />
+              </div>
+              <b>Office</b>
+              <p>{content.contact.address}</p>
+            </div>
+
+            <div className="sc cc">
+              <div className="ico">
+                <Clock size={26} strokeWidth={2} />
+              </div>
+              <b>Opening Hours</b>
+              <p>Every day, 08:00 to 20:00 (WITA)</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <form className="card form" onSubmit={handleSubmit}>
-            <h3>Trip request</h3>
+      {/* Form Split */}
+      <section style={{ paddingTop: "20px" }}>
+        <div className="wrap split" style={{ alignItems: "start" }}>
+          <form className="cform" onSubmit={handleSubmit}>
+            <h2 style={{ fontSize: "1.7rem" }}>Send an Enquiry</h2>
+            <p className="lead" style={{ marginBottom: "22px" }}>
+              Fill this in and we will open WhatsApp with your message ready to send.
+            </p>
 
-            <label htmlFor="name">Your name</label>
-            <input
-              id="name"
-              required
-              placeholder="e.g. Emma"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-
-            <div className="row">
-              <div>
-                <label htmlFor="date">Travel date</label>
+            <div className="frow">
+              <div className="field">
+                <label htmlFor="nm">Your Name</label>
                 <input
-                  id="date"
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
+                  id="nm"
+                  required
+                  placeholder="e.g. Sarah"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div>
-                <label htmlFor="guests">Guests</label>
+              <div className="field">
+                <label htmlFor="gs">Guests</label>
                 <input
-                  id="guests"
+                  id="gs"
                   type="number"
                   min="1"
-                  max="30"
+                  placeholder="2"
                   value={guests}
                   onChange={(e) => setGuests(e.target.value)}
                 />
               </div>
             </div>
 
-            <label htmlFor="tour">I&apos;m interested in</label>
-            <select
-              id="tour"
-              value={tourChoice}
-              onChange={(e) => setTourChoice(e.target.value)}
-            >
-              {content.tours.map((t) => (
-                <option key={t.id} value={t.name}>
-                  {t.name}
-                </option>
-              ))}
-              <option value="Car or Scooter Rental">Car or Scooter Rental</option>
-              <option value="Airport / Harbour Transfer">Airport / Harbour Transfer</option>
-            </select>
+            <div className="frow">
+              <div className="field">
+                <label htmlFor="dt">Travel Dates</label>
+                <input
+                  id="dt"
+                  placeholder="e.g. 12 to 18 June"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                />
+              </div>
+              <div className="field custom-dropdown-field" ref={dropdownRef}>
+                <label id="interest-label">I Am Interested In</label>
+                <button
+                  type="button"
+                  id="interest-trigger"
+                  className={`custom-select-trigger ${dropdownOpen ? "active" : ""}`}
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  aria-haspopup="listbox"
+                  aria-expanded={dropdownOpen}
+                  aria-labelledby="interest-label"
+                >
+                  <span className="cst-value-text">{tourChoice}</span>
+                  <span className="cst-chevron-wrap" aria-hidden="true">
+                    <ChevronDown
+                      size={18}
+                      strokeWidth={2.4}
+                      className={`cst-chevron ${dropdownOpen ? "open" : ""}`}
+                    />
+                  </span>
+                </button>
 
-            <label htmlFor="hotel">Hotel / area (optional)</label>
-            <input
-              id="hotel"
-              placeholder="e.g. Kuta, Senggigi"
-              value={hotel}
-              onChange={(e) => setHotel(e.target.value)}
-            />
-
-            <label htmlFor="msg">Message</label>
-            <textarea
-              id="msg"
-              placeholder="Tell us anything we should know..."
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-
-            <button
-              className="btn b-green"
-              type="submit"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
-            >
-              <Send size={18} /> Send via WhatsApp
-            </button>
-            <p className="hint">Opens WhatsApp with your message prefilled.</p>
-          </form>
-        </div>
-      </section>
-
-      {/* Office Section */}
-      <section className="alt" id="office">
-        <div className="wrap">
-          <div className="head">
-            <span className="tag">{page.office_section.tag}</span>
-            <h2>{page.office_section.heading}</h2>
-          </div>
-          <div className="loc">
-            <div className="card info">
-              <h3>{page.office_section.title}</h3>
-              <p style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <MapPin size={15} style={{ color: "var(--red)", flexShrink: 0 }} />
-                {content.contact.address}
-              </p>
-              <ul className="hrs">
-                <li>
-                  <span>Monday – Saturday</span>
-                  <b>08:00 – 20:00</b>
-                </li>
-                <li>
-                  <span>Sunday</span>
-                  <b>09:00 – 17:00</b>
-                </li>
-                <li>
-                  <span>WhatsApp</span>
-                  <b>Replies all day</b>
-                </li>
-              </ul>
-              <a
-                className="btn b-red"
-                href={content.contact.maps_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get directions
-              </a>
+                {dropdownOpen && (
+                  <div
+                    className="custom-select-menu"
+                    role="listbox"
+                    aria-labelledby="interest-label"
+                  >
+                    {defaultTourOptions.map((opt, i) => {
+                      const isSelected = opt === tourChoice;
+                      return (
+                        <div
+                          key={i}
+                          role="option"
+                          aria-selected={isSelected}
+                          className={`custom-select-option ${isSelected ? "selected" : ""}`}
+                          onClick={() => {
+                            setTourChoice(opt);
+                            setDropdownOpen(false);
+                          }}
+                        >
+                          <span className="cso-text">{opt}</span>
+                          {isSelected && (
+                            <Check size={16} strokeWidth={2.6} className="cso-check" />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="card mapc">
-              <iframe
-                className="map"
-                title="Office location"
-                loading="lazy"
-                src={content.contact.map_embed}
+
+            <div className="field">
+              <label htmlFor="ms">Message &amp; Wishlist</label>
+              <textarea
+                id="ms"
+                rows={4}
+                placeholder="Tell us what you would like to do (hotel, flights, custom places, preferences)"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
+
+            <button className="btn btn-wa" type="submit" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              <WhatsAppIcon size={18} />
+              Send via WhatsApp
+            </button>
+          </form>
+
+          <div>
+            <iframe
+              className="map"
+              title="Lombok Travel Diary office map"
+              loading="lazy"
+              src={content.contact.map_embed}
+            />
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section>
+      <section style={{ paddingTop: "40px" }}>
         <div className="wrap">
-          <div className="head">
-            <span className="tag">{page.faq.tag}</span>
-            <h2>{page.faq.heading}</h2>
-          </div>
           <div className="faq">
             {page.faq.items.map((fq, i) => (
               <details key={i}>
@@ -263,7 +278,7 @@ export default function ContactClient() {
           <h2>{page.cta.heading}</h2>
           <p>{page.cta.subheading}</p>
           <a
-            className="btn b-yellow"
+            className="btn btn-sun"
             href={`https://wa.me/${content.contact.whatsapp}?text=${encodeURIComponent(
               "Hi Lombok Travel Diary! I'd like to plan my trip."
             )}`}
@@ -271,7 +286,7 @@ export default function ContactClient() {
             rel="noopener noreferrer"
             style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
           >
-            <WhatsAppIcon size={18} className="w-4 h-4 text-[var(--ink)]" />
+            <WhatsAppIcon size={18} />
             Chat on WhatsApp
           </a>
         </div>
