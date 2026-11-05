@@ -45,7 +45,7 @@ export default function Footer() {
             <h4>Services</h4>
             <ul>
               <li><Link href="/tour-package#custom-builder">Custom Trip Planner</Link></li>
-              <li><Link href="/#our-services">Car &amp; Scooter Rental</Link></li>
+              <li><Link href="/#rental-transport">Car &amp; Scooter Rental</Link></li>
               <li><Link href="/#our-services">Airport &amp; Harbor Transfer</Link></li>
             </ul>
           </div>

@@ -18,9 +18,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const title = `${tour.name} – Lombok Travel Diary`;
+  const description = tour.tagline || tour.overview?.slice(0, 160);
+  const ogImage = tour.image?.startsWith("http")
+    ? tour.image
+    : tour.image?.startsWith("/")
+    ? tour.image
+    : "/og-image.jpg";
+
   return {
-    title: `${tour.name} – Lombok Travel Diary`,
-    description: tour.tagline,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: tour.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 

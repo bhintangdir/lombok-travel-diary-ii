@@ -191,16 +191,28 @@ export default function MobileBottomNav() {
               </Link>
 
               <Link
-                href="/#our-services"
+                href="/#rental-transport"
                 className="mob-more-card"
-                onClick={() => setMoreOpen(false)}
+                onClick={(e) => {
+                  setMoreOpen(false);
+                  if (pathname === "/") {
+                    e.preventDefault();
+                    setTimeout(() => {
+                      const el = document.getElementById("rental-transport");
+                      if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - 85;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }
+                    }, 120);
+                  }
+                }}
               >
                 <div className="mm-ico">
                   <Car size={22} strokeWidth={2.2} />
                 </div>
                 <div>
                   <b>Car &amp; Scooter Rental</b>
-                  <p>Comfortable vehicles with local drivers</p>
+                  <p>Enquire vehicles &amp; drivers on WhatsApp</p>
                 </div>
               </Link>
 

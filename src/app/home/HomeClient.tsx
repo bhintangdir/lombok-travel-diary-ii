@@ -15,6 +15,11 @@ import {
   Gem,
   X,
   ZoomIn,
+  Car,
+  Bike,
+  Shield,
+  Fuel,
+  Sparkles,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useContent } from "@/context/ContentContext";
@@ -352,7 +357,7 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* 3. RECOMMENDED TOURS SECTION */}
+{/* 3. RECOMMENDED TOURS SECTION */}
       <section className="tours" id="tours">
         <div className="wrap">
           <div className="head c">
@@ -460,6 +465,105 @@ export default function HomeClient() {
             <Link className="btn btn-primary" href="/tour-package">
               View All Tour Packages
             </Link>
+          </div>
+        </div>
+      </section>
+
+            {/* 3.5 VEHICLE RENTAL ENQUIRY SECTION (CAR & SCOOTER HIRE VIA WHATSAPP) */}
+      <section
+        id="rental-transport"
+        style={{
+          background: "linear-gradient(180deg, #F0F9FB 0%, #FFFFFF 100%)",
+          padding: "85px 0 95px",
+          scrollMarginTop: "95px",
+        }}
+      >
+        <div className="wrap">
+          <div className="head c">
+            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--ocean)", textTransform: "uppercase", letterSpacing: "1.2px", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "8px" }}>
+              <Car size={16} strokeWidth={2.4} />
+              Flexible Island Mobility
+            </span>
+            <h2>Lombok Car &amp; Scooter Rental</h2>
+            <p className="lead" style={{ maxWidth: "660px", margin: "8px auto 0" }}>
+              Reliable, fully-maintained private vehicles for your island holiday. No rigid catalog forms — ask our local dispatch team directly on WhatsApp for real-time fleet availability, custom dates, and direct all-inclusive rates.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(310px, 1fr))", gap: "24px", marginTop: "36px" }}>
+            {/* Service Highlight 1: Private Car Rental with Driver */}
+            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "32px 28px", border: "1.5px solid var(--line)", boxShadow: "0 10px 30px rgba(4, 58, 75, 0.05)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div>
+                <div style={{ width: "50px", height: "50px", borderRadius: "14px", background: "rgba(43, 181, 216, 0.12)", color: "var(--ocean)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
+                  <Car size={26} strokeWidth={2.2} />
+                </div>
+                <h3 style={{ fontSize: "1.32rem", color: "var(--deep)", marginBottom: "10px" }}>Private Car with Driver</h3>
+                <p style={{ color: "var(--muted)", fontSize: "0.94rem", lineHeight: 1.6, marginBottom: "20px" }}>
+                  Comfortable, clean, air-conditioned family MPVs and spacious vans (Avanza, Innova, HiAce) driven by friendly, English-speaking local drivers. Fuel, parking, and driver services included with 100% flexible custom itineraries.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
+                    <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
+                    <span>Free hotel / airport pick-up &amp; drop-off</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
+                    <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
+                    <span>Flexible 10-12 hour daily hire or multi-day tours</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
+                    <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
+                    <span>Transparent quotes with no hidden fuel surcharges</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href={waUrl("Hello Lombok Travel Diary! I would like to enquire about renting a private car with driver in Lombok. Dates: ___ Number of guests: ___ Preferred vehicle (Avanza / Innova / HiAce): ___")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-wa"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                <WhatsAppIcon size={18} />
+                Enquire Car via WhatsApp
+              </a>
+            </div>
+
+            {/* Service Highlight 2: Automatic Scooter Rental */}
+            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "32px 28px", border: "1.5px solid var(--line)", boxShadow: "0 10px 30px rgba(4, 58, 75, 0.05)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div>
+                <div style={{ width: "50px", height: "50px", borderRadius: "14px", background: "rgba(242, 165, 65, 0.14)", color: "#D97706", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
+                  <Bike size={26} strokeWidth={2.2} />
+                </div>
+                <h3 style={{ fontSize: "1.32rem", color: "var(--deep)", marginBottom: "10px" }}>Automatic Scooter Rental</h3>
+                <p style={{ color: "var(--muted)", fontSize: "0.94rem", lineHeight: 1.6, marginBottom: "20px" }}>
+                  Explore Kuta beaches, scenic coastal roads, and village lanes at your own rhythm. Premium, well-serviced automatic scooters (Honda Scoopy, Vario, Yamaha NMAX) delivered straight to your hotel or homestay in Lombok.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
+                    <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
+                    <span>Includes 2 clean sanitized helmets &amp; phone holder</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
+                    <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
+                    <span>Free hotel delivery &amp; pickup across Kuta &amp; Mataram</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
+                    <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
+                    <span>Daily, weekly, or monthly flexible rental rates</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href={waUrl("Hello Lombok Travel Diary! I would like to enquire about renting an automatic scooter in Lombok. Rental dates: ___ Location / Hotel for delivery: ___ Scooter model preference (Scoopy / Vario / NMAX): ___")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-wa"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                <WhatsAppIcon size={18} />
+                Enquire Scooter via WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -667,16 +771,17 @@ export default function HomeClient() {
                 marginBottom: "16px",
               }}
             >
-              {/* Official TripAdvisor Owl Logo */}
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Tripadvisor">
-                <circle cx="6.5" cy="14" r="3.5" fill="#34E0A1" stroke="#000" strokeWidth="1.2" />
-                <circle cx="17.5" cy="14" r="3.5" fill="#34E0A1" stroke="#000" strokeWidth="1.2" />
-                <circle cx="6.5" cy="14" r="1.3" fill="#000" />
-                <circle cx="17.5" cy="14" r="1.3" fill="#000" />
-                <circle cx="6.5" cy="14" r="0.4" fill="#fff" />
-                <circle cx="17.5" cy="14" r="0.4" fill="#fff" />
-                <path d="M12 9.5C10.5 7.5 7.5 7 5 7.5C2.5 8 1 9.8 1 11.5C1 14 3.5 16 6.5 16C8.5 16 10.2 15 11.2 13.5L12 14.5L12.8 13.5C13.8 15 15.5 16 17.5 16C20.5 16 23 14 23 11.5C23 9.8 21.5 8 19 7.5C16.5 7 13.5 7.5 12 9.5Z" stroke="#000" strokeWidth="1.2" fill="none" />
-                <path d="M12 9.5L10 11H14L12 9.5Z" fill="#E8553D" />
+              {/* Official TripAdvisor Icon */}
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Tripadvisor">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#00AA6C" />
+                <path d="M12 8.2C10.7 6.8 8.6 6.4 6.7 6.8C4.8 7.2 3.6 8.7 3.6 10.1C3.6 12.2 5.5 13.9 7.8 13.9C9.4 13.9 10.7 13.1 11.4 11.9L12 12.7L12.6 11.9C13.3 13.1 14.6 13.9 16.2 13.9C18.5 13.9 20.4 12.2 20.4 10.1C20.4 8.7 19.2 7.2 17.3 6.8C15.4 6.4 13.3 6.8 12 8.2Z" fill="#FFFFFF" />
+                <circle cx="7.8" cy="10.1" r="2.3" fill="#00AA6C" />
+                <circle cx="16.2" cy="10.1" r="2.3" fill="#00AA6C" />
+                <circle cx="7.8" cy="10.1" r="1.1" fill="#FFFFFF" />
+                <circle cx="16.2" cy="10.1" r="1.1" fill="#FFFFFF" />
+                <circle cx="7.8" cy="10.1" r="0.4" fill="#000000" />
+                <circle cx="16.2" cy="10.1" r="0.4" fill="#000000" />
+                <path d="M12 8.2L10.5 9.5H13.5L12 8.2Z" fill="#E8553D" />
               </svg>
               <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                 <span style={{ fontWeight: 800, fontSize: "0.9rem", color: "#004f32", letterSpacing: "0.02em" }}>Tripadvisor</span>
