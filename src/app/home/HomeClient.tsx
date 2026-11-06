@@ -12,6 +12,7 @@ import {
   Star,
   Check,
   ArrowRight,
+  Compass,
   Gem,
   X,
   ZoomIn,
@@ -20,6 +21,8 @@ import {
   Shield,
   Fuel,
   Sparkles,
+  Waves,
+  Award,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useContent } from "@/context/ContentContext";
@@ -235,24 +238,29 @@ export default function HomeClient() {
     <main>
       {/* 1. HERO SECTION */}
       <section className="hero" id="home">
-        <div className="wrap">
-          <h1>Your Lombok Adventure Starts Here.</h1>
+        <div className="wrap text-center">
+          <h1>
+            Your Lombok <span className="text-[#F2A541]">Adventure</span> Starts Here.
+          </h1>
           <p>
-            From camping above the clouds in Sembalun, snorkeling with sea turtles across the 3 Gilis &amp; Secret Gilis, lush hidden waterfalls, to the pulse of Mandalika MotoGP Circuit. All private, flexible, and booked directly on WhatsApp.
+            From camping above the clouds in Sembalun, snorkeling with sea turtles across the{" "}
+            <span className="text-[#F4E9D6] font-medium">3 Gilis &amp; Secret Gilis</span>, lush hidden waterfalls, to the pulse of Mandalika MotoGP Circuit. All private, flexible, and booked directly on WhatsApp.
           </p>
-          <div className="row">
-            <a className="btn btn-sun" href={waUrl()} target="_blank" rel="noopener noreferrer">
-              Plan Trip on WhatsApp
+          <div className="row justify-center">
+            <a className="btn btn-sun" href="#tours">
+              <Compass className="w-5 h-5" />
+              <span>Explore Tour Packages</span>
             </a>
-            <a className="btn btn-ghost" href="#tours">
-              Explore Tour Packages
-            </a>
+            <Link className="btn btn-ghost" href="/contact">
+              <span>Contact Us</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* 2. SERVICES SECTION */}
-      <section className="osvc" id="our-services">
+      <section className="osvc" id="our-services" style={{ scrollMarginTop: "100px" }}>
         <div className="wrap">
           <div className="head c">
             <h2>Our Travel Services</h2>
@@ -357,8 +365,8 @@ export default function HomeClient() {
         </div>
       </section>
 
-{/* 3. RECOMMENDED TOURS SECTION */}
-      <section className="tours" id="tours">
+      {/* 3. RECOMMENDED TOURS SECTION */}
+      <section className="tours" id="tours" style={{ scrollMarginTop: "100px" }}>
         <div className="wrap">
           <div className="head c">
             <h2>Most Popular Tour Packages</h2>
@@ -469,99 +477,99 @@ export default function HomeClient() {
         </div>
       </section>
 
-            {/* 3.5 VEHICLE RENTAL ENQUIRY SECTION (CAR & SCOOTER HIRE VIA WHATSAPP) */}
+      {/* 3.5 SURFING LESSONS & COACHING SECTION */}
       <section
-        id="rental-transport"
+        id="surf-lessons"
         style={{
           background: "linear-gradient(180deg, #F0F9FB 0%, #FFFFFF 100%)",
           padding: "85px 0 95px",
-          scrollMarginTop: "95px",
+          scrollMarginTop: "105px",
         }}
       >
         <div className="wrap">
           <div className="head c">
             <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--ocean)", textTransform: "uppercase", letterSpacing: "1.2px", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "8px" }}>
-              <Car size={16} strokeWidth={2.4} />
-              Flexible Island Mobility
+              <Waves size={16} strokeWidth={2.4} />
+              Ride Lombok&apos;s World-Class Waves
             </span>
-            <h2>Lombok Car &amp; Scooter Rental</h2>
+            <h2>Lombok Surfing Lessons &amp; Coaching</h2>
             <p className="lead" style={{ maxWidth: "660px", margin: "8px auto 0" }}>
-              Reliable, fully-maintained private vehicles for your island holiday. No rigid catalog forms — ask our local dispatch team directly on WhatsApp for real-time fleet availability, custom dates, and direct all-inclusive rates.
+              Learn to surf in the warm, crystal-clear tropical waters of South Lombok. From total first-timers standing on their first wave to intermediate surfers hunting point breaks, our ISA-certified local instructors ensure a fun, safe, and unforgettable experience.
             </p>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(310px, 1fr))", gap: "24px", marginTop: "36px" }}>
-            {/* Service Highlight 1: Private Car Rental with Driver */}
+            {/* Service Highlight 1: Beginner Surf Lesson (Selong Belanak / Gerupuk) */}
             <div style={{ background: "#ffffff", borderRadius: "20px", padding: "32px 28px", border: "1.5px solid var(--line)", boxShadow: "0 10px 30px rgba(4, 58, 75, 0.05)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div style={{ width: "50px", height: "50px", borderRadius: "14px", background: "rgba(43, 181, 216, 0.12)", color: "var(--ocean)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
-                  <Car size={26} strokeWidth={2.2} />
+                  <Waves size={26} strokeWidth={2.2} />
                 </div>
-                <h3 style={{ fontSize: "1.32rem", color: "var(--deep)", marginBottom: "10px" }}>Private Car with Driver</h3>
+                <h3>Beginner Surf Lesson</h3>
                 <p style={{ color: "var(--muted)", fontSize: "0.94rem", lineHeight: 1.6, marginBottom: "20px" }}>
-                  Comfortable, clean, air-conditioned family MPVs and spacious vans (Avanza, Innova, HiAce) driven by friendly, English-speaking local drivers. Fuel, parking, and driver services included with 100% flexible custom itineraries.
+                  Held at the gentle sandy breaks of Selong Belanak Beach or inside Gerupuk Bay. Perfect for beginners, families, and kids. Includes 2 hours of private coaching, board rental, rash vest, and surf photos.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px" }}>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
                     <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
-                    <span>Free hotel / airport pick-up &amp; drop-off</span>
+                    <span>1-on-1 or 1-on-2 dedicated local surf coach</span>
                   </li>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
                     <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
-                    <span>Flexible 10-12 hour daily hire or multi-day tours</span>
+                    <span>Soft-top surfboard, leash, wax &amp; rash vest included</span>
                   </li>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
                     <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
-                    <span>Transparent quotes with no hidden fuel surcharges</span>
+                    <span>Free beach transfer &amp; digital surf action photos</span>
                   </li>
                 </ul>
               </div>
               <a
-                href={waUrl("Hello Lombok Travel Diary! I would like to enquire about renting a private car with driver in Lombok. Dates: ___ Number of guests: ___ Preferred vehicle (Avanza / Innova / HiAce): ___")}
+                href={waUrl("Hello Lombok Travel Diary! I would like to book a Beginner Surf Lesson in Lombok. Dates: ___ Number of surfers: ___ Skill level: First Timer / Beginner")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-wa"
                 style={{ width: "100%", justifyContent: "center" }}
               >
                 <WhatsAppIcon size={18} />
-                Enquire Car via WhatsApp
+                Book Surf
               </a>
             </div>
 
-            {/* Service Highlight 2: Automatic Scooter Rental */}
+            {/* Service Highlight 2: Surf Guiding & Intermediate Coaching */}
             <div style={{ background: "#ffffff", borderRadius: "20px", padding: "32px 28px", border: "1.5px solid var(--line)", boxShadow: "0 10px 30px rgba(4, 58, 75, 0.05)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div style={{ width: "50px", height: "50px", borderRadius: "14px", background: "rgba(242, 165, 65, 0.14)", color: "#D97706", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
-                  <Bike size={26} strokeWidth={2.2} />
+                  <Award size={26} strokeWidth={2.2} />
                 </div>
-                <h3 style={{ fontSize: "1.32rem", color: "var(--deep)", marginBottom: "10px" }}>Automatic Scooter Rental</h3>
+                <h3>Surf Guiding &amp; Boat Trips</h3>
                 <p style={{ color: "var(--muted)", fontSize: "0.94rem", lineHeight: 1.6, marginBottom: "20px" }}>
-                  Explore Kuta beaches, scenic coastal roads, and village lanes at your own rhythm. Premium, well-serviced automatic scooters (Honda Scoopy, Vario, Yamaha NMAX) delivered straight to your hotel or homestay in Lombok.
+                  For progressing and intermediate surfers wanting to score the best reef breaks across Lombok (Don-Don, Inside Gerupuk, Outside Ekas, Tanjung Aan, Mawi). Includes local surf boat charter and tidal wave analysis.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px" }}>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
                     <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
-                    <span>Includes 2 clean sanitized helmets &amp; phone holder</span>
+                    <span>Private traditional wooden boat charter to reef breaks</span>
                   </li>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
                     <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
-                    <span>Free hotel delivery &amp; pickup across Kuta &amp; Mataram</span>
+                    <span>In-water coaching, wave selection &amp; video analysis</span>
                   </li>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
                     <Check size={16} strokeWidth={2.6} style={{ color: "var(--sea)" }} />
-                    <span>Daily, weekly, or monthly flexible rental rates</span>
+                    <span>Guided by experienced lifelong local Kuta Lombok surfers</span>
                   </li>
                 </ul>
               </div>
               <a
-                href={waUrl("Hello Lombok Travel Diary! I would like to enquire about renting an automatic scooter in Lombok. Rental dates: ___ Location / Hotel for delivery: ___ Scooter model preference (Scoopy / Vario / NMAX): ___")}
+                href={waUrl("Hello Lombok Travel Diary! I would like to enquire about Surf Guiding & Boat Trips in Lombok. Dates: ___ Number of surfers: ___ Skill level (Intermediate / Advanced): ___ Preferred spots: ___")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-wa"
                 style={{ width: "100%", justifyContent: "center" }}
               >
                 <WhatsAppIcon size={18} />
-                Enquire Scooter via WhatsApp
+                Enquire Surf
               </a>
             </div>
           </div>
@@ -911,7 +919,14 @@ export default function HomeClient() {
       </section>
 
       {/* 9. MOMENTS FROM LOMBOK (GALLERY SLIDER) */}
-      <section id="gallery" style={{ background: "var(--mist)", position: "relative" }}>
+      <section
+        id="gallery"
+        style={{
+          background: "var(--mist)",
+          position: "relative",
+          scrollMarginTop: "105px",
+        }}
+      >
         <div className="wrap">
           <div className="head c">
             <h2>Moments Across Lombok</h2>

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MapPin, Gem } from "lucide-react";
+import { MapPin, Gem, Sparkles, ArrowRight } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
 
 interface Props {
@@ -71,16 +71,15 @@ export default function DestinationDetailClient({ slug }: Props) {
       >
         <div className="wrap">
           <div className="crumb">
-            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
-              Home
-            </Link>{" "}
-            /{" "}
-            <Link href="/destination" style={{ color: "rgba(255,255,255,0.85)" }}>
-              Destination
-            </Link>{" "}
-            / {name}
+            <Link href="/">Home</Link>
+            <span className="crumb-sep">/</span>
+            <Link href="/destination">Destination</Link>
+            <span className="crumb-sep">/</span>
+            <span className="crumb-active">{name}</span>
           </div>
-          <h1>{name}</h1>
+          <h1>
+            <span className="text-[#F2A541]">{name}</span>
+          </h1>
           <p>{destination.tagline || destination.overview || destination.description}</p>
           <div className="hmeta">
             <span>
@@ -198,6 +197,41 @@ export default function DestinationDetailClient({ slug }: Props) {
               Enquire on WhatsApp
             </a>
             <p className="sm">Direct consultation on route and private driver availability with locals.</p>
+
+            {/* Custom Trip Banner Card (Compact) */}
+            <div
+              style={{
+                marginTop: "14px",
+                padding: "10px 12px",
+                borderRadius: "12px",
+                background: "linear-gradient(135deg, rgba(231, 246, 250, 0.6) 0%, rgba(244, 233, 214, 0.35) 100%)",
+                border: "1px dashed var(--ocean)",
+                textAlign: "left",
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--deep)", fontWeight: 700, fontSize: "0.78rem", marginBottom: "2px" }}>
+                <Sparkles size={13} style={{ color: "#F2A541", flexShrink: 0 }} />
+                <span>Want to visit {name}?</span>
+              </div>
+              <p style={{ fontSize: "0.75rem", color: "var(--muted)", margin: "0 0 6px", lineHeight: 1.35 }}>
+                Combine {name} into your custom tour route.
+              </p>
+              <Link
+                href="/tour-package#custom-builder"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  color: "var(--link)",
+                  textDecoration: "none",
+                }}
+              >
+                <span>Click here to design your trip</span>
+                <ArrowRight size={12} />
+              </Link>
+            </div>
           </aside>
         </div>
       </section>

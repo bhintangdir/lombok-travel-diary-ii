@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -14,8 +14,10 @@
   --color-line: #CDE7EF;
   --color-wa: #1FAF5A;
 
-  --font-serif: 'Fraunces', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 :root {
@@ -31,8 +33,10 @@
   --line: #CDE7EF;
   --wa: #1FAF5A;
 
-  --serif: 'Fraunces', Georgia, serif;
-  --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
 
   /* Backward-compatible aliases */
   --navy: #043A4B;
@@ -102,18 +106,32 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px;
 }
 
 section[id] {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 100px;
+}
+
+#gallery {
+  scroll-margin-top: 105px !important;
+}
+
+#surf-lessons {
+  scroll-margin-top: 105px !important;
+}
+
+#custom-builder {
+  scroll-margin-top: 105px !important;
 }
 
 body {
-  font-family: var(--sans);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--ink);
-  line-height: 1.65;
+  line-height: 1.6;
   background: #fff;
+  font-size: 15px;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -139,35 +157,55 @@ a {
 }
 
 section {
-  padding: 88px 0;
+  padding: 72px 0;
   position: relative;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--serif);
-  font-weight: 600;
-  line-height: 1.15;
+h1, h2, h3, h4, .font-serif, .font-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.25;
   color: var(--deep);
+  letter-spacing: -0.025em;
 }
 
+.font-sans, .font-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Headings matched to Gading Trans Lombok typography hierarchy */
 h1 {
-  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 h2 {
-  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
-  margin-bottom: 14px;
+  font-size: clamp(1.5rem, 2.5vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
 }
 
 h3 {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .lead {
   color: var(--muted);
   max-width: 640px;
-  font-size: 1.05rem;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  font-weight: 400;
 }
 
 .head {
@@ -398,50 +436,81 @@ header.site-header.solid .menu-links a {
    HERO SECTIONS
    ======================================================== */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: 120px 0 80px;
+  justify-content: center;
+  padding: 120px 0 70px;
   color: #fff;
+  text-align: center;
   background: linear-gradient(180deg, rgba(4, 58, 75, 0.55), rgba(4, 58, 75, 0.78)),
               url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=70') center/cover,
               linear-gradient(135deg, var(--sea), var(--deep));
 }
 
+.hero .wrap {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .hero.sm {
-  min-height: 58vh;
-  padding: 124px 0 84px;
+  min-height: 48vh;
+  padding: 110px 0 60px;
   position: relative;
+  display: block;
+  text-align: left;
   background: linear-gradient(180deg, rgba(4, 58, 75, 0.62), rgba(4, 58, 75, 0.82)),
               url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=70') center/cover,
               linear-gradient(135deg, var(--sea), var(--deep));
   color: #fff;
 }
 
+.hero.sm .wrap {
+  max-width: 1180px;
+  display: block;
+  align-items: flex-start;
+  text-align: left;
+}
+
 .hero h1 {
   color: #fff;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  max-width: 780px;
-  margin-bottom: 20px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+  max-width: 980px;
+  margin: 0 auto 20px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 .hero.sm h1 {
-  font-size: clamp(2.3rem, 5vw, 3.8rem);
-  margin-bottom: 12px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  max-width: 760px;
+  margin: 0 0 12px 0;
+  text-align: left;
 }
 
 .hero p {
-  font-size: 1.15rem;
-  max-width: 600px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  max-width: 780px;
   opacity: 0.95;
-  margin-bottom: 34px;
+  margin: 0 auto 32px;
+  line-height: 1.65;
 }
 
 .hero.sm p {
-  font-size: 1.12rem;
+  font-size: 0.96rem;
   max-width: 680px;
-  opacity: 0.95;
-  margin-bottom: 0;
+  opacity: 0.92;
+  margin: 0 0 16px 0;
+  text-align: left;
 }
 
 .hero .row,
@@ -449,16 +518,45 @@ header.site-header.solid .menu-links a {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero.sm .row,
+.hero.sm .btns {
+  justify-content: flex-start;
 }
 
 .crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
   font-size: 0.88rem;
-  opacity: 0.88;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 16px;
+}
+
+.crumb a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 .crumb a:hover {
   color: var(--sun);
+}
+
+.crumb .crumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+
+.crumb .crumb-active,
+.crumb span:last-child {
+  color: var(--sun);
+  font-weight: 600;
 }
 
 .facts {
@@ -565,30 +663,36 @@ header.site-header.solid .menu-links a {
 }
 
 /* ========================================================
-   FILTERS & CHIPS
+   FILTERS & CHIPS (Horizontal Scroll on Mobile)
    ======================================================== */
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .chip {
-  padding: 10px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
   border-radius: 999px;
   border: 1.5px solid var(--line);
   background: #fff;
-  font: 600 0.92rem var(--sans);
+  font: 600 0.88rem var(--sans);
   color: var(--deep);
   cursor: pointer;
-  transition: 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
 .chip:hover {
   border-color: var(--ocean);
   color: var(--ocean);
+  transform: translateY(-1px);
 }
 
 .chip[aria-pressed="true"],
@@ -596,6 +700,32 @@ header.site-header.solid .menu-links a {
   background: var(--ocean);
   border-color: var(--ocean);
   color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 157, 196, 0.25);
+}
+
+/* Horizontal scrollable on tablet & mobile */
+@media (max-width: 768px) {
+  .filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    padding: 8px 16px 14px;
+    margin: 0 -22px 18px;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .chip {
+    scroll-snap-align: start;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
 }
 
 .count {
@@ -996,7 +1126,7 @@ header.site-header.solid .menu-links a {
 
 .custom-box h2 {
   color: #fff;
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   margin-bottom: 10px;
 }
 
@@ -2749,7 +2879,7 @@ footer a:hover {
     -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid rgba(4, 58, 75, 0.08);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
     box-shadow: 0 -4px 20px rgba(4, 58, 75, 0.08);
     padding-bottom: env(safe-area-inset-bottom, 0px);

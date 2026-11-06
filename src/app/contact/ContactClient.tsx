@@ -81,12 +81,13 @@ export default function ContactClient() {
       >
         <div className="wrap">
           <div className="crumb">
-            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
-              Home
-            </Link>{" "}
-            / Contact
+            <Link href="/">Home</Link>
+            <span className="crumb-sep">/</span>
+            <span className="crumb-active">Contact</span>
           </div>
-          <h1>Let Us Plan Your Trip.</h1>
+          <h1>
+            Let Us Plan <span className="text-[#F2A541]">Your Trip.</span>
+          </h1>
           <p>The fastest way to reach us is WhatsApp. Prefer email or dropping by our office? We would love that too.</p>
         </div>
       </section>
@@ -139,7 +140,7 @@ export default function ContactClient() {
       <section style={{ paddingTop: "20px" }}>
         <div className="wrap split" style={{ alignItems: "start" }}>
           <form className="cform" onSubmit={handleSubmit}>
-            <h2 style={{ fontSize: "1.7rem" }}>Send an Enquiry</h2>
+            <h2>Send an Enquiry</h2>
             <p className="lead" style={{ marginBottom: "22px" }}>
               Fill this in and we will open WhatsApp with your message ready to send.
             </p>

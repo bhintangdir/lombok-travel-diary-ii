@@ -146,12 +146,13 @@ export default function TourPackageClient() {
       <section className="hero sm">
         <div className="wrap">
           <div className="crumb">
-            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
-              Home
-            </Link>{" "}
-            / Tour Package
+            <Link href="/">Home</Link>
+            <span className="crumb-sep">/</span>
+            <span className="crumb-active">Tour Package</span>
           </div>
-          <h1>Lombok Tour Packages &amp; Trekking</h1>
+          <h1>
+            Lombok Tour Packages &amp; <span className="text-[#F2A541]">Trekking</span>
+          </h1>
           <p>
             Private, handcrafted itineraries: Sembalun Ridge Trekking, 3 Gilis &amp; Secret Gilis Snorkeling, rainforest waterfalls, southern beaches, and Pertamina Mandalika Circuit tours.
           </p>

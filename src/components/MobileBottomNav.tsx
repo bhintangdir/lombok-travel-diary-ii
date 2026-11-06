@@ -12,7 +12,7 @@ import {
   Camera,
   Info,
   PhoneCall,
-  Car,
+  Waves,
   Plane,
   Sparkles,
 } from "lucide-react";
@@ -49,6 +49,7 @@ export default function MobileBottomNav() {
   const isHomeActive = pathname === "/";
   const isPackageActive = pathname.startsWith("/tour-package");
   const isDestActive = pathname.startsWith("/destination");
+  const isContactActive = pathname === "/contact";
 
   return (
     <>
@@ -90,7 +91,19 @@ export default function MobileBottomNav() {
           <span>Destination</span>
         </Link>
 
-        {/* Menu 4: More */}
+        {/* Menu 4: Contact */}
+        <Link
+          href="/contact"
+          className={`mob-nav-btn ${isContactActive ? "active" : ""}`}
+          aria-label="Contact Us"
+        >
+          <div className="mob-nav-ico">
+            <PhoneCall size={21} strokeWidth={isContactActive ? 2.5 : 2} />
+          </div>
+          <span>Contact</span>
+        </Link>
+
+        {/* Menu 5: More */}
         <button
           type="button"
           onClick={() => setMoreOpen(!moreOpen)}
@@ -191,16 +204,16 @@ export default function MobileBottomNav() {
               </Link>
 
               <Link
-                href="/#rental-transport"
+                href="/#surf-lessons"
                 className="mob-more-card"
                 onClick={(e) => {
                   setMoreOpen(false);
                   if (pathname === "/") {
                     e.preventDefault();
                     setTimeout(() => {
-                      const el = document.getElementById("rental-transport");
+                      const el = document.getElementById("surf-lessons");
                       if (el) {
-                        const top = el.getBoundingClientRect().top + window.scrollY - 85;
+                        const top = el.getBoundingClientRect().top + window.scrollY - 105;
                         window.scrollTo({ top, behavior: "smooth" });
                       }
                     }, 120);
@@ -208,11 +221,11 @@ export default function MobileBottomNav() {
                 }}
               >
                 <div className="mm-ico">
-                  <Car size={22} strokeWidth={2.2} />
+                  <Waves size={22} strokeWidth={2.2} />
                 </div>
                 <div>
-                  <b>Car &amp; Scooter Rental</b>
-                  <p>Enquire vehicles &amp; drivers on WhatsApp</p>
+                  <b>Surfing Lessons &amp; Camp</b>
+                  <p>Beginner to advanced coaching in Kuta Lombok</p>
                 </div>
               </Link>
 

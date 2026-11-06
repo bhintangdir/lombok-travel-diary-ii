@@ -123,12 +123,13 @@ export default function DestinationClient() {
       <section className="hero sm">
         <div className="wrap">
           <div className="crumb">
-            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
-              Home
-            </Link>{" "}
-            / Destination
+            <Link href="/">Home</Link>
+            <span className="crumb-sep">/</span>
+            <span className="crumb-active">Destination</span>
           </div>
-          <h1>Lombok Destinations &amp; Hidden Gems</h1>
+          <h1>
+            Lombok Destinations &amp; <span className="text-[#F2A541]">Hidden Gems</span>
+          </h1>
           <p>
             An inspiring directory of standalone destinations across Lombok — from world-famous landmarks to untouched hidden gems. Explore each spot individually, or combine them into your private tour package!
           </p>

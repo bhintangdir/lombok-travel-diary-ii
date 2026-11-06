@@ -23,12 +23,13 @@ export default function AboutClient() {
       >
         <div className="wrap">
           <div className="crumb">
-            <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }}>
-              Home
-            </Link>{" "}
-            / About
+            <Link href="/">Home</Link>
+            <span className="crumb-sep">/</span>
+            <span className="crumb-active">About</span>
           </div>
-          <h1>Local Team, Island Heart.</h1>
+          <h1>
+            Local Team, <span className="text-[#F2A541]">Island Heart.</span>
+          </h1>
           <p>
             We are Lombok Travel Diary — dedicated to helping you experience the raw beauty and warm spirit of Lombok Island, honestly and unhurriedly.
           </p>
