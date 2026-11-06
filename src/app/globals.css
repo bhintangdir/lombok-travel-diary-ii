@@ -126,7 +126,7 @@ section[id] {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
   color: var(--ink);
   line-height: 1.6;
   background: #fff;
@@ -161,8 +161,8 @@ section {
   position: relative;
 }
 
-h1, h2, h3, h4, .font-serif, .font-heading {
-  font-family: 'Playfair Display', Georgia, serif;
+h1, h2, h3, h4, h5, h6, .font-serif, .font-heading {
+  font-family: 'Playfair Display', Georgia, serif !important;
   font-weight: 700;
   line-height: 1.25;
   color: var(--deep);
@@ -170,7 +170,7 @@ h1, h2, h3, h4, .font-serif, .font-heading {
 }
 
 .font-sans, .font-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
 }
 
 /* Headings matched to Gading Trans Lombok typography hierarchy */
@@ -236,7 +236,7 @@ h4 {
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
   text-decoration: none;
-  font-family: var(--sans);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
   box-shadow: none;
 }
 
@@ -486,7 +486,7 @@ header.site-header.solid .menu-links a {
 
 .hero h1 {
   color: #fff;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif !important;
   font-weight: 700;
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   max-width: 1020px;
@@ -504,7 +504,7 @@ header.site-header.solid .menu-links a {
 }
 
 .hero p {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
   font-size: 1.1rem;
   font-weight: 400;
   max-width: 820px;
@@ -578,7 +578,7 @@ header.site-header.solid .menu-links a {
 }
 
 .facts b {
-  font-family: var(--serif);
+  font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 1.5rem;
   display: block;
   font-weight: 600;
@@ -689,7 +689,7 @@ header.site-header.solid .menu-links a {
   border-radius: 999px;
   border: 1.5px solid var(--line);
   background: #fff;
-  font: 600 0.88rem var(--sans);
+  font: 600 0.88rem 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--deep);
   cursor: pointer;
   white-space: nowrap;
@@ -822,7 +822,21 @@ header.site-header.solid .menu-links a {
   display: block;
 }
 
-.tc p.d {
+.tc h3 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .tc h3 a {
+    color: var(--deep);
+    text-decoration: none;
+  }
+
+  .tc p.d {
   color: var(--muted);
   font-size: 0.93rem;
   margin-bottom: 18px;
@@ -830,7 +844,7 @@ header.site-header.solid .menu-links a {
 }
 
 .tc h4 {
-  font-family: var(--sans);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--deep);
@@ -893,7 +907,7 @@ header.site-header.solid .menu-links a {
 }
 
 .from b {
-  font-family: var(--serif);
+  font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 1.4rem;
   color: var(--deep);
 }
@@ -994,7 +1008,7 @@ header.site-header.solid .menu-links a {
 }
 
 .dcard .d-cat {
-  font-family: var(--sans);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1312,7 +1326,7 @@ header.site-header.solid .menu-links a {
   font-size: 1.15rem;
   color: #fff;
   margin-bottom: 6px;
-  font-family: var(--serif);
+  font-family: 'Playfair Display', Georgia, serif !important;
 }
 
 .c-res-txt p {
@@ -1566,7 +1580,7 @@ header.site-header.solid .menu-links a {
   display: block;
   color: var(--deep);
   margin-bottom: 2px;
-  font-family: var(--sans);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
   font-size: 1.05rem;
 }
 .cc p {
@@ -1628,7 +1642,7 @@ header.site-header.solid .menu-links a {
 
 .sc.custom .gold-sub {
   display: block;
-  font-family: var(--sans);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -1775,7 +1789,7 @@ svg.wa-icon,
 }
 
 .quote p {
-  font-family: var(--serif);
+  font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 1.12rem;
   color: var(--deep);
   margin-bottom: 14px;
@@ -2368,7 +2382,7 @@ svg.wa-icon,
 }
 
 .side .pp {
-  font-family: var(--serif);
+  font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 2.2rem;
   color: var(--deep);
   line-height: 1.1;
@@ -2746,7 +2760,7 @@ footer {
 
 footer h4 {
   color: #fff;
-  font-family: var(--serif);
+  font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 1.05rem;
   margin-bottom: 14px;
   font-weight: 600;
@@ -2992,7 +3006,7 @@ footer a:hover {
     font-size: 1.12rem;
     color: var(--deep);
     margin: 0;
-    font-family: var(--serif);
+    font-family: 'Playfair Display', Georgia, serif !important;
     font-weight: 700;
   }
 

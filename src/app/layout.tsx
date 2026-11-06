@@ -75,7 +75,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="font-sans antialiased">
         <ContentProvider>
           <Navbar />
           {children}
