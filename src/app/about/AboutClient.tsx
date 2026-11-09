@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Compass, Check, ShieldCheck, HeartHandshake } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
 
@@ -39,15 +40,9 @@ export default function AboutClient() {
       {/* 2. STORY SPLIT */}
       <section>
         <div className="wrap split">
-          <div
-            className="photo"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=70')",
-            }}
-            role="img"
-            aria-label="Peaceful Lombok beach"
-          />
+            <div className="photo" role="img" aria-label="Peaceful Lombok beach">
+              <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=70" alt="Peaceful Lombok beach" fill sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" className="object-cover" />
+            </div>
           <div>
             <h2>Our Story</h2>
             <p>

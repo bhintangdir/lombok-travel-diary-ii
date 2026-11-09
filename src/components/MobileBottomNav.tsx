@@ -150,7 +150,19 @@ export default function MobileBottomNav() {
               <Link
                 href="/#gallery"
                 className="mob-more-card"
-                onClick={() => setMoreOpen(false)}
+                onClick={(e) => {
+                  setMoreOpen(false);
+                  if (pathname === "/") {
+                    e.preventDefault();
+                    setTimeout(() => {
+                      const el = document.getElementById("gallery");
+                      if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }
+                    }, 120);
+                  }
+                }}
               >
                 <div className="mm-ico">
                   <Camera size={22} strokeWidth={2.2} />
@@ -175,24 +187,23 @@ export default function MobileBottomNav() {
                 </div>
               </Link>
 
-              <Link
-                href="/contact"
-                className="mob-more-card"
-                onClick={() => setMoreOpen(false)}
-              >
-                <div className="mm-ico">
-                  <PhoneCall size={22} strokeWidth={2.2} />
-                </div>
-                <div>
-                  <b>Contact &amp; Office</b>
-                  <p>Direct WhatsApp, email &amp; office map</p>
-                </div>
-              </Link>
 
               <Link
                 href="/tour-package#custom-builder"
                 className="mob-more-card highlight"
-                onClick={() => setMoreOpen(false)}
+                onClick={(e) => {
+                  setMoreOpen(false);
+                  if (pathname === "/tour-package") {
+                    e.preventDefault();
+                    setTimeout(() => {
+                      const el = document.getElementById("custom-builder");
+                      if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - 220;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }
+                    }, 120);
+                  }
+                }}
               >
                 <div className="mm-ico gold">
                   <Sparkles size={22} strokeWidth={2.2} />
@@ -213,7 +224,7 @@ export default function MobileBottomNav() {
                     setTimeout(() => {
                       const el = document.getElementById("surf-lessons");
                       if (el) {
-                        const top = el.getBoundingClientRect().top + window.scrollY - 105;
+                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
                         window.scrollTo({ top, behavior: "smooth" });
                       }
                     }, 120);
@@ -232,7 +243,19 @@ export default function MobileBottomNav() {
               <Link
                 href="/#our-services"
                 className="mob-more-card"
-                onClick={() => setMoreOpen(false)}
+                onClick={(e) => {
+                  setMoreOpen(false);
+                  if (pathname === "/") {
+                    e.preventDefault();
+                    setTimeout(() => {
+                      const el = document.getElementById("our-services");
+                      if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }
+                    }, 120);
+                  }
+                }}
               >
                 <div className="mm-ico">
                   <Plane size={22} strokeWidth={2.2} />

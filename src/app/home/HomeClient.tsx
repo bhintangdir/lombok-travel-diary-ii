@@ -2,6 +2,8 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import TripAdvisorLogo from "@/components/TripAdvisorLogo";
 import {
   MessageCircle,
   Users,
@@ -93,7 +95,7 @@ const galleryMoments: GalleryMoment[] = [
     title: "Savana Dandaun Highland",
     subtitle: "Secluded highland campsite & gentle hills",
     location: "Sembalun Valley, East Lombok",
-    imageUrl: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=75",
+    imageUrl: "/bukit-dandaun.png",
     description: "Nestled within an ancient volcanic crater amphitheater, Savana Dandaun is an untouched sanctuary of rolling green grasslands, grazing mountain cows, and whispering pine hills. A peaceful alternative to crowded summits, offering gentle family-friendly trails.",
     highlights: [
       "Untouched grassy caldera away from crowded summit routes",
@@ -103,7 +105,7 @@ const galleryMoments: GalleryMoment[] = [
     relatedTour: {
       name: "Camping Savana Dandaun Hill (2D1N)",
       slug: "camping-savana-dandaun",
-      imageUrl: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=70",
+      imageUrl: "/bukit-dandaun.png",
       category: "Sembalun Trekking",
       duration: "2 Days 1 Night",
       tagline: "Secluded 2D1N camp with full gear, porters, campfire meals & private hotel transfers.",
@@ -219,6 +221,21 @@ export default function HomeClient() {
     };
   }, [activeMoment]);
 
+  // Handle initial hash scroll with appropriate offset if loaded directly with #hash
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const hash = window.location.hash.replace("#", "");
+      const timer = setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 190;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   const phone = content.contact?.phone || "+62 851-3893-9835";
   const waNumber = content.contact?.whatsapp || "6285138939835";
   const defMsg = "Hello Lombok Travel Diary! I would like to plan a trip to Lombok. Travel dates: ___ Number of guests: ___";
@@ -260,7 +277,7 @@ export default function HomeClient() {
       </section>
 
       {/* 2. SERVICES SECTION */}
-      <section className="osvc" id="our-services" style={{ scrollMarginTop: "100px" }}>
+      <section className="osvc" id="our-services">
         <div className="wrap">
           <div className="head c">
             <h2>Our Travel Services</h2>
@@ -269,17 +286,88 @@ export default function HomeClient() {
             </p>
           </div>
           <div className="grid g4">
-            {/* 1. Transport */}
+            {/* 1. Nature & Snorkeling */}
             <div className="sc sc-service">
-              <div
-                className="sc-bg-img"
-                style={{ backgroundImage: "url('/airport-pickup.jpg')" }}
-                aria-hidden="true"
-              />
+              <div className="sc-bg-img" aria-hidden="true">
+                <Image
+                  src="/tour-3-gili-trawangan-air-and-meno.jpg"
+                  alt="Island Hopping and Snorkeling"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="sc-overlay" aria-hidden="true" />
+              <div className="sc-content">
+                <h3>Island Hopping &amp; Snorkeling</h3>
+                <p>Private boats to 3 Gilis, Secret Gilis &amp; hidden waterfalls.</p>
+                <Link className="more" href="/tour-package?c=nature">
+                  Explore snorkeling tours →
+                </Link>
+              </div>
+            </div>
+
+            {/* 2. Trekking */}
+            <div className="sc sc-service">
+              <div className="sc-bg-img" aria-hidden="true">
+                <Image
+                  src="/bukit-pergasingan-sembalun.jpg"
+                  alt="Sembalun Trekking"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="sc-overlay" aria-hidden="true" />
+              <div className="sc-content">
+                <h3>Sembalun Trekking</h3>
+                <p>Sunrise camping on Pergasingan &amp; Dandaun with gear &amp; porters.</p>
+                <Link className="more" href="/tour-package?c=trek">
+                  View trekking tours →
+                </Link>
+              </div>
+            </div>
+
+            {/* 3. Fishing Trip */}
+            <div className="sc sc-service">
+              <div className="sc-bg-img" aria-hidden="true">
+                <Image
+                  src="/mancing-spot-pelangan.jpg"
+                  alt="Lombok Fishing Expeditions"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="sc-overlay" aria-hidden="true" />
+              <div className="sc-content">
+                <h3>Lombok Fishing Expeditions</h3>
+                <p>Offshore charters in Pelangan &amp; Teluk Sepi with full gear.</p>
+                <Link className="more" href="/tour-package?c=fishing">
+                  Explore fishing trips →
+                </Link>
+              </div>
+            </div>
+
+            {/* 4. Transport */}
+            <div className="sc sc-service">
+              <div className="sc-bg-img" aria-hidden="true">
+                <Image
+                  src="/airport-pickup.jpg"
+                  alt="Private Transport Lombok"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="sc-overlay" aria-hidden="true" />
               <div className="sc-content">
                 <h3>Private Transport</h3>
-                <p>Punctual airport &amp; harbor transfers, private AC car rental with local drivers, and scooter rentals.</p>
+                <p>Airport transfers, private AC car with driver &amp; scooters.</p>
                 <a
                   className="more"
                   href={waUrl("Hello Lombok Travel Diary! I would like to enquire about private car rental with driver or airport transfer.")}
@@ -290,72 +378,26 @@ export default function HomeClient() {
                 </a>
               </div>
             </div>
-
-            {/* 2. Nature & Snorkeling */}
-            <div className="sc sc-service">
-              <div
-                className="sc-bg-img"
-                style={{ backgroundImage: "url('/tour-3-gili-trawangan-air-and-meno.jpg')" }}
-                aria-hidden="true"
-              />
-              <div className="sc-overlay" aria-hidden="true" />
-              <div className="sc-content">
-                <h3>Island Hopping &amp; Snorkeling</h3>
-                <p>Private speedboats to 3 Gilis with GoPro, secluded Secret Gilis of Sekotong, and jungle waterfalls.</p>
-                <Link className="more" href="/tour-package?c=nature">
-                  Explore snorkeling tours →
-                </Link>
-              </div>
-            </div>
-
-            {/* 3. Trekking */}
-            <div className="sc sc-service">
-              <div
-                className="sc-bg-img"
-                style={{ backgroundImage: "url('/bukit-pergasingan-sembalun.jpg')" }}
-                aria-hidden="true"
-              />
-              <div className="sc-overlay" aria-hidden="true" />
-              <div className="sc-content">
-                <h3>Sembalun Trekking</h3>
-                <p>Pergasingan Hill, Savana Dandaun, Anak Dara &amp; Kondo sunrise hikes with full camping gear &amp; porters.</p>
-                <Link className="more" href="/tour-package?c=trek">
-                  View trekking tours →
-                </Link>
-              </div>
-            </div>
-
-            {/* 4. Fishing Trip */}
-            <div className="sc sc-service">
-              <div
-                className="sc-bg-img"
-                style={{ backgroundImage: "url('/mancing-spot-pelangan.jpg')" }}
-                aria-hidden="true"
-              />
-              <div className="sc-overlay" aria-hidden="true" />
-              <div className="sc-content">
-                <h3>Lombok Fishing Expeditions</h3>
-                <p>Coastal and deep-sea charters in Pelangan, Teluk Sepi &amp; Ampenan with boat, fishing gear &amp; captain.</p>
-                <Link className="more" href="/tour-package?c=fishing">
-                  Explore fishing trips →
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Custom Trip Banner (No Icon, Panorama Card) */}
           <div className="sc custom">
-            <div
-              className="sc-bg-img"
-              style={{ backgroundImage: "url('/custom-trip.jpg')" }}
-              aria-hidden="true"
-            />
+            <div className="sc-bg-img" aria-hidden="true">
+              <Image
+                src="/custom-trip.jpg"
+                alt="Custom Lombok Trips"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
             <div className="sc-overlay-custom" aria-hidden="true" />
             <div className="txt">
-              <span className="gold-sub">TAILOR-MADE PRIVATE EXPEDITIONS</span>
-              <h3>Custom Lombok Trips (Design Your Own Itinerary)</h3>
+              <span className="gold-sub">CUSTOM PRIVATE TRIP</span>
+              <h3>Custom Lombok Trip Planner</h3>
               <p>
-                Want to combine Sembalun ridge camping, Secret Gili snorkeling, hidden gems like Semeti Beach &amp; Tanjung Bloam, Mandalika trackday, or offshore fishing? Build your dream route with our interactive Custom Trip Planner and get an instant quote on WhatsApp.
+                Design your private Lombok route &amp; get an instant WhatsApp quote.
               </p>
             </div>
             <Link className="btn btn-sun" href="/tour-package#custom-builder">
@@ -366,7 +408,7 @@ export default function HomeClient() {
       </section>
 
       {/* 3. RECOMMENDED TOURS SECTION */}
-      <section className="tours" id="tours" style={{ scrollMarginTop: "100px" }}>
+      <section className="tours" id="tours">
         <div className="wrap">
           <div className="head c">
             <h2>Most Popular Tour Packages</h2>
@@ -375,12 +417,16 @@ export default function HomeClient() {
           <div className="grid g3">
             {/* Card 1 */}
             <article className="card">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=70"
+                  alt="Camping Pergasingan Hill Sembalun"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="body">
                 <div className="meta"><span>2D1N</span><span>Sembalun Trekking</span></div>
                 <h3>Camping Pergasingan Hill</h3>
@@ -391,12 +437,16 @@ export default function HomeClient() {
 
             {/* Card 2 */}
             <article className="card">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=70"
+                  alt="Snorkeling 3 Gilis Lombok"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="body">
                 <div className="meta"><span>Full Day</span><span>Snorkeling &amp; Reef</span></div>
                 <h3>Snorkeling 3 (Three) Gilis</h3>
@@ -407,12 +457,16 @@ export default function HomeClient() {
 
             {/* Card 3 */}
             <article className="card">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="/bukit-dandaun.png"
+                  alt="Camping Savana Dandaun Sembalun"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="body">
                 <div className="meta"><span>2D1N</span><span>Hidden Gem Trek</span></div>
                 <h3>Camping Savana Dandaun</h3>
@@ -423,12 +477,16 @@ export default function HomeClient() {
 
             {/* Card 4 */}
             <article className="card">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=70"
+                  alt="Snorkeling Secret Gilis Sekotong"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="body">
                 <div className="meta"><span>Full Day</span><span>Secret Island Sanctuary</span></div>
                 <h3>Snorkeling Secret Gilis</h3>
@@ -439,12 +497,16 @@ export default function HomeClient() {
 
             {/* Card 5 */}
             <article className="card">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=70"
+                  alt="North Lombok Waterfalls Tiu Kelep"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="body">
                 <div className="meta"><span>Full Day</span><span>Rainforest Waterfalls</span></div>
                 <h3>North Lombok Waterfalls (Tiu Kelep)</h3>
@@ -455,12 +517,16 @@ export default function HomeClient() {
 
             {/* Card 6 */}
             <article className="card">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=70"
+                  alt="Mandalika Circuit Tour and Trackday"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="body">
                 <div className="meta"><span>Half/Full Day</span><span>Motorsport &amp; Coast</span></div>
                 <h3>Mandalika Circuit Tour &amp; Trackday</h3>
@@ -483,18 +549,16 @@ export default function HomeClient() {
         style={{
           background: "linear-gradient(180deg, #F0F9FB 0%, #FFFFFF 100%)",
           padding: "85px 0 95px",
-          scrollMarginTop: "105px",
         }}
       >
         <div className="wrap">
           <div className="head c">
-            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--ocean)", textTransform: "uppercase", letterSpacing: "1.2px", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "8px" }}>
-              <Waves size={16} strokeWidth={2.4} />
+            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--ocean)", textTransform: "uppercase", letterSpacing: "1.2px", display: "inline-block", marginBottom: "8px" }}>
               Ride Lombok&apos;s World-Class Waves
             </span>
             <h2>Lombok Surfing Lessons &amp; Coaching</h2>
             <p className="lead" style={{ maxWidth: "660px", margin: "8px auto 0" }}>
-              Learn to surf in the warm, crystal-clear tropical waters of South Lombok. From total first-timers standing on their first wave to intermediate surfers hunting point breaks, our ISA-certified local instructors ensure a fun, safe, and unforgettable experience.
+              Learn to surf in warm tropical waters with ISA-certified local coaches. Fun, safe, and flexible sessions for beginners to reef riders.
             </p>
           </div>
 
@@ -507,7 +571,7 @@ export default function HomeClient() {
                 </div>
                 <h3>Beginner Surf Lesson</h3>
                 <p style={{ color: "var(--muted)", fontSize: "0.94rem", lineHeight: 1.6, marginBottom: "20px" }}>
-                  Held at the gentle sandy breaks of Selong Belanak Beach or inside Gerupuk Bay. Perfect for beginners, families, and kids. Includes 2 hours of private coaching, board rental, rash vest, and surf photos.
+                  Gentle sandy breaks at Selong Belanak or Gerupuk Bay. Includes 2 hours of private coaching, softboard, rash vest &amp; photos.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px" }}>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
@@ -544,7 +608,7 @@ export default function HomeClient() {
                 </div>
                 <h3>Surf Guiding &amp; Boat Trips</h3>
                 <p style={{ color: "var(--muted)", fontSize: "0.94rem", lineHeight: 1.6, marginBottom: "20px" }}>
-                  For progressing and intermediate surfers wanting to score the best reef breaks across Lombok (Don-Don, Inside Gerupuk, Outside Ekas, Tanjung Aan, Mawi). Includes local surf boat charter and tidal wave analysis.
+                  Score Lombok&apos;s best reef breaks with local boat charters, tide analysis, and dedicated in-water wave coaching.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "10px" }}>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.88rem", color: "var(--deep)", fontWeight: 500 }}>
@@ -579,14 +643,16 @@ export default function HomeClient() {
       {/* 4. ABOUT STORY SECTION */}
       <section id="about">
         <div className="wrap split">
-          <div
-            className="photo"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1000&q=70')",
-            }}
-            role="img"
-            aria-label="Traveller enjoying scenic Lombok view"
-          />
+          <div className="photo">
+            <Image
+              src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1000&q=70"
+              alt="Traveller enjoying scenic Lombok view"
+              fill
+              sizes="(max-width: 900px) 100vw, 50vw"
+              className="object-cover"
+              loading="lazy"
+            />
+          </div>
           <div>
             <h2>Born on Lombok, Dedicated to Mindful Explorers.</h2>
             <p>
@@ -655,12 +721,16 @@ export default function HomeClient() {
           </div>
           <div className="grid g4">
             <Link className="dest" href="/destination/savana-dandaun">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="/bukit-dandaun.png"
+                  alt="Savana Dandaun Sembalun"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div>
                 <span className="gem-pill">
                   <Gem size={12} strokeWidth={2.4} style={{ display: "inline-block", marginRight: "4px", verticalAlign: "-1px" }} />
@@ -672,12 +742,16 @@ export default function HomeClient() {
             </Link>
 
             <Link className="dest" href="/destination/secret-gili-sekotong">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=70"
+                  alt="Secret Gilis Sekotong"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div>
                 <span className="gem-pill">
                   <Gem size={12} strokeWidth={2.4} style={{ display: "inline-block", marginRight: "4px", verticalAlign: "-1px" }} />
@@ -689,12 +763,16 @@ export default function HomeClient() {
             </Link>
 
             <Link className="dest" href="/destination/pergasingan-hill">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=70"
+                  alt="Pergasingan Hill Sembalun"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div>
                 <h3>Pergasingan Hill</h3>
                 <p>Patchwork farmlands &amp; Rinjani sunrise vista</p>
@@ -702,12 +780,16 @@ export default function HomeClient() {
             </Link>
 
             <Link className="dest" href="/destination/pertamina-mandalika-circuit">
-              <div
-                className="img"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=70')",
-                }}
-              />
+              <div className="img">
+                <Image
+                  src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=70"
+                  alt="Pertamina Mandalika International Circuit"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div>
                 <h3>Mandalika Circuit</h3>
                 <p>World-class MotoGP circuit &amp; trackday</p>
@@ -716,7 +798,7 @@ export default function HomeClient() {
           </div>
           <div className="center" style={{ marginTop: "32px" }}>
             <Link className="btn btn-primary" href="/destination">
-              View All Destinations &amp; Hidden Gems →
+              View All Destinations →
             </Link>
           </div>
         </div>
@@ -779,20 +861,8 @@ export default function HomeClient() {
                 marginBottom: "16px",
               }}
             >
-              {/* Official TripAdvisor Icon */}
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Tripadvisor">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#00AA6C" />
-                <path d="M12 8.2C10.7 6.8 8.6 6.4 6.7 6.8C4.8 7.2 3.6 8.7 3.6 10.1C3.6 12.2 5.5 13.9 7.8 13.9C9.4 13.9 10.7 13.1 11.4 11.9L12 12.7L12.6 11.9C13.3 13.1 14.6 13.9 16.2 13.9C18.5 13.9 20.4 12.2 20.4 10.1C20.4 8.7 19.2 7.2 17.3 6.8C15.4 6.4 13.3 6.8 12 8.2Z" fill="#FFFFFF" />
-                <circle cx="7.8" cy="10.1" r="2.3" fill="#00AA6C" />
-                <circle cx="16.2" cy="10.1" r="2.3" fill="#00AA6C" />
-                <circle cx="7.8" cy="10.1" r="1.1" fill="#FFFFFF" />
-                <circle cx="16.2" cy="10.1" r="1.1" fill="#FFFFFF" />
-                <circle cx="7.8" cy="10.1" r="0.4" fill="#000000" />
-                <circle cx="16.2" cy="10.1" r="0.4" fill="#000000" />
-                <path d="M12 8.2L10.5 9.5H13.5L12 8.2Z" fill="#E8553D" />
-              </svg>
+              <TripAdvisorLogo width={140} height={30} aria-label="Tripadvisor" />
               <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ fontWeight: 800, fontSize: "0.9rem", color: "#004f32", letterSpacing: "0.02em" }}>Tripadvisor</span>
                 <div style={{ display: "flex", gap: "3px" }}>
                   {[...Array(5)].map((_, i) => (
                     <span
@@ -835,9 +905,12 @@ export default function HomeClient() {
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: "0.74rem", fontWeight: 700, color: "#00aa6c", background: "rgba(0, 170, 108, 0.1)", padding: "3px 8px", borderRadius: "6px" }}>
-                  Verified Review
-                </span>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <TripAdvisorLogo width={76} height={16} aria-label="Tripadvisor" />
+                  <span style={{ fontSize: "0.74rem", fontWeight: 700, color: "#00aa6c", background: "rgba(0, 170, 108, 0.1)", padding: "3px 8px", borderRadius: "6px" }}>
+                    Verified
+                  </span>
+                </div>
               </div>
               <h4 style={{ fontSize: "1.02rem", color: "var(--deep)", marginBottom: "8px", fontWeight: 700 }}>
                 &ldquo;Pure magic in Sembalun!&rdquo;
@@ -867,9 +940,12 @@ export default function HomeClient() {
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: "0.74rem", fontWeight: 700, color: "#00aa6c", background: "rgba(0, 170, 108, 0.1)", padding: "3px 8px", borderRadius: "6px" }}>
-                  Verified Review
-                </span>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <TripAdvisorLogo width={76} height={16} aria-label="Tripadvisor" />
+                  <span style={{ fontSize: "0.74rem", fontWeight: 700, color: "#00aa6c", background: "rgba(0, 170, 108, 0.1)", padding: "3px 8px", borderRadius: "6px" }}>
+                    Verified
+                  </span>
+                </div>
               </div>
               <h4 style={{ fontSize: "1.02rem", color: "var(--deep)", marginBottom: "8px", fontWeight: 700 }}>
                 &ldquo;Secret Gilis without the crowds&rdquo;
@@ -899,9 +975,12 @@ export default function HomeClient() {
                     />
                   ))}
                 </div>
-                <span style={{ fontSize: "0.74rem", fontWeight: 700, color: "#00aa6c", background: "rgba(0, 170, 108, 0.1)", padding: "3px 8px", borderRadius: "6px" }}>
-                  Verified Review
-                </span>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <TripAdvisorLogo width={76} height={16} aria-label="Tripadvisor" />
+                  <span style={{ fontSize: "0.74rem", fontWeight: 700, color: "#00aa6c", background: "rgba(0, 170, 108, 0.1)", padding: "3px 8px", borderRadius: "6px" }}>
+                    Verified
+                  </span>
+                </div>
               </div>
               <h4 style={{ fontSize: "1.02rem", color: "var(--deep)", marginBottom: "8px", fontWeight: 700 }}>
                 &ldquo;Exceptional Mandalika &amp; Beach day&rdquo;
@@ -924,7 +1003,6 @@ export default function HomeClient() {
         style={{
           background: "var(--mist)",
           position: "relative",
-          scrollMarginTop: "105px",
         }}
       >
         <div className="wrap">
@@ -964,12 +1042,15 @@ export default function HomeClient() {
                   title="Click to view details and related tour"
                   style={{ cursor: "pointer" }}
                 >
-                  <div
-                    className="img"
-                    style={{ backgroundImage: `url('${item.imageUrl}')` }}
-                    role="img"
-                    aria-label={item.title}
-                  >
+                  <div className="img" role="img" aria-label={item.title}>
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 85vw, 400px"
+                      className="object-cover"
+                      loading="lazy"
+                    />
                     <span className="slide-zoom-pill">
                       <ZoomIn size={13} strokeWidth={2.4} />
                       Click to view
@@ -1020,10 +1101,16 @@ export default function HomeClient() {
             </button>
 
             {/* Modal Image */}
-            <div
-              className="gallery-modal-img"
-              style={{ backgroundImage: `url('${activeMoment.imageUrl}')` }}
-            />
+            <div className="gallery-modal-img">
+              <Image
+                src={activeMoment.imageUrl}
+                alt={activeMoment.title}
+                fill
+                sizes="(max-width: 900px) 100vw, 860px"
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
 
             {/* Modal Content */}
             <div className="gallery-modal-body">
@@ -1036,10 +1123,16 @@ export default function HomeClient() {
               <div className="gallery-featured-card">
                 <span className="gfc-eyebrow">Featured in Tour Package:</span>
                 <div className="gfc-body">
-                  <div
-                    className="gfc-thumb"
-                    style={{ backgroundImage: `url('${activeMoment.relatedTour.imageUrl}')` }}
-                  />
+                  <div className="gfc-thumb">
+                    <Image
+                      src={activeMoment.relatedTour.imageUrl}
+                      alt={activeMoment.relatedTour.name}
+                      fill
+                      sizes="120px"
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="gfc-details">
                     <div className="gfc-badges">
                       <span className="gfc-badge-cat">{activeMoment.relatedTour.category}</span>
@@ -1072,6 +1165,53 @@ export default function HomeClient() {
           </div>
         </div>
       )}
+
+            {/* FAQ SECTION */}
+      <section style={{ background: "#f8fafc", padding: "80px 0" }}>
+        <div className="wrap">
+          <div className="head c">
+            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--sea)", textTransform: "uppercase", letterSpacing: "1.2px", display: "inline-block", marginBottom: "8px" }}>
+              Frequently Asked Questions
+            </span>
+            <h2>Common Questions Before Travelling</h2>
+            <p className="lead" style={{ maxWidth: "600px", margin: "6px auto 0" }}>
+              Helpful answers regarding our private tour service, booking process, and flexible island itineraries.
+            </p>
+          </div>
+          <div className="faq">
+            <details>
+              <summary>How do I book a private tour or transfer?</summary>
+              <p>
+                Simply tap any WhatsApp button across our site to message our local team directly. Share your travel dates, group size, and preferred destinations, and we will send a clear itinerary and transparent quote.
+              </p>
+            </details>
+            <details>
+              <summary>Are all tours 100% private?</summary>
+              <p>
+                Yes! Every trip is private exclusively for you, your partner, family, or friends. You will never share a vehicle or boat with strangers, giving you complete freedom to set your own pace.
+              </p>
+            </details>
+            <details>
+              <summary>Do you offer hotel, airport, and harbor pickups?</summary>
+              <p>
+                Yes. Door-to-door hotel pickup across Lombok (Kuta, Mataram, Senggigi, Selong Belanak) is included in all tour packages. We also provide punctual transfers to and from Lombok International Airport (LOP) and all fast boat harbors (Bangsal, Lembar, Teluk Nara).
+              </p>
+            </details>
+            <details>
+              <summary>Can I customize or adjust my itinerary on the day?</summary>
+              <p>
+                Absolutely! Our friendly local drivers and licensed guides are flexible. You can linger longer at a scenic sunset spot, stop for lunch at an authentic local warung, or adjust stops along the way.
+              </p>
+            </details>
+            <details>
+              <summary>What is the payment method?</summary>
+              <p>
+                A small deposit confirms your travel date, and the remaining balance can be settled conveniently via bank transfer or cash in Indonesian Rupiah on the day of your trip.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
 
       {/* 10. CTA SECTION */}
       <section className="cta">

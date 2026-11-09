@@ -49,14 +49,25 @@ export default function Navbar() {
               link.path === "/"
                 ? pathname === "/"
                 : link.path === "/#gallery"
-                ? pathname === "/" && typeof window !== "undefined" && window.location.hash === "#gallery"
-                : pathname.startsWith(link.path);
+                ? false
+                : pathname === link.path || pathname.startsWith(link.path + "/");
 
             return (
               <li key={idx}>
                 <Link
                   href={link.path}
                   className={isActive ? "on" : ""}
+                  aria-current={isActive ? "page" : undefined}
+                  onClick={(e) => {
+                    if (link.path === "/#gallery" && pathname === "/") {
+                      e.preventDefault();
+                      const el = document.getElementById("gallery");
+                      if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }
+                    }
+                  }}
                 >
                   {link.name}
                 </Link>

@@ -1339,7 +1339,7 @@
         "height_class": "l",
         "bg_gradient": "linear-gradient(160deg,#2FA36B,#F7C548)",
         "bg_image": "/savana-dandaun.jpg",
-        "image": "/savana-dandaun.jpg",
+        "image": "/bukit-dandaun.png",
         "badge": "Hidden Gem ✨",
         "best_time": "May – October",
         "ideal_duration": "1 – 2 Days",
@@ -1821,11 +1821,6 @@
         "Snorkel gear & life vests",
         "Bottled water"
       ],
-      "exclusions": [
-        "Personal expenses",
-        "Island bicycle rental",
-        "Lunch on the island"
-      ],
       "what_to_bring": [
         "Swimwear & towel",
         "Reef-safe sunscreen",
@@ -1875,10 +1870,6 @@
         "Snorkel gear & life jackets",
         "Fish food & mineral water"
       ],
-      "exclusions": [
-        "Grilled fish lunch (payable at warung)",
-        "Personal expenses"
-      ],
       "what_to_bring": [
         "Swimwear & change of clothes",
         "Sunglasses & sun hat",
@@ -1921,10 +1912,6 @@
         "Petrol & parking at all beaches",
         "All beach & hill entrance fees",
         "Chilled bottled water"
-      ],
-      "exclusions": [
-        "Lunch & fresh coconuts",
-        "Surfboard hire (optional)"
       ],
       "what_to_bring": [
         "Swimwear & dry clothes",
@@ -1969,10 +1956,6 @@
         "Local Sade resident guide",
         "Mineral water"
       ],
-      "exclusions": [
-        "Costume photo tip (optional)",
-        "Lunch & personal shopping"
-      ],
       "what_to_bring": [
         "Casual modest clothing",
         "Camera or phone",
@@ -2015,10 +1998,6 @@
         "Waterfall entrance tickets",
         "Local forest guide",
         "Chilled mineral water"
-      ],
-      "exclusions": [
-        "Lunch & personal expenses",
-        "Local motorcycle taxi inside park (optional)"
       ],
       "what_to_bring": [
         "Swimwear & dry clothes",
@@ -2063,10 +2042,6 @@
         "Experienced local Senaru guide",
         "Mineral water"
       ],
-      "exclusions": [
-        "Lunch",
-        "Personal expenses"
-      ],
       "what_to_bring": [
         "Strap-on water sandals or grip shoes",
         "Swimwear, change of clothes & towel",
@@ -2110,11 +2085,6 @@
         "Chilled bottled mineral water",
         "Hotel pickup & drop-off"
       ],
-      "exclusions": [
-        "Bukit Selong viewpoint ticket (approx IDR 15k)",
-        "Fresh strawberry weighing by kilo",
-        "Lunch at highland restaurant"
-      ],
       "what_to_bring": [
         "Jacket or sweater (high altitude can feel crisp and cool)",
         "Camera or smartphone with plenty of storage"
@@ -2157,10 +2127,6 @@
         "Local trekking guide in Tetebatu",
         "Chilled bottled mineral water",
         "Hotel pickup & drop-off across Lombok"
-      ],
-      "exclusions": [
-        "Personal lunch at village warung",
-        "Optional gratuities"
       ],
       "what_to_bring": [
         "Walking shoes or light trainers",
@@ -2209,10 +2175,6 @@
         "Chilled bottled mineral water",
         "Hotel pickup & drop-off"
       ],
-      "exclusions": [
-        "Site admission tickets (approx IDR 10k–25k)",
-        "Lunch & personal souvenirs"
-      ],
       "what_to_bring": [
         "Modest clothing for palace and mosque visits",
         "Camera and sunglasses"
@@ -2254,10 +2216,6 @@
         "Whale shark boat & Bagan community fee",
         "Snorkeling gear & life jackets",
         "Local boat charters for Moyo & Kenawa"
-      ],
-      "exclusions": [
-        "Overnight accommodation in Sumbawa",
-        "Personal meals & beverages"
       ],
       "what_to_bring": [
         "Swimwear, rash guard & dry bag",
@@ -2305,10 +2263,6 @@
         "Free itinerary planning & consultation",
         "Pickup & drop-off at any hotel or airport"
       ],
-      "exclusions": [
-        "Specific attraction tickets (can be bundled all-in)",
-        "Meals & personal expenses"
-      ],
       "what_to_bring": [
         "Your wishlist of favorite places",
         "Travel dates & flight times"
@@ -2352,10 +2306,6 @@
         "Local Porter",
         "Professional Guide",
         "Entrance Fee"
-      ],
-      "exclusions": [
-        "Personal trekking gear (warm clothes)",
-        "Guide & porter gratuities (optional)"
       ],
       "what_to_bring": [
         "Warm jacket or windbreaker (night: 12-15°C)",
@@ -2403,10 +2353,6 @@
         "Professional Guide",
         "Entrance Fee"
       ],
-      "exclusions": [
-        "Personal clothing",
-        "Guide & porter tips"
-      ],
       "what_to_bring": [
         "Warm fleece jacket & change of clothes",
         "Trekking shoes",
@@ -2451,10 +2397,6 @@
         "Mineral water during hike",
         "Bukit Anak Dara entrance fee"
       ],
-      "exclusions": [
-        "Transport to Sembalun (optional add-on)",
-        "Meals / snacks"
-      ],
       "what_to_bring": [
         "Warm jacket & gloves",
         "Trekking shoes with solid grip",
@@ -2497,10 +2439,6 @@
         "Take Photo by Phone (Best Phone Snaps)",
         "Bottled water",
         "Entrance fee"
-      ],
-      "exclusions": [
-        "Hotel pickup outside Sembalun (optional add-on)",
-        "Meals"
       ],
       "what_to_bring": [
         "Comfortable outdoor clothing",
@@ -2545,10 +2483,6 @@
         "Local porters & guide team",
         "National park entry permits"
       ],
-      "exclusions": [
-        "Personal trekking clothes",
-        "Porter / guide gratuities"
-      ],
       "what_to_bring": [
         "Your preferred travel dates",
         "Camera and warm layers"
@@ -2591,10 +2525,6 @@
         "Cooler box with ice for your catch",
         "Bottled mineral water",
         "Private hotel transfers & driver"
-      ],
-      "exclusions": [
-        "Personal expenses",
-        "Beach warung grill charges"
       ],
       "what_to_bring": [
         "Sun hat & polarized sunglasses",
@@ -2640,10 +2570,6 @@
         "Bottled drinking water & light snacks",
         "Private hotel transfers with AC car & driver"
       ],
-      "exclusions": [
-        "Personal expenses",
-        "Lunch & crew gratuities"
-      ],
       "what_to_bring": [
         "Polarized sunglasses & sun hat",
         "Motion sickness tablets (if sensitive to boat sway)",
@@ -2688,10 +2614,6 @@
         "Bottled drinking water",
         "Private hotel transfers & driver"
       ],
-      "exclusions": [
-        "Personal expenses",
-        "Lunch & beach warung grill charges"
-      ],
       "what_to_bring": [
         "Swimwear & beach towel (if combining with island swim)",
         "Sun protection (hat, sunscreen)",
@@ -2734,10 +2656,6 @@
         "Fuel (petrol) included",
         "10-12 hours service per day",
         "Hotel pickup & drop-off across Lombok"
-      ],
-      "exclusions": [
-        "Attraction entry tickets & parking",
-        "Driver meal tip (or invite him to eat along)"
       ],
       "what_to_bring": [
         "Your destination wishlist",
@@ -2785,9 +2703,6 @@
         "Luggage assistance",
         "Chilled bottled water"
       ],
-      "exclusions": [
-        "Personal roadside purchases"
-      ],
       "what_to_bring": [
         "Flight number & arrival/departure time",
         "Hotel name or address"
@@ -2828,9 +2743,6 @@
         "Experienced driver & petrol",
         "Boat schedule coordination assistance",
         "Harbour parking fees"
-      ],
-      "exclusions": [
-        "Fast boat / ferry passenger tickets"
       ],
       "what_to_bring": [
         "Boat schedule & pier name"
@@ -2873,11 +2785,6 @@
         "Trackday registration & slot coordination",
         "Bukit Seger circuit viewpoint entry",
         "Bottled water"
-      ],
-      "exclusions": [
-        "Vehicle rental fee for trackday laps (quoted separately)",
-        "Personal racing gear rental",
-        "Meals and drinks outside tour"
       ],
       "what_to_bring": [
         "Valid driving license (if participating in trackday)",

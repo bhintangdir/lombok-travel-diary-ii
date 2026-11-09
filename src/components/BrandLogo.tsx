@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import Image from "next/image";
 
 export function LogoMark({ size = 42, className = "" }: { size?: number; className?: string }) {
   return (
@@ -15,16 +15,16 @@ export function LogoMark({ size = 42, className = "" }: { size?: number; classNa
         flexShrink: 0,
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
         border: "1.5px solid rgba(249, 215, 118, 0.75)",
-        display: "grid",
-        placeItems: "center",
+        position: "relative",
         background: "#043A4B",
       }}
     >
-      <img
+      <Image
         src="/logo-square.png"
         alt="Lombok Travel Diary Emblem"
         width={size}
         height={size}
+        loading="lazy"
         style={{
           width: "100%",
           height: "100%",
@@ -56,12 +56,13 @@ export default function BrandLogo({
   // Footer / Top Graphic Variant: Menggunakan logo-top (terang untuk background gelap footer)
   if (variant === "top" || variant === "footer") {
     return (
-      <div className={`brand-top-graphic ${className}`} style={{ display: "inline-block" }}>
-        <img
+      <div className={`brand-top-graphic ${className}`} style={{ display: "inline-block", position: "relative" }}>
+        <Image
           src="/logo-top.png"
           alt="Lombok Travel Diary"
           width={210}
           height={62}
+          loading="lazy"
           style={{
             height: size ? `${size}px` : "48px",
             width: "auto",
@@ -76,12 +77,13 @@ export default function BrandLogo({
   // Direct Graphic Variant logo-scrolled
   if (variant === "square" || variant === "scrolled") {
     return (
-      <div className={`brand-footer-graphic ${className}`} style={{ display: "inline-block" }}>
-        <img
+      <div className={`brand-footer-graphic ${className}`} style={{ display: "inline-block", position: "relative" }}>
+        <Image
           src="/logo-scrolled.png"
           alt="Lombok Travel Diary"
           width={210}
           height={58}
+          loading="lazy"
           style={{
             height: size ? `${size}px` : "50px",
             width: "auto",
@@ -96,11 +98,12 @@ export default function BrandLogo({
   // Navbar Dynamic Variant
   const logoSrc = scrolled ? "/logo-scrolled.png" : "/logo-top.png";
   return (
-    <img
+    <Image
       src={logoSrc}
       alt="Lombok Travel Diary"
       width={210}
       height={60}
+      priority={true}
       className={`navbar-brand-logo ${className}`}
       style={{
         height: "44px",

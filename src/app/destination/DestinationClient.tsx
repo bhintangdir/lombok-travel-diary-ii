@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Sparkles, MapPin, ArrowRight, Gem } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
 
@@ -131,43 +132,52 @@ export default function DestinationClient() {
             Lombok Destinations &amp; <span className="text-[#F2A541]">Hidden Gems</span>
           </h1>
           <p>
-            An inspiring directory of standalone destinations across Lombok — from world-famous landmarks to untouched hidden gems. Explore each spot individually, or combine them into your private tour package!
+            An inspiring directory of standalone destinations across Lombok — from world-famous landmarks to untouched hidden gems. Explore each spot individually, or combine them into your custom itinerary.
           </p>
         </div>
       </section>
 
-      {/* 2. DESTINATION GRID & FILTERS */}
-      <section style={{ paddingTop: "56px" }}>
+      {/* 2. FLOATING STICKY FILTER BAR (Gading Trans style) */}
+      <nav className="sticky-filter-bar" aria-label="Filter destinations by category">
         <div className="wrap">
-          {/* Filters */}
           <div className="filters" role="group" aria-label="Filter destinations">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                className={`chip ${filter === cat.key ? "active" : ""}`}
-                aria-pressed={filter === cat.key}
-                style={cat.key === "gem" ? { color: "#F2A541", fontWeight: 700 } : {}}
-                onClick={() => setFilter(cat.key)}
-              >
-                {cat.key === "gem" && (
-                  <Gem size={13} strokeWidth={2.4} style={{ color: "#F2A541", stroke: "#F2A541", display: "inline-block", marginRight: "5px", verticalAlign: "-1px" }} />
-                )}
-                {cat.label}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const count =
+                cat.key === "all"
+                  ? items.length
+                  : cat.key === "gem"
+                  ? items.filter((item: any) => item.is_gem === true).length
+                  : items.filter((item: any) => item.cat === cat.key).length;
+
+              return (
+                <button
+                  key={cat.key}
+                  className={`chip ${filter === cat.key ? "active" : ""}`}
+                  aria-pressed={filter === cat.key}
+                  style={cat.key === "gem" ? { color: "#F2A541", fontWeight: 700 } : {}}
+                  onClick={() => setFilter(cat.key)}
+                >
+                  {cat.key === "gem" && (
+                    <Gem size={13} strokeWidth={2.4} style={{ color: "#F2A541", stroke: "#F2A541", display: "inline-block", marginRight: "5px", verticalAlign: "-1px" }} />
+                  )}
+                  {cat.label} <span style={{ opacity: 0.85, fontSize: "0.86em", marginLeft: "4px" }}>({count})</span>
+                </button>
+              );
+            })}
           </div>
+        </div>
+      </nav>
 
-          <p className="count">Showing {filteredItems.length} destinations across Lombok</p>
-
-          {/* Cards Grid */}
+      {/* 3. DESTINATION GRID */}
+      <section style={{ paddingTop: "28px" }}>
+        <div className="wrap">
+          
           <div className="grid g3">
             {filteredItems.map((item: any, idx: number) => (
               <article key={idx} className="dcard" id={item.slug}>
                 <Link href={`/destination/${item.slug}`} className="pic-link" aria-label={`View details for ${item.name}`}>
-                  <div
-                    className="pic"
-                    style={{ backgroundImage: `url('${item.imgUrl}')` }}
-                  >
+                  <div className="pic">
+                    <Image src={item.imgUrl} alt={item.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" className="object-cover" />
                     {item.is_gem ? (
                       <span className="badge gem">
                         <Gem size={12} strokeWidth={2.4} style={{ color: "#F2A541", stroke: "#F2A541", display: "inline-block", marginRight: "4px", verticalAlign: "-1px" }} />
@@ -213,7 +223,7 @@ export default function DestinationClient() {
 
                   <div className="dacts">
                     <Link className="btn btn-line" href={`/destination/${item.slug}`}>
-                      Explore Spot
+                      View Detail
                     </Link>
                     <a
                       className="btn btn-wa"
@@ -221,7 +231,7 @@ export default function DestinationClient() {
                       rel="noopener noreferrer"
                       href={wa(`Hello Lombok Travel Diary! I would like to enquire about visiting: ${item.name} (${item.region || item.location || "Lombok"}).`)}
                     >
-                      Enquire Spot
+                      WhatsApp
                     </a>
                   </div>
                 </div>
@@ -243,20 +253,10 @@ export default function DestinationClient() {
             }}
           >
             {/* Background Image & Ambient Gradient Overlay */}
-            <div
-              className="sc-bg-img"
-              style={{
-                backgroundImage: "url('/custom-trip.jpg')",
-                position: "absolute",
-                inset: 0,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                zIndex: 0,
-              }}
-              aria-hidden="true"
-            />
-            <div
-              style={{
+            <div className="sc-bg-img" style={{ position: "absolute", inset: 0, zIndex: 0 }} aria-hidden="true">
+                <Image src="/custom-trip.jpg" alt="Custom Trip Lombok" fill sizes="100vw" loading="lazy" className="object-cover" />
+            </div>
+            <div style={{
                 position: "absolute",
                 inset: 0,
                 background: "linear-gradient(135deg, rgba(4, 58, 75, 0.92) 0%, rgba(6, 91, 114, 0.86) 60%, rgba(4, 58, 75, 0.94) 100%)",
@@ -323,6 +323,47 @@ export default function DestinationClient() {
                 Lombok turns lush and emerald green. Rainforest waterfalls like Tiu Kelep, Sendang Gile, and Benang Kelambu reach their most dramatic and thunderous flow.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+            {/* 4.5 DESTINATION FAQ SECTION */}
+      <section style={{ background: "#f8fafc", padding: "75px 0" }}>
+        <div className="wrap">
+          <div className="head c">
+            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--sea)", textTransform: "uppercase", letterSpacing: "1.2px", display: "inline-block", marginBottom: "8px" }}>
+              Travel Notes &amp; FAQ
+            </span>
+            <h2>Tips Before Exploring Lombok Destinations</h2>
+            <p className="lead" style={{ maxWidth: "600px", margin: "6px auto 0" }}>
+              Essential tips on regional travel times, road conditions, and combining standalone spots.
+            </p>
+          </div>
+          <div className="faq">
+            <details>
+              <summary>Can I combine multiple destinations into a single day trip?</summary>
+              <p>
+                Yes! Many spots pair naturally together: Kuta Mandalika combines perfectly with Tanjung Aan &amp; Bukit Merese, while Tiu Kelep Waterfall pairs seamlessly with Senaru or Pergasingan Hill in Sembalun.
+              </p>
+            </details>
+            <details>
+              <summary>What is the best way to get between regions in Lombok?</summary>
+              <p>
+                Hiring a private AC car with a local driver is by far the most comfortable and flexible option. Our drivers know local road conditions, tidal schedules, and scenic photography viewpoints.
+              </p>
+            </details>
+            <details>
+              <summary>Are destination entrance and parking tickets included?</summary>
+              <p>
+                When booking any of our private tour packages, all village entrance tickets, waterfall permits, parking fees, and local community guide fees are fully included with zero surprise charges.
+              </p>
+            </details>
+            <details>
+              <summary>What should I wear or prepare when visiting these spots?</summary>
+              <p>
+                Wear light breathable clothes and secure sandals or walking shoes. If visiting traditional Sasak villages (Sade / Sukarara), modest attire is respectful (shoulders and knees covered). For waterfalls and snorkeling, bring swimwear and a dry change of clothes.
+              </p>
+            </details>
           </div>
         </div>
       </section>

@@ -165,7 +165,7 @@ export default function LanguageSelector() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="notranslate"
+        className="notranslate lang-selector-trigger"
         translate="no"
         aria-label="Change Language"
         aria-expanded={isOpen}

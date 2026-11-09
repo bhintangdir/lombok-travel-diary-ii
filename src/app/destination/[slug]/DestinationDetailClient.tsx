@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MapPin, Gem, Sparkles, ArrowRight } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
@@ -103,9 +104,15 @@ export default function DestinationDetailClient({ slug }: Props) {
           <div className="dmain">
             {/* Gallery Grid */}
             <div className="dg">
-              <div className="img" style={{ backgroundImage: `url('${g1}')` }} />
-              <div className="img" style={{ backgroundImage: `url('${g2}')` }} />
-              <div className="img" style={{ backgroundImage: `url('${g3}')` }} />
+              <div className="img">
+                <Image src={g1} alt={`${destination.name} - Photo 1`} fill sizes="(max-width: 900px) 100vw, 66vw" loading="lazy" className="object-cover" />
+              </div>
+              <div className="img">
+                <Image src={g2} alt={`${destination.name} - Photo 2`} fill sizes="(max-width: 900px) 50vw, 33vw" loading="lazy" className="object-cover" />
+              </div>
+              <div className="img">
+                <Image src={g3} alt={`${destination.name} - Photo 3`} fill sizes="(max-width: 900px) 50vw, 33vw" loading="lazy" className="object-cover" />
+              </div>
             </div>
 
             <h2>About This Destination</h2>
@@ -252,7 +259,9 @@ export default function DestinationDetailClient({ slug }: Props) {
 
               return (
                 <Link key={idx} className="card" href={`/destination/${r.slug}`}>
-                  <div className="img" style={{ backgroundImage: `url('${rImg}')` }} />
+                  <div className="img">
+                    <Image src={rImg} alt={r.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" className="object-cover" />
+                  </div>
                   <div className="body">
                     <div className="meta">
                       <span>{r.region || "Lombok"}</span>

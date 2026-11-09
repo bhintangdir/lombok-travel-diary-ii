@@ -260,8 +260,17 @@ export default function ContactClient() {
       </section>
 
       {/* FAQ */}
-      <section style={{ paddingTop: "40px" }}>
+      <section style={{ background: "#f8fafc", padding: "75px 0" }}>
         <div className="wrap">
+          <div className="head c">
+            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--sea)", textTransform: "uppercase", letterSpacing: "1.2px", display: "inline-block", marginBottom: "8px" }}>
+              Frequently Asked Questions
+            </span>
+            <h2>{page.faq.heading || "Quick Answers"}</h2>
+            <p className="lead" style={{ maxWidth: "580px", margin: "6px auto 0" }}>
+              Have questions about contacting our local team or office visits? Here are common answers.
+            </p>
+          </div>
           <div className="faq">
             {page.faq.items.map((fq, i) => (
               <details key={i}>

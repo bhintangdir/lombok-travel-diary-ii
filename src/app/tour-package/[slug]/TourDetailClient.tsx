@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MapPin, Sparkles, ArrowRight } from "lucide-react";
 import { useContent } from "@/context/ContentContext";
@@ -85,9 +86,15 @@ export default function TourDetailClient({ slug }: Props) {
           <div className="dmain">
             {/* Gallery Grid */}
             <div className="dg">
-              <div className="img" style={{ backgroundImage: `url('${g1}')` }} />
-              <div className="img" style={{ backgroundImage: `url('${g2}')` }} />
-              <div className="img" style={{ backgroundImage: `url('${g3}')` }} />
+              <div className="img">
+                <Image src={g1} alt={`${tour.name} - Photo 1`} fill sizes="(max-width: 900px) 100vw, 66vw" loading="lazy" className="object-cover" />
+              </div>
+              <div className="img">
+                <Image src={g2} alt={`${tour.name} - Photo 2`} fill sizes="(max-width: 900px) 50vw, 33vw" loading="lazy" className="object-cover" />
+              </div>
+              <div className="img">
+                <Image src={g3} alt={`${tour.name} - Photo 3`} fill sizes="(max-width: 900px) 50vw, 33vw" loading="lazy" className="object-cover" />
+              </div>
             </div>
 
             <h2>Tour Overview &amp; Experience</h2>
@@ -128,25 +135,14 @@ export default function TourDetailClient({ slug }: Props) {
               ))}
             </ul>
 
-            <h2>Package Details &amp; Inclusions</h2>
-            <div className="two">
-              <div className="box yes">
-                <h3>What is Included</h3>
-                <ul>
-                  {includedList.map((inc: string, i: number) => (
-                    <li key={i}>{inc}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="box no">
-                <h3>Not Included</h3>
-                <ul>
-                  <li>Personal expenses &amp; souvenirs</li>
-                  <li>Optional gratuity for guides, drivers &amp; porters</li>
-                  <li>Personal travel medical insurance</li>
-                  <li>Additional food or alcohol outside the program</li>
-                </ul>
-              </div>
+            <h2>Package Inclusions</h2>
+            <div className="box yes" style={{ margin: "20px 0" }}>
+              <h3>What is Included</h3>
+              <ul>
+                {includedList.map((inc: string, i: number) => (
+                  <li key={i}>{inc}</li>
+                ))}
+              </ul>
             </div>
 
             <div className="know">
@@ -248,7 +244,9 @@ export default function TourDetailClient({ slug }: Props) {
 
               return (
                 <Link key={idx} className="card" href={`/tour-package/${r.slug}`}>
-                  <div className="img" style={{ backgroundImage: `url('${rImg}')` }} />
+                  <div className="img">
+                    <Image src={rImg} alt={r.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" className="object-cover" />
+                  </div>
                   <div className="body">
                     <div className="meta">
                       <span>{r.duration || "Full Day"}</span>
