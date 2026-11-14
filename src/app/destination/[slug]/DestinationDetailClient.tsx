@@ -33,9 +33,10 @@ export default function DestinationDetailClient({ slug }: Props) {
     ? destination.image
     : `https://images.unsplash.com/${destination.image || "photo-1506905925346-21bda4d32df4"}?auto=format&fit=crop&w=1800&q=70`;
 
-  const g1 = heroImage;
-  const g2 = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=70";
-  const g3 = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=70";
+  const galleryList = Array.isArray(destination.gallery) && destination.gallery.length > 0 ? destination.gallery : [];
+  const g1 = galleryList[0] || heroImage;
+  const g2 = galleryList[1] || "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=70";
+  const g3 = galleryList[2] || "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=70";
 
   // Find linked tour
   const linkedTour: any = (content.tours || []).find((t: any) =>

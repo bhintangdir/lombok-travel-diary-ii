@@ -42,7 +42,7 @@
       },
       {
         "name": "Gallery",
-        "path": "/#gallery"
+        "path": "/gallery"
       },
       {
         "name": "About",
@@ -319,8 +319,8 @@
         "color_class": "c-navy",
         "height_class": "l",
         "bg_gradient": "linear-gradient(160deg,#2FA36B,#27467F)",
-        "bg_image": "/tour-3-gili-trawangan-air-and-meno.jpg",
-        "image": "/tour-3-gili-trawangan-air-and-meno.jpg",
+        "bg_image": "/pics/touranddestination-gilisnorkling.jpg",
+        "image": "/pics/touranddestination-gilisnorkling.jpg",
         "badge": "Top Pick",
         "best_time": "May – October",
         "ideal_duration": "1 – 3 Days",
@@ -367,7 +367,15 @@
             "a": "Yes! Our private Gili Island Hopping tour visits the best snorkeling spots of Trawangan, Meno, and Air in an easy 8-9 hour day itinerary."
           }
         ],
-        "recommended_tour_slug": "snorkeling-3-gili"
+        "recommended_tour_slug": "snorkeling-3-gili",
+        "gallery": [
+          "/pics/touranddestination-gilisnorkling.jpg",
+          "/pics/touranddestination-gilisnorkling2.jpg",
+          "/pics/touranddestination-gilisnorkling3.jpg",
+          "/pics/touranddestination-gilisnorkling4.jpg",
+          "/pics/touranddestination-gilisnorkling5.jpg",
+          "/pics/ourtravel-islandhopping.jpg"
+        ]
       },
       {
         "id": "secret-gili-sekotong",
@@ -382,8 +390,8 @@
         "color_class": "c-navy",
         "height_class": "m",
         "bg_gradient": "linear-gradient(160deg,#27467F,#F7C548)",
-        "bg_image": "/secret-gili-sekotong-area.webp",
-        "image": "/secret-gili-sekotong-area.webp",
+        "bg_image": "/pics/tourpackage-secretgili.jpg",
+        "image": "/pics/tourpackage-secretgili.jpg",
         "badge": "Hidden Gems",
         "best_time": "May – October",
         "ideal_duration": "Day Trip",
@@ -429,7 +437,12 @@
             "a": "Gili Sudak has simple restrooms and fresh seafood warungs; Gili Kedis is completely uninhabited and untouched."
           }
         ],
-        "recommended_tour_slug": "snorkeling-secret-gili"
+        "recommended_tour_slug": "snorkeling-secret-gili",
+        "gallery": [
+          "/pics/tourpackage-secretgili.jpg",
+          "/pics/tourpackage-secretgili2.jpg",
+          "/pics/tourpackage-secretgili3.jpg"
+        ]
       },
       {
         "id": "kuta-mandalika",
@@ -444,8 +457,8 @@
         "color_class": "c-green",
         "height_class": "m",
         "bg_gradient": "linear-gradient(160deg,#F7C548,#E8553D)",
-        "bg_image": "/kuta-mandalika.png",
-        "image": "/kuta-mandalika.png",
+        "bg_image": "/pics/tourpackage-southlombok5.jpg",
+        "image": "/pics/tourpackage-southlombok5.jpg",
         "badge": "Surfer Vibe",
         "best_time": "April – November",
         "ideal_duration": "2 – 4 Days",
@@ -492,7 +505,12 @@
             "a": "Only 20 to 25 minutes by private car on smooth modern highways."
           }
         ],
-        "recommended_tour_slug": "tour-beach-lombok"
+        "recommended_tour_slug": "tour-beach-lombok",
+        "gallery": [
+          "/pics/tourpackage-southlombok5.jpg",
+          "/pics/tourpackage-southlombok7.jpg",
+          "/pics/tourpackage-southlombok8.jpg"
+        ]
       },
       {
         "id": "tanjung-aan",
@@ -507,8 +525,8 @@
         "color_class": "c-green",
         "height_class": "l",
         "bg_gradient": "linear-gradient(160deg,#319795,#38A169)",
-        "bg_image": "/tanjung-ann.webp",
-        "image": "/tanjung-ann.webp",
+        "bg_image": "/pics/tourpackage-southlombok5.jpg",
+        "image": "/pics/tourpackage-southlombok5.jpg",
         "badge": "Iconic Sunset",
         "best_time": "Afternoon & Sunset",
         "ideal_duration": "3 – 5 Hours",
@@ -554,7 +572,12 @@
             "a": "Yes! Unlike some surf breaks nearby, Tanjung Aan's inner bay is calm and excellent for relaxed swimming."
           }
         ],
-        "recommended_tour_slug": "tour-beach-lombok"
+        "recommended_tour_slug": "tour-beach-lombok",
+        "gallery": [
+          "/pics/tourpackage-southlombok5.jpg",
+          "/pics/tourpackage-southlombok7.jpg",
+          "/pics/tourpackage-southlombok8.jpg"
+        ]
       },
       {
         "id": "selong-belanak",
@@ -863,8 +886,8 @@
         "color_class": "c-green",
         "height_class": "l",
         "bg_gradient": "linear-gradient(160deg,#2FA36B,#27467F)",
-        "bg_image": "/tiu-kelep-and-sendang-gile-waterfall.webp",
-        "image": "/tiu-kelep-and-sendang-gile-waterfall.webp",
+        "bg_image": "/pics/tourpackage-northlombokwaterfall.jpg",
+        "image": "/pics/tourpackage-northlombokwaterfall.jpg",
         "badge": "Lush Nature",
         "best_time": "Year-round (Best: Apr – Nov)",
         "ideal_duration": "Day Trip",
@@ -910,7 +933,12 @@
             "a": "Yes! The natural pool at the base of Tiu Kelep is fresh and chilly—incredibly refreshing after the hike."
           }
         ],
-        "recommended_tour_slug": "waterfall-klu"
+        "recommended_tour_slug": "waterfall-klu",
+        "gallery": [
+          "/pics/tourpackage-northlombokwaterfall.jpg",
+          "/pics/tourpackage-northlombokwaterfall2.jpg",
+          "/pics/tourpackage-northlombokwaterfall3.jpg"
+        ]
       },
       {
         "id": "benang-kelambu",
@@ -925,8 +953,8 @@
         "color_class": "c-navy",
         "height_class": "m",
         "bg_gradient": "linear-gradient(160deg,#2C5282,#3182CE)",
-        "bg_image": "/benang-stokel-and-benang-kelambu-waterfall.jpg",
-        "image": "/benang-stokel-and-benang-kelambu-waterfall.jpg",
+        "bg_image": "/pics/tourpackage-centrallombokwaterfall.webp",
+        "image": "/pics/tourpackage-centrallombokwaterfall.webp",
         "badge": "Jungle Curtain",
         "best_time": "Morning – Midday",
         "ideal_duration": "3 – 4 Hours",
@@ -972,7 +1000,12 @@
             "a": "Yes! Paved footpaths and handrails make this one of the most accessible waterfall sites in all of Lombok."
           }
         ],
-        "recommended_tour_slug": "waterfall-lombok-tengah"
+        "recommended_tour_slug": "waterfall-lombok-tengah",
+        "gallery": [
+          "/pics/tourpackage-centrallombokwaterfall.webp",
+          "/pics/tourpackage-centrallombokwaterfall2.jpg",
+          "/pics/tourpackage-centrallombokwaterfall7.jpg"
+        ]
       },
       {
         "id": "sasak-sade-village",
@@ -987,8 +1020,8 @@
         "color_class": "c-yellow",
         "height_class": "s",
         "bg_gradient": "linear-gradient(160deg,#F7C548,#27467F)",
-        "bg_image": "/sasak-village-and-kuta-beach-tour.jpg",
-        "image": "/sade.jpg",
+        "bg_image": "/pics/sasak-cultural01.jpg",
+        "image": "/pics/sasak-cultural01.jpg",
         "badge": "Ancestral Living",
         "best_time": "Year-round",
         "ideal_duration": "Half Day / 2 Hours",
@@ -1034,7 +1067,11 @@
             "a": "A relaxed guided walking tour of the village takes around 1 to 1.5 hours."
           }
         ],
-        "recommended_tour_slug": "sasak-tour"
+        "recommended_tour_slug": "sasak-tour",
+        "gallery": [
+          "/pics/sasak-cultural01.jpg",
+          "/pics/sasak-cultural4.jpg"
+        ]
       },
       {
         "id": "desa-ende",
@@ -1285,8 +1322,8 @@
         "color_class": "c-red",
         "height_class": "l",
         "bg_gradient": "linear-gradient(160deg,#E8553D,#27467F)",
-        "bg_image": "/mandalika-circuit-tour.jpg",
-        "image": "/mandalika-circuit-tour.jpg",
+        "bg_image": "/pics/mandalika-circuit1.jpg",
+        "image": "/pics/mandalika-circuit1.jpg",
         "badge": "MotoGP Track",
         "best_time": "All Year Round",
         "ideal_duration": "3 – 5 Hours",
@@ -1323,7 +1360,12 @@
             "a": "Yes, on non-race days official guided paddock and circuit tours operate daily."
           }
         ],
-        "recommended_tour_slug": "mandalika-circuit-tour"
+        "recommended_tour_slug": "mandalika-circuit-tour",
+        "gallery": [
+          "/pics/mandalika-circuit1.jpg",
+          "/pics/mandalika-circuit2.jpg",
+          "/pics/mandalika-circuit3.jpg"
+        ]
       },
       {
         "id": "savana-dandaun",
@@ -1838,7 +1880,15 @@
         }
       ],
       "more_detail": "Pickup 08:00 → Harbour → Private speed boat → 3 Gilis snorkel → GoPro & Guide → Hotel drop-off.",
-      "image": "/tour-3-gili-trawangan-air-and-meno.jpg"
+      "image": "/pics/touranddestination-gilisnorkling.jpg",
+      "gallery": [
+        "/pics/touranddestination-gilisnorkling.jpg",
+        "/pics/touranddestination-gilisnorkling2.jpg",
+        "/pics/touranddestination-gilisnorkling3.jpg",
+        "/pics/touranddestination-gilisnorkling4.jpg",
+        "/pics/touranddestination-gilisnorkling5.jpg",
+        "/pics/ourtravel-islandhopping.jpg"
+      ]
     },
     {
       "id": "snorkeling-secret-gili",
@@ -1882,7 +1932,12 @@
         }
       ],
       "more_detail": "Pickup 08:00 → Tawun harbour → Gili Nanggu → Gili Sudak → Gili Kedis → GoPro & Guide → Hotel drop-off.",
-      "image": "/secret-gili-sekotong-area.webp"
+      "image": "/pics/tourpackage-secretgili.jpg",
+      "gallery": [
+        "/pics/tourpackage-secretgili.jpg",
+        "/pics/tourpackage-secretgili2.jpg",
+        "/pics/tourpackage-secretgili3.jpg"
+      ]
     },
     {
       "id": "tour-beach-lombok",
@@ -1925,7 +1980,12 @@
         }
       ],
       "more_detail": "Pickup 08:30 → Selong Belanak → Mawun → Kuta → Tanjung Aan → Merese Sunset → Hotel drop-off.",
-      "image": "/kuta-mandalika.png"
+      "image": "/pics/tourpackage-southlombok5.jpg",
+      "gallery": [
+        "/pics/tourpackage-southlombok5.jpg",
+        "/pics/tourpackage-southlombok7.jpg",
+        "/pics/tourpackage-southlombok8.jpg"
+      ]
     },
     {
       "id": "sasak-tour",
@@ -1968,7 +2028,11 @@
         }
       ],
       "more_detail": "Pickup 08:30 → Sukarara → Sade Village → Kuta Mandalika → Tanjung Aan → Hotel drop-off.",
-      "image": "/sasak-village-and-kuta-beach-tour.jpg"
+      "image": "/pics/sasak-cultural01.jpg",
+      "gallery": [
+        "/pics/sasak-cultural01.jpg",
+        "/pics/sasak-cultural4.jpg"
+      ]
     },
     {
       "id": "waterfall-lombok-tengah",
@@ -2011,7 +2075,12 @@
         }
       ],
       "more_detail": "Pickup 08:30 → Benang Stokel → Benang Kelambu → Spring swim → Lunch → Hotel drop-off.",
-      "image": "/benang-stokel-and-benang-kelambu-waterfall.jpg"
+      "image": "/pics/tourpackage-centrallombokwaterfall.webp",
+      "gallery": [
+        "/pics/tourpackage-centrallombokwaterfall.webp",
+        "/pics/tourpackage-centrallombokwaterfall2.jpg",
+        "/pics/tourpackage-centrallombokwaterfall7.jpg"
+      ]
     },
     {
       "id": "waterfall-klu",
@@ -2054,7 +2123,12 @@
         }
       ],
       "more_detail": "Pickup 08:00 → Senaru → Sendang Gile → Tiu Kelep → Lunch → Traditional Village → Hotel drop-off.",
-      "image": "/tiu-kelep-and-sendang-gile-waterfall.webp"
+      "image": "/pics/tourpackage-northlombokwaterfall.jpg",
+      "gallery": [
+        "/pics/tourpackage-northlombokwaterfall.jpg",
+        "/pics/tourpackage-northlombokwaterfall2.jpg",
+        "/pics/tourpackage-northlombokwaterfall3.jpg"
+      ]
     },
     {
       "id": "sembalun-mount-rinjani-tour",
@@ -2803,7 +2877,12 @@
         }
       ],
       "more_detail": "Pickup → Mandalika Circuit Tour → Paddock & Pit Walk → Turn 10 Photos → Bukit Seger Viewpoint → Hotel Drop-off.",
-      "image": "/mandalika-circuit-tour.jpg"
+      "image": "/pics/mandalika-circuit1.jpg",
+      "gallery": [
+        "/pics/mandalika-circuit1.jpg",
+        "/pics/mandalika-circuit2.jpg",
+        "/pics/mandalika-circuit3.jpg"
+      ]
     }
   ],
   "about_page": {

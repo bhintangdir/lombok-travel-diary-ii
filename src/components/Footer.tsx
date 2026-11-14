@@ -35,7 +35,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/tour-package">Tour Packages</Link></li>
               <li><Link href="/destination">Destinations &amp; Gems</Link></li>
-              <li><Link href="/#gallery">Moments Gallery</Link></li>
+              <li><Link href="/gallery">Moments Gallery</Link></li>
               <li><Link href="/about">About Us</Link></li>
             </ul>
           </div>

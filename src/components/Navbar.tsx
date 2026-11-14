@@ -29,7 +29,7 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Tour Package", path: "/tour-package" },
     { name: "Destination", path: "/destination" },
-    { name: "Gallery", path: "/#gallery" },
+    { name: "Gallery", path: "/gallery" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
@@ -63,7 +63,7 @@ export default function Navbar() {
                       e.preventDefault();
                       const el = document.getElementById("gallery");
                       if (el) {
-                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
+                        const top = el.getBoundingClientRect().top + window.scrollY - 230;
                         window.scrollTo({ top, behavior: "smooth" });
                       }
                     }

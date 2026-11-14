@@ -148,21 +148,9 @@ export default function MobileBottomNav() {
             {/* Menu Links Grid */}
             <div className="mob-more-grid">
               <Link
-                href="/#gallery"
+                href="/gallery"
                 className="mob-more-card"
-                onClick={(e) => {
-                  setMoreOpen(false);
-                  if (pathname === "/") {
-                    e.preventDefault();
-                    setTimeout(() => {
-                      const el = document.getElementById("gallery");
-                      if (el) {
-                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
-                        window.scrollTo({ top, behavior: "smooth" });
-                      }
-                    }, 120);
-                  }
-                }}
+                onClick={() => setMoreOpen(false)}
               >
                 <div className="mm-ico">
                   <Camera size={22} strokeWidth={2.2} />
@@ -198,7 +186,7 @@ export default function MobileBottomNav() {
                     setTimeout(() => {
                       const el = document.getElementById("custom-builder");
                       if (el) {
-                        const top = el.getBoundingClientRect().top + window.scrollY - 220;
+                        const top = el.getBoundingClientRect().top + window.scrollY - 130;
                         window.scrollTo({ top, behavior: "smooth" });
                       }
                     }, 120);
@@ -224,7 +212,7 @@ export default function MobileBottomNav() {
                     setTimeout(() => {
                       const el = document.getElementById("surf-lessons");
                       if (el) {
-                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
+                        const top = el.getBoundingClientRect().top + window.scrollY - 15;
                         window.scrollTo({ top, behavior: "smooth" });
                       }
                     }, 120);
@@ -237,32 +225,6 @@ export default function MobileBottomNav() {
                 <div>
                   <b>Surfing Lessons &amp; Camp</b>
                   <p>Beginner to advanced coaching in Kuta Lombok</p>
-                </div>
-              </Link>
-
-              <Link
-                href="/#our-services"
-                className="mob-more-card"
-                onClick={(e) => {
-                  setMoreOpen(false);
-                  if (pathname === "/") {
-                    e.preventDefault();
-                    setTimeout(() => {
-                      const el = document.getElementById("our-services");
-                      if (el) {
-                        const top = el.getBoundingClientRect().top + window.scrollY - 190;
-                        window.scrollTo({ top, behavior: "smooth" });
-                      }
-                    }, 120);
-                  }
-                }}
-              >
-                <div className="mm-ico">
-                  <Plane size={22} strokeWidth={2.2} />
-                </div>
-                <div>
-                  <b>Airport &amp; Harbor Transfer</b>
-                  <p>Punctual pick-up &amp; drop-off service</p>
                 </div>
               </Link>
             </div>

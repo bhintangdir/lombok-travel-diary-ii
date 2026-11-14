@@ -31,16 +31,17 @@ export default function TourDetailClient({ slug }: Props) {
     .filter((t: any) => t.id !== tour.id)
     .slice(0, 3);
 
-  // Gallery images fallback
+  // Gallery images fallback with dynamic gallery support
   const heroImage = tour.image?.startsWith("http")
     ? tour.image
     : tour.image?.startsWith("/")
     ? tour.image
     : `https://images.unsplash.com/${tour.image || "photo-1506905925346-21bda4d32df4"}?auto=format&fit=crop&w=1800&q=70`;
 
-  const g1 = heroImage;
-  const g2 = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=70";
-  const g3 = "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=70";
+  const galleryList = Array.isArray(tour.gallery) && tour.gallery.length > 0 ? tour.gallery : [];
+  const g1 = galleryList[0] || heroImage;
+  const g2 = galleryList[1] || "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=70";
+  const g3 = galleryList[2] || "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=70";
 
   const includedList = tour.inclusions || tour.included || [
     "Private AC Vehicle & Experienced Local Driver (Fuel Included)",

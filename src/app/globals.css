@@ -106,32 +106,32 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 130px;
+  scroll-padding-top: 155px;
 }
 
 section[id],
 div[id] {
-  scroll-margin-top: 130px;
+  scroll-margin-top: 155px;
 }
 
 #gallery {
-  scroll-margin-top: 190px !important;
+  scroll-margin-top: 230px !important;
 }
 
 #surf-lessons {
-  scroll-margin-top: 190px !important;
+  scroll-margin-top: 15px !important;
 }
 
 #custom-builder {
-  scroll-margin-top: 220px !important;
+  scroll-margin-top: 130px !important;
 }
 
 #our-services {
-  scroll-margin-top: 190px !important;
+  scroll-margin-top: 230px !important;
 }
 
 #tours {
-  scroll-margin-top: 190px !important;
+  scroll-margin-top: 25px !important;
 }
 
 body {
@@ -779,6 +779,13 @@ header.site-header.solid .menu-links a.on {
 
 /* Horizontal scrollable on tablet & mobile */
 @media (max-width: 768px) {
+  .hero p {
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    max-width: 90% !important;
+    margin: 0 auto 24px !important;
+  }
+
   .filters {
     display: flex;
     flex-wrap: nowrap;

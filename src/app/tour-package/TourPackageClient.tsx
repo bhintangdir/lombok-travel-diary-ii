@@ -20,13 +20,26 @@ export default function TourPackageClient() {
       }
       if (window.location.hash) {
         const hash = window.location.hash.replace("#", "");
-        setTimeout(() => {
+        const scrollToTarget = () => {
           const el = document.getElementById(hash);
           if (el) {
-            const top = el.getBoundingClientRect().top + window.scrollY - 220;
-            window.scrollTo({ top, behavior: "smooth" });
+            const top = el.getBoundingClientRect().top + window.scrollY - 130;
+            window.scrollTo({ top, behavior: "instant" as ScrollBehavior });
           }
-        }, 200);
+        };
+
+        // Run across frames as Next.js finishes hydration and layout painting
+        const t1 = setTimeout(scrollToTarget, 50);
+        const t2 = setTimeout(scrollToTarget, 200);
+        const t3 = setTimeout(scrollToTarget, 500);
+        const t4 = setTimeout(scrollToTarget, 900);
+
+        return () => {
+          clearTimeout(t1);
+          clearTimeout(t2);
+          clearTimeout(t3);
+          clearTimeout(t4);
+        };
       }
     }
   }, []);

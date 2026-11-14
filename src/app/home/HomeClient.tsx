@@ -225,14 +225,20 @@ export default function HomeClient() {
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       const hash = window.location.hash.replace("#", "");
-      const timer = setTimeout(() => {
+      const scrollToHash = () => {
         const el = document.getElementById(hash);
         if (el) {
-          const top = el.getBoundingClientRect().top + window.scrollY - 190;
-          window.scrollTo({ top, behavior: "smooth" });
+          const offset = hash === "tours" ? 25 : hash === "surf-lessons" ? 15 : 230;
+          const top = el.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: "instant" as ScrollBehavior });
         }
-      }, 200);
-      return () => clearTimeout(timer);
+      };
+      const t1 = setTimeout(scrollToHash, 80);
+      const t2 = setTimeout(scrollToHash, 300);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
     }
   }, []);
 
@@ -264,7 +270,18 @@ export default function HomeClient() {
             <span className="text-[#F4E9D6] font-medium">3 Gilis &amp; Secret Gilis</span>, lush hidden waterfalls, to the pulse of Mandalika MotoGP Circuit. All private, flexible, and booked directly on WhatsApp.
           </p>
           <div className="row justify-center">
-            <a className="btn btn-sun" href="#tours">
+            <a
+              className="btn btn-sun"
+              href="#tours"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById("tours");
+                if (el) {
+                  const top = el.getBoundingClientRect().top + window.scrollY - 25;
+                  window.scrollTo({ top, behavior: "smooth" });
+                }
+              }}
+            >
               <Compass className="w-5 h-5" />
               <span>Explore Tour Packages</span>
             </a>
@@ -1073,6 +1090,31 @@ export default function HomeClient() {
             >
               <ChevronRight size={24} strokeWidth={2.4} />
             </button>
+          </div>
+
+          {/* View More Gallery Button */}
+          <div style={{ textAlign: "center", marginTop: "36px" }}>
+            <Link
+              href="/gallery"
+              className="btn btn-outline"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "13px 32px",
+                fontSize: "0.98rem",
+                fontWeight: 700,
+                borderRadius: "999px",
+                border: "2px solid var(--ocean)",
+                color: "var(--ocean)",
+                background: "#ffffff",
+                transition: "all 0.25s ease",
+                boxShadow: "0 4px 14px rgba(4, 58, 75, 0.08)",
+              }}
+            >
+              View More Gallery Moments
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
